@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+   <FacialAnimation.HeadTypeDef>
+    <defName>HeadPointyNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Heads_Blank/Pointy</texPath>
+    <gender>3</gender>
+    <shader>Map/CutoutSkin</shader>
+	   <shaderColorOverride>Map/CutoutSkinOverlay</shaderColorOverride>
+  </FacialAnimation.HeadTypeDef>
+
+  <FacialAnimation.HeadTypeDef>
+    <defName>HeadSquareNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Heads_Blank/Square</texPath>
+    <gender>3</gender>
+    <shader>Map/CutoutSkin</shader>
+	  <shaderColorOverride>Map/CutoutSkinOverlay</shaderColorOverride>
+  </FacialAnimation.HeadTypeDef> 
+
+</Defs>

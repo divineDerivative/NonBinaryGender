@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Issues -->
+
+  <IssueDef>
+    <defName>SpouseCount_NonBinary</defName>
+    <label>Non-binary's spouses</label>
+    <iconPath>UI/Issues/SpouseCountNonBinary</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>SpouseCount_NonBinary_MaxOne</defName>
+    <issue>SpouseCount_NonBinary</issue>
+    <label>one only</label>
+    <description>Non-binary people may have one spouse only.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>0</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <classic>true</classic>
+    <comps>
+      <li Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Two</eventDef>
+        <gender>3</gender>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology" Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Three</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>3</gender>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology" Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_Four</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>3</gender>
+      </li>
+      <li MayRequire="Ludeon.RimWorld.Ideology" Class="PreceptComp_UnwillingToDo_Gendered">
+        <eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+        <displayDescription>false</displayDescription>
+        <gender>3</gender>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  
+</Defs>

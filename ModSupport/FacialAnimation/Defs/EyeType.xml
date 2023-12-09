@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+   <FacialAnimation.EyeballTypeDef>
+    <defName>EyeDullNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Eyes/Dull</texPath>
+    <shader>Map/CutoutComplex</shader>
+    <minColor>RGB(0.25,0.25,0.25)</minColor>
+    <maxColor>RGB(0.85,0.85,0.85)</maxColor>
+    <gender>3</gender>
+  </FacialAnimation.EyeballTypeDef> 
+</Defs>

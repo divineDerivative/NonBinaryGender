@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--Close family-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Parent"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>parent</labelEnby>
+				<diedThoughtEnby>MyParentDied</diedThoughtEnby>
+				<lostThoughtEnby>MyParentLost</lostThoughtEnby>
+				<killedThoughtEnby>KilledMyParent</killedThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Child"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>child</labelEnby>
+				<diedThoughtEnby>MyChildDied</diedThoughtEnby>
+				<lostThoughtEnby>MyChildLost</lostThoughtEnby>
+				<killedThoughtEnby>KilledMyChild</killedThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Sibling"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>sibling</labelEnby>
+				<diedThoughtEnby>MySiblingDied</diedThoughtEnby>
+				<lostThoughtEnby>MySiblingLost</lostThoughtEnby>
+				<killedThoughtEnby>KilledMySibling</killedThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="HalfSibling"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>sibling</labelEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Grandparent"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>grandparent</labelEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Grandchild"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>grandchild</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="NephewOrNiece"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>nibling</labelEnby>
+				<diedThoughtEnby>MyNephewOrNieceDied</diedThoughtEnby>
+				<lostThoughtEnby>MyNephewOrNieceLost</lostThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Distant family-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="GreatGrandparent"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>great grandparent</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="GreatGrandchild"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>great grandchild</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="GranduncleOrGrandaunt"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>great grandpibling</labelEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="GrandnephewOrGrandniece"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>grandnibling</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="UncleOrAunt"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>pibling</labelEnby>
+				<diedThoughtEnby>MyUncleOrAuntDied</diedThoughtEnby>
+				<lostThoughtEnby>MyUncleOrAuntLost</lostThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<!--Family by choice-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Spouse"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>spouse</labelEnby>
+				<diedThoughtEnby>MySpouseDied</diedThoughtEnby>
+				<lostThoughtEnby>MySpouseLost</lostThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Fiance"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<diedThoughtEnby>MyEnbyFianceDied</diedThoughtEnby>
+				<lostThoughtEnby>MyNBFianceLost</lostThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Lover"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<lostThoughtEnby>MyNBLoverLost</lostThoughtEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Stepparent"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>stepparent</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="Stepchild"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>stepchild</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="ParentInLaw"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>parent-in-law</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="ChildInLaw"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>child-in-law</labelEnby>
+			</li>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/PawnRelationDef[defName="ExSpouse"]</xpath>
+		<value>
+			<li Class="NonBinaryGender.EnbyInfo">
+				<labelEnby>ex-spouse</labelEnby>
+			</li>
+		</value>
+	</Operation>
+</Patch>

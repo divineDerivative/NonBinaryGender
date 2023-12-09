@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Rim Reborn - Viera Race</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="ARR_VieraBase"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>ARimReborn/Heads/Viera/</path>
+					<headtypeGraphics>
+						<ARR_Viera_Male_Average>ARimReborn/Heads/Viera/Male_Average</ARR_Viera_Male_Average>
+						<ARR_Viera_Female_Average>ARimReborn/Heads/Viera/Female_Average</ARR_Viera_Female_Average>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>Non-Binary Gender</name>
+  <author>divineDerivative</author>
+  <packageId>divineDerivative.NonBinaryGender</packageId>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+  <description>
+Updated and maintained version of the original mod by Vesper.
+Adds a non-binary gender option for pawns, as well as relevant precepts.
+Features:
+-    Configurable chance of pawns being non-binary
+-    Non-binary pawns can have any body type and wear any clothing
+-    Both colonists and world pawns can generate as non-binary
+-    Adds appropriate gender-neutral relationship titles (child instead of son/daughter, etc)
+-    Adds precepts for nudity rules and spouse rules to match vanilla male/female precepts in Ideology
+-    Compatible with Character Editor
+-    Compatible with [NL] Facial Animation - WIP
+-    Gender neutral name options
+  </description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+	<loadAfter>
+		<li>erdelf.humanoidalienraces</li>
+		<li>erdelf.humanoidalienraces.dev</li>
+	</loadAfter>
+</ModMetaData>

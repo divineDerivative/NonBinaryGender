@@ -1,0 +1,19 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Heruan Race</li>
+		</mods>
+		<match  Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Aelanna_Heruan"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>Aelanna/Pawn/Heruan/Heads/</path>
+					<headtypeGraphics>
+						<Heruan_Male_Average>Aelanna/Pawn/Heruan/Heads/Male_Average</Heruan_Male_Average>
+						<Heruan_Female_Average>Aelanna/Pawn/Heruan/Heads/Female_Average</Heruan_Female_Average>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+  </Operation>
+</Patch>

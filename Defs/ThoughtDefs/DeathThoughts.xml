@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!--===================== Family member died thoughts =====================-->
+  
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyChildDied</defName>
+    <stages>
+      <li>
+        <label>my child {0} died</label>
+        <description>My child is dead. My own flesh and blood...</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MySpouseDied</defName>
+    <stages>
+      <li>
+        <label>my spouse {0} died</label>
+        <description>My spouse is dead. I am alone.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyEnbyFianceDied</defName>
+    <stages>
+      <li>
+        <label>my fiance {0} died</label>
+        <description>My fiance died. Such a person... my future is gone.</description>
+        <baseMoodEffect>-18</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MySiblingDied</defName>
+    <stages>
+      <li>
+        <label>my sibling {0} died</label>
+        <description>My sibling died. My own flesh and blood...</description>
+        <baseMoodEffect>-14</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyParentDied</defName>
+    <stages>
+      <li>
+        <label>my parent {0} died</label>
+        <description>My parent died. He's gone forever.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyNephewOrNieceDied</defName>
+    <stages>
+      <li>
+        <label>my nibling {0} died</label>
+        <description>My nibling died. Such a wonderful child.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemoryFamily">
+    <defName>MyUncleOrAuntDied</defName>
+    <stages>
+      <li>
+        <label>my pibling {0} died</label>
+        <description>My pibling died.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

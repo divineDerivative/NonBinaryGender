@@ -1,0 +1,21 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Name</li>
+		</mods>
+		<match  Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Seren"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>Things/Pawn/Humanlike/Mantodean/Head/</path>
+					<headtypeGraphics>
+						<Male_AverageNormal>Things/Pawn/Humanlike/Mantodean/Head/Male_Average_Normal</Male_AverageNormal>
+						<Male_AverageWide>Things/Pawn/Humanlike/Mantodean/Head/Male_Average_Wide</Male_AverageWide>
+						<Female_AverageNormal>Things/Pawn/Humanlike/Mantodean/Head/Female_Average_Normal</Female_AverageNormal>
+						<Female_AverageWide>Things/Pawn/Humanlike/Mantodean/Head/Female_Average_Wide</Female_AverageWide>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+  </Operation>
+</Patch>

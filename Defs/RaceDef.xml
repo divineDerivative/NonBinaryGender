@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!--<AlienRace.ThingDef_AlienRace ParentName="HumanRace">
+		<defName>notHuman</defName>
+		<label>not human</label>
+		<description>not human</description>
+		--><!--<alienRace>
+			<graphicPaths>
+				<head>
+					<debug>false</debug>
+					<headtypeGraphics>
+						<Male_AverageNormal>Things/Pawn/Humanlike/Heads/Female/Female_Average_Normal</Male_AverageNormal>
+						<Male_AveragePointy>Things/Pawn/Humanlike/Heads/Female/Female_Average_Pointy</Male_AveragePointy>
+						<Male_AverageWide>Things/Pawn/Humanlike/Heads/Female/Female_Average_Wide</Male_AverageWide>
+						<Male_NarrowNormal>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Normal</Male_NarrowNormal>
+						<Male_NarrowPointy>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Pointy</Male_NarrowPointy>
+						<Male_NarrowWide>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Wide</Male_NarrowWide>
+						<Female_AverageNormal>Things/Pawn/Humanlike/Heads/Female/Female_Average_Normal</Female_AverageNormal>
+						<Female_AveragePointy>Things/Pawn/Humanlike/Heads/Female/Female_Average_Pointy</Female_AveragePointy>
+						<Female_AverageWide>Things/Pawn/Humanlike/Heads/Female/Female_Average_Wide</Female_AverageWide>
+						<Female_NarrowNormal>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Normal</Female_NarrowNormal>
+						<Female_NarrowPointy>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Pointy</Female_NarrowPointy>
+						<Female_NarrowWide>Things/Pawn/Humanlike/Heads/Female/Female_Narrow_Wide</Female_NarrowWide>
+					</headtypeGraphics>
+				</head>
+			</graphicPaths>
+		</alienRace>--><!--
+	</AlienRace.ThingDef_AlienRace>
+
+	<PawnKindDef ParentName="Colonist">
+		<defName>testColonist</defName>
+		<race>notHuman</race>
+	</PawnKindDef>-->
+</Defs>

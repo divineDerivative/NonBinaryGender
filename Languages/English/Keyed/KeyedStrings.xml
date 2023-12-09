@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<NBLabel>non-binary</NBLabel>
+	<NBProthey>they</NBProthey>
+	<NBProtheyCap>They</NBProtheyCap>
+	<NBProtheir>their</NBProtheir>
+	<NBProtheirCap>Their</NBProtheirCap>
+	<NBProthemObj>them</NBProthemObj>
+	<NBProthemObjCap>Them</NBProthemObjCap>
+
+	<NonBinaryGenderModName>Non-Binary Gender</NonBinaryGenderModName>
+	<Enby.EnbyChance>Chance of a person being non-binary: </Enby.EnbyChance>
+	<Enby.GenderNeutralNames>Gender Neutral Names</Enby.GenderNeutralNames>
+	<Enby.GenderNeutralNamesTooltip>Choose how gender neutral names will be used for non-binary people</Enby.GenderNeutralNamesTooltip>
+	<Enby.GenderNeutralNameOptionTooltipNoneBrief>Do not use gender neutral names</Enby.GenderNeutralNameOptionTooltipNoneBrief>
+	<Enby.GenderNeutralNameOptionTooltipNoneVerbose>. Non-binary people will be given a male or female first name.</Enby.GenderNeutralNameOptionTooltipNoneVerbose>
+	<Enby.GenderNeutralNameOptionTooltipOnlyBrief>Only use gender neutral names</Enby.GenderNeutralNameOptionTooltipOnlyBrief>
+	<Enby.GenderNeutralNameOptionTooltipOnlyVerbose> for non-binary people.</Enby.GenderNeutralNameOptionTooltipOnlyVerbose>
+	<Enby.GenderNeutralNameOptionTooltipAddBrief>Add gender neutral names to existing names</Enby.GenderNeutralNameOptionTooltipAddBrief>
+	<Enby.GenderNeutralNameOptionTooltipAddVerbose>. Non-binary people will be given a male, female, or gender neutral name.</Enby.GenderNeutralNameOptionTooltipAddVerbose>
+</LanguageData>

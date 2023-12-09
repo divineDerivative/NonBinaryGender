@@ -1,0 +1,55 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Skrix - An Insect-like Race</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Skrix" or defName="Skrix_Noble" or defName="Skrix_Royal"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Heads_WorkerClass/</path>
+							<headtypeGraphics>
+								<Male_AverageNormal>Heads_WorkerClass/Male_Average_Normal</Male_AverageNormal>
+								<Male_AveragePointy>Heads_WorkerClass/Male_Average_Pointy</Male_AveragePointy>
+								<Male_AverageWide>Heads_WorkerClass/Male_Average_Wide</Male_AverageWide>
+								<Male_NarrowNormal>Heads_WorkerClass/Male_Narrow_Normal</Male_NarrowNormal>
+								<Male_NarrowPointy>Heads_WorkerClass/Male_Narrow_Pointy</Male_NarrowPointy>
+								<Male_NarrowWide>Heads_WorkerClass/Male_Narrow_Wide</Male_NarrowWide>
+								<Female_AverageNormal>Heads_WorkerClass/Female_Average_Normal</Female_AverageNormal>
+								<Female_AveragePointy>Heads_WorkerClass/Female_Average_Pointy</Female_AveragePointy>
+								<Female_AverageWide>Heads_WorkerClass/Female_Average_Wide</Female_AverageWide>
+								<Female_NarrowNormal>Heads_WorkerClass/Female_Narrow_Normal</Female_NarrowNormal>
+								<Female_NarrowPointy>Heads_WorkerClass/Female_Narrow_Pointy</Female_NarrowPointy>
+								<Female_NarrowWide>Heads_WorkerClass/Female_Narrow_Wide</Female_NarrowWide>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Skrix_Soldier"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Heads_SoldierClass/</path>
+							<headtypeGraphics>
+								<Male_AverageNormal>Heads_SoldierClass/Male_Average_Normal</Male_AverageNormal>
+								<Male_AveragePointy>Heads_SoldierClass/Male_Average_Pointy</Male_AveragePointy>
+								<Male_AverageWide>Heads_SoldierClass/Male_Average_Wide</Male_AverageWide>
+								<Male_NarrowNormal>Heads_SoldierClass/Male_Narrow_Normal</Male_NarrowNormal>
+								<Male_NarrowPointy>Heads_SoldierClass/Male_Narrow_Pointy</Male_NarrowPointy>
+								<Male_NarrowWide>Heads_SoldierClass/Male_Narrow_Wide</Male_NarrowWide>
+								<Female_AverageNormal>Heads_SoldierClass/Female_Average_Normal</Female_AverageNormal>
+								<Female_AveragePointy>Heads_SoldierClass/Female_Average_Pointy</Female_AveragePointy>
+								<Female_AverageWide>Heads_SoldierClass/Female_Average_Wide</Female_AverageWide>
+								<Female_NarrowNormal>Heads_SoldierClass/Female_Narrow_Normal</Female_NarrowNormal>
+								<Female_NarrowPointy>Heads_SoldierClass/Female_Narrow_Pointy</Female_NarrowPointy>
+								<Female_NarrowWide>Heads_SoldierClass/Female_Narrow_Wide</Female_NarrowWide>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+			</operations>
+		</match>
+  </Operation>
+</Patch>

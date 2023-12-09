@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<PreceptDef>
+		<defName>SpouseCount_NonBinary_MaxTwo</defName>
+		<issue>SpouseCount_NonBinary</issue>
+		<label>two or fewer</label>
+		<description>Non-binary people may have up to two spouses.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>70</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_Three</eventDef>
+				<gender>3</gender>
+			</li>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_Four</eventDef>
+				<displayDescription>false</displayDescription>
+				<gender>3</gender>
+			</li>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+				<displayDescription>false</displayDescription>
+				<gender>3</gender>
+			</li>
+		</comps>
+	</PreceptDef>
+
+	<PreceptDef>
+		<defName>SpouseCount_NonBinary_MaxThree</defName>
+		<issue>SpouseCount_NonBinary</issue>
+		<label>three or fewer</label>
+		<description>Non-binary people may have up to three spouses.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>50</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_Four</eventDef>
+				<gender>3</gender>
+			</li>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+				<displayDescription>false</displayDescription>
+				<gender>3</gender>
+			</li>
+		</comps>
+	</PreceptDef>
+
+	<PreceptDef>
+		<defName>SpouseCount_NonBinary_MaxFour</defName>
+		<issue>SpouseCount_NonBinary</issue>
+		<label>four or fewer</label>
+		<description>Non-binary people may have up to four spouses.</description>
+		<impact>Medium</impact>
+		<displayOrderInIssue>30</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+		<comps>
+			<li Class="PreceptComp_UnwillingToDo_Gendered">
+				<eventDef>GotMarried_SpouseCount_FiveOrMore</eventDef>
+				<gender>3</gender>
+			</li>
+		</comps>
+	</PreceptDef>
+
+	<PreceptDef>
+		<defName>SpouseCount_NonBinary_Unlimited</defName>
+		<issue>SpouseCount_NonBinary</issue>
+		<description>Non-binary people may have as many spouses as they like.</description>
+		<label>unlimited</label>
+		<impact>Medium</impact>
+		<displayOrderInIssue>10</displayOrderInIssue>
+		<displayOrderInImpact>-100</displayOrderInImpact>
+	</PreceptDef>
+</Defs>

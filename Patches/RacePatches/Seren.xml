@@ -1,0 +1,29 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[Alien/Race] Seren, from Stardust</li>
+		</mods>
+		<match  Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Seren"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>Things/Seren/Heads/</path>
+					<headtypeGraphics>
+						<Male_AverageNormal>Things/Seren/Heads/Male_Average_Normal</Male_AverageNormal>
+						<Male_AveragePointy>Things/Seren/Heads/Male_Average_Pointy</Male_AveragePointy>
+						<Male_AverageWide>Things/Seren/Heads/Male_Average_Wide</Male_AverageWide>
+						<Male_NarrowNormal>Things/Seren/Heads/Male_Narrow_Normal</Male_NarrowNormal>
+						<Male_NarrowPointy>Things/Seren/Heads/Male_Narrow_Pointy</Male_NarrowPointy>
+						<Male_NarrowWide>Things/Seren/Heads/Male_Narrow_Wide</Male_NarrowWide>
+						<Female_AverageNormal>Things/Seren/Heads/Female_Average_Normal</Female_AverageNormal>
+						<Female_AveragePointy>Things/Seren/Heads/Female_Average_Pointy</Female_AveragePointy>
+						<Female_AverageWide>Things/Seren/Heads/Female_Average_Wide</Female_AverageWide>
+						<Female_NarrowNormal>Things/Seren/Heads/Female_Narrow_Normal</Female_NarrowNormal>
+						<Female_NarrowPointy>Things/Seren/Heads/Female_Narrow_Pointy</Female_NarrowPointy>
+						<Female_NarrowWide>Things/Seren/Heads/Female_Narrow_Wide</Female_NarrowWide>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+  </Operation>
+</Patch>

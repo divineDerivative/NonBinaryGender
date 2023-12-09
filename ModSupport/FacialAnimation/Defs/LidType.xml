@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+   <FacialAnimation.LidTypeDef>
+    <defName>LidPointyNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Lids/Pointy</texPath>
+    <shader>Map/Transparent</shader>
+    <gender>3</gender>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef>
+    <defName>LidFlashyNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Lids/Flashy</texPath>
+    <shader>Map/Transparent</shader>
+    <gender>3</gender>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef>
+    <defName>LidQuiteNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Lids/Quite</texPath>
+    <shader>Map/Transparent</shader>
+    <gender>3</gender>
+  </FacialAnimation.LidTypeDef>
+  
+    <FacialAnimation.LidTypeDef>
+    <defName>LidSleepyNonBinary</defName>
+    <texPath>Things/Pawn/Humanlike/Lids/Sleepy</texPath>
+    <shader>Map/Transparent</shader>
+    <gender>3</gender>
+  </FacialAnimation.LidTypeDef> 
+</Defs>

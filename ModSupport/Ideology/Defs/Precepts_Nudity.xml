@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+
+  <IssueDef>
+    <defName>Nudity_NonBinary</defName>
+    <label>non-binary clothing</label>
+    <iconPath>UI/Issues/Nudity_NonBinary</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_Mandatory</defName>
+    <issue>Nudity_NonBinary</issue>
+    <description>Non-binary people must be entirely nude at all times. Utility items like shields belts or jump packs are acceptable.</description>
+    <label>fully nude</label>
+    <impact>High</impact>
+    <displayOrderInIssue>125</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>AnyBodyPartCovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>AnyBodyPartCovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+    <prefersNudity>true</prefersNudity>
+    <genderPrefersNudity>3</genderPrefersNudity>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_CoveringAnythingButGroinDisapproved</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>pants at most</label>
+    <description>Non-binary people should cover their groin, but may not cover anything else. Utility items like shields belts or jump packs are acceptable.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>110</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>AnyBodyPartButGroinCovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>AnyBodyPartButGroinCovered_Disapproved_Social_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinUncovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinUncovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+    <prefersNudity>true</prefersNudity>
+    <genderPrefersNudity>3</genderPrefersNudity>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_NoRules</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>no rules</label>
+    <description>A non-binary person may display or cover any part of their body.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>90</displayOrderInIssue>
+    <displayOrderInImpact>-100</displayOrderInImpact>
+    <associatedMemes>
+      <li>Individualist</li>
+    </associatedMemes>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+    <PreceptDef>
+    <defName>Nudity_NonBinary_UncoveredGroinDisapproved</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>pants</label>
+    <description>Non-binary people must cover their groin. The rest of the body may be covered, or not.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>70</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+    <classic>true</classic>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinUncovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinUncovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_UncoveredGroinOrChestDisapproved</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>pants and shirt</label>
+    <description>Non-binary people must cover their groin and chest. The rest of the body may be covered, or not.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>50</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinOrChestUncovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinOrChestUncovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_UncoveredGroinChestOrHairDisapproved</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>pants, shirt, and hat</label>
+    <description>Non-binary people must cover their entire body and hair. The face may be covered, or not.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>30</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinChestOrHairUncovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinChestOrHairUncovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!-- ====== -->
+
+  <PreceptDef>
+    <defName>Nudity_NonBinary_UncoveredGroinChestHairOrFaceDisapproved</defName>
+    <issue>Nudity_NonBinary</issue>
+    <label>totally covered</label>
+    <description>Non-binary people must cover their entire body, including their hair and face.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>10</displayOrderInIssue>
+    <displayOrderInImpact>750</displayOrderInImpact>
+    <comps>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinChestHairOrFaceUncovered_Disapproved_NonBinary</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinChestHairOrFaceUncovered_Disapproved_Social_NonBinary</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <!--================================= Thoughts ====================================-->
+
+  <ThoughtDef ParentName="AnyBodyPartCovered_Disapproved">
+    <defName>AnyBodyPartCovered_Disapproved_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="AnyBodyPartCovered_Disapproved_Social">
+    <defName>AnyBodyPartCovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="AnyBodyPartButGroinCovered_Disapproved">
+    <defName>AnyBodyPartButGroinCovered_Disapproved_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="AnyBodyPartButGroinCovered_Disapproved_Social">
+    <defName>AnyBodyPartButGroinCovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinUncovered_Disapproved">
+    <defName>GroinUncovered_Disapproved_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinUncovered_Disapproved_Social">
+    <defName>GroinUncovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinOrChestUncovered_Disapproved">
+    <defName>GroinOrChestUncovered_Disapproved_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinOrChestUncovered_Disapproved_Social">
+    <defName>GroinOrChestUncovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinChestOrHairUncovered_Disapproved">
+    <defName>GroinChestOrHairUncovered_Disapproved_NonBinary</defName>
+    <workerClass>ThoughtWorker_Precept_GroinChestOrHairUncovered</workerClass>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinChestOrHairUncovered_Disapproved_Social">
+    <defName>GroinChestOrHairUncovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinChestHairOrFaceUncovered_Disapproved">
+    <defName>GroinChestHairOrFaceUncovered_Disapproved_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="GroinChestHairOrFaceUncovered_Disapproved_Social">
+    <defName>GroinChestHairOrFaceUncovered_Disapproved_Social_NonBinary</defName>
+    <gender>3</gender>
+  </ThoughtDef>
+</Defs>
