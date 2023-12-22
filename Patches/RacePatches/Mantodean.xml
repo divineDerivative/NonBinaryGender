@@ -4,7 +4,7 @@
 			<li>Name</li>
 		</mods>
 		<match  Class="PatchOperationReplace">
-			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Seren"]/alienRace/graphicPaths/head</xpath>
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Mantodean"]/alienRace/graphicPaths/head</xpath>
 			<value>
 				<head>
 					<path>Things/Pawn/Humanlike/Mantodean/Head/</path>

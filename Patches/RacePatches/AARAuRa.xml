@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Rim Reborn - Au Ra Race</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ARR_AuRaRaen" or defName="ARR_AuRaXaela"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>ARimReborn/Pawn/AuRa/Heads/</path>
+					<headtypeGraphics>
+						<ARR_AuRa_Male_A>ARimReborn/Pawn/AuRa/Heads/Male_A</ARR_AuRa_Male_A>
+						<ARR_AuRa_Male_B>ARimReborn/Pawn/AuRa/Heads/Male_B</ARR_AuRa_Male_B>
+						<ARR_AuRa_Male_C>ARimReborn/Pawn/AuRa/Heads/Male_C</ARR_AuRa_Male_C>
+						<ARR_AuRa_Male_D>ARimReborn/Pawn/AuRa/Heads/Male_D</ARR_AuRa_Male_D>
+						<ARR_AuRa_Female_A>ARimReborn/Pawn/AuRa/Heads/Female_A</ARR_AuRa_Female_A>
+						<ARR_AuRa_Female_B>ARimReborn/Pawn/AuRa/Heads/Female_B</ARR_AuRa_Female_B>
+						<ARR_AuRa_Female_C>ARimReborn/Pawn/AuRa/Heads/Female_C</ARR_AuRa_Female_C>
+						<ARR_AuRa_Female_D>ARimReborn/Pawn/AuRa/Heads/Female_D</ARR_AuRa_Female_D>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+	</Operation>
+</Patch>

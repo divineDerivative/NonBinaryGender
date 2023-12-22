@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>A Rim Reborn - Au Ra Race</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ARR_MiqoteKeeper"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>ARimReborn/Heads/Keeper/</path>
+							<headtypeGraphics>
+								<ARR_Miqote_Keeper_Male_A>ARimReborn/Heads/Keeper/Male_A</ARR_Miqote_Keeper_Male_A>
+								<ARR_Miqote_Keeper_Male_B>ARimReborn/Heads/Keeper/Male_B</ARR_Miqote_Keeper_Male_B>
+								<ARR_Miqote_Keeper_Male_C>ARimReborn/Heads/Keeper/Male_C</ARR_Miqote_Keeper_Male_C>
+								<ARR_Miqote_Keeper_Male_D>ARimReborn/Heads/Keeper/Male_D</ARR_Miqote_Keeper_Male_D>
+								<ARR_Miqote_Keeper_Female_A>ARimReborn/Heads/Keeper/Female_A</ARR_Miqote_Keeper_Female_A>
+								<ARR_Miqote_Keeper_Female_B>ARimReborn/Heads/Keeper/Female_B</ARR_Miqote_Keeper_Female_B>
+								<ARR_Miqote_Keeper_Female_C>ARimReborn/Heads/Keeper/Female_C</ARR_Miqote_Keeper_Female_C>
+								<ARR_Miqote_Keeper_Female_D>ARimReborn/Heads/Keeper/Female_D</ARR_Miqote_Keeper_Female_D>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ARR_MiqoteSeeker"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>ARimReborn/Heads/Seeker/</path>
+							<headtypeGraphics>
+								<ARR_Miqote_Seeker_Male_A>ARimReborn/Heads/Seeker/Male_A</ARR_Miqote_Seeker_Male_A>
+								<ARR_Miqote_Seeker_Male_B>ARimReborn/Heads/Seeker/Male_B</ARR_Miqote_Seeker_Male_B>
+								<ARR_Miqote_Seeker_Male_C>ARimReborn/Heads/Seeker/Male_C</ARR_Miqote_Seeker_Male_C>
+								<ARR_Miqote_Seeker_Male_D>ARimReborn/Heads/Seeker/Male_D</ARR_Miqote_Seeker_Male_D>
+								<ARR_Miqote_Seeker_Female_A>ARimReborn/Heads/Seeker/Female_A</ARR_Miqote_Seeker_Female_A>
+								<ARR_Miqote_Seeker_Female_B>ARimReborn/Heads/Seeker/Female_B</ARR_Miqote_Seeker_Female_B>
+								<ARR_Miqote_Seeker_Female_C>ARimReborn/Heads/Seeker/Female_C</ARR_Miqote_Seeker_Female_C>
+								<ARR_Miqote_Seeker_Female_D>ARimReborn/Heads/Seeker/Female_D</ARR_Miqote_Seeker_Female_D>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
