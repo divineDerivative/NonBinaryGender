@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average1-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average1-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average2-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average2-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average3-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average3-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Average3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Average3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Heavy1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Heavy1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Heavy2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Heavy2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Heavy3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Heavy3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Narrow1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Narrow1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Narrow2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Narrow2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Furskin_Narrow3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Furskin_Narrow3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<gender>3</gender>
+			<headType>Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average1-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average1-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average2-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average2-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average3-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average3-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Average3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Average3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Heavy1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Heavy1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Heavy2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Heavy2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Heavy3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Heavy3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Narrow1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Narrow1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Narrow2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Narrow2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Furskin_Narrow3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Furskin_Narrow3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<gender>3</gender>
+			<headType>Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average1-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average1-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average2-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average2-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average3-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average3-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Average3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Average3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Heavy1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Heavy1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Heavy2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Heavy2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Heavy3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Heavy3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Narrow1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Narrow1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Narrow2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Narrow2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Furskin_Narrow3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Furskin_Narrow3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<gender>3</gender>
+			<headType>Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average1-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average1-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average2-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average2-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average3-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average3-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Average3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Average3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Heavy1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Heavy1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Heavy2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Heavy2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Heavy3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Heavy3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Narrow1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Narrow1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Narrow2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Narrow2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Furskin_Narrow3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Furskin_Narrow3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<gender>3</gender>
+			<headType>Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average1-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average1-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average2-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average2-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average3-styleimpid_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average3-styleimpid</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+			<style>impid</style>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Average3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Average3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Average3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Heavy1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Heavy1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Heavy2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Heavy2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Heavy3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Heavy3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Heavy3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Narrow1_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Narrow1</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow1</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Narrow2_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Narrow2</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow2</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Furskin_Narrow3_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Furskin_Narrow3</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Furskin_Narrow3</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Gaunt_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Gaunt</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<gender>3</gender>
+			<headType>Gaunt</headType>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cf-Female_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cf-Female_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<head>Female_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-cm-Male_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-cm-Male_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>7~13</ageRange>
+			<head>Male_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ef-Female_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ef-Female_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<head>Female_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-em-Male_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-em-Male_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>64~999</ageRange>
+			<head>Male_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mf-Female_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mf-Female_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<head>Female_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-mm-Male_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-mm-Male_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>39~64</ageRange>
+			<head>Male_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tf-Female_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tf-Female_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<head>Female_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-tm-Male_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-tm-Male_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>13~19</ageRange>
+			<head>Male_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-yf-Female_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-yf-Female_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<head>Female_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+
+	<PortraitsOfTheRim.PortraitElementDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PR_Head_Biotech-ym-Male_HeavyJawNormal_Enby</defName>
+		<portraitLayer>PR_Head</portraitLayer>
+		<graphicData>
+			<texPath>Head/Biotech-ym-Male_HeavyJawNormal</texPath>
+		</graphicData>
+		<requirements>
+			<ageRange>19~39</ageRange>
+			<head>Male_HeavyJawNormal</head>
+		</requirements>
+	</PortraitsOfTheRim.PortraitElementDef>
+</Defs>

@@ -4,5 +4,6 @@
 		<li>/</li>
         <li IfModActive="Ludeon.RimWorld.Ideology">ModSupport/Ideology</li>
 		<li IfModActive="Nals.FacialAnimation">ModSupport/FacialAnimation</li>
+		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
     </v1.4>
 </loadFolders>

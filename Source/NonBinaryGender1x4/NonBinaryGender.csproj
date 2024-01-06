@@ -58,6 +58,10 @@
       <HintPath>..\..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PortraitsOfTheRim">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -94,6 +98,7 @@
     <Compile Include="Patches\ModCompatibility\FacialAnimation.cs" />
     <Compile Include="Patches\GenderUtility.cs" />
     <Compile Include="Patches\ModCompatibility\HARPatches.cs" />
+    <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
     <Compile Include="Patches\NameBank.cs" />
     <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
     <Compile Include="Patches\PawnGenerator.cs" />

@@ -24,6 +24,10 @@ namespace NonBinaryGender
             {
                 FacialAnimation_Patches.PatchFacialAnimation(harmony);
             }
+            if (ModsConfig.IsActive("TwoPenny.PortraitsOfTheRim"))
+            {
+                harmony.PatchPortraits();
+            }
             //Add names if needed
             if (NonBinaryGenderMod.settings.neutralNames != GenderNeutralNameOption.None)
             {
