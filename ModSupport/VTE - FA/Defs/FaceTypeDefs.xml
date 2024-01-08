@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--Brows-->
+	<FacialAnimation.BrowTypeDef>
+		<defName>BrowFurryMonobrow_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Brows/FurryMonobrow</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.BrowTypeDef>
+
+	<!--Lids-->
+	<FacialAnimation.LidTypeDef>
+		<defName>LidFlirty_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Lids/Flashy</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.LidTypeDef>
+
+	<FacialAnimation.LidTypeDef>
+		<defName>LidHardened_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Lids/Hardened</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.LidTypeDef>
+
+	<!--Mouth-->
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthCaveman_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/Caveman</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+		<probability>0.05</probability>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthFatCheeks_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/FatCheeks</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+		<probability>0.05</probability>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthHawk_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/Hawk</texPath>
+		<gender>3</gender>
+		<shader>Map/Transparent</shader>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthLipsSimple_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/LipsSimple</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthLipsTinySmile_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/LipsTinySmile</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthMrStreamer_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/MrStreamer</texPath>
+		<shader>Map/CutoutComplex</shader>
+		<gender>3</gender>
+		<probability>0.00</probability>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthScowl_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/Scowl</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthLipsSimpleSmile_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/LipsSimpleSmile</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.MouthTypeDef>
+
+	<FacialAnimation.MouthTypeDef>
+		<defName>MouthLipsWorried_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Mouth/LipsWorried</texPath>
+		<shader>Map/Transparent</shader>
+		<gender>3</gender>
+	</FacialAnimation.MouthTypeDef>
+
+	<!--Skin-->
+	<FacialAnimation.SkinTypeDef>
+		<defName>SkinChinCleft_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Skins/ChinCleft</texPath>
+		<shader>Map/Transparent</shader>
+		<probability>0.05</probability>
+		<gender>3</gender>
+	</FacialAnimation.SkinTypeDef>
+
+	<FacialAnimation.SkinTypeDef>
+		<defName>SkinEyeshadow_Enby</defName>
+		<texPath>Things/Pawn/Humanlike/Skins/Eyeshadow</texPath>
+		<shader>Map/Transparent</shader>
+		<probability>0.05</probability>
+		<gender>3</gender>
+	</FacialAnimation.SkinTypeDef>
+</Defs>

@@ -6,5 +6,6 @@
 		<li IfModActive="Nals.FacialAnimation">ModSupport/FacialAnimation</li>
 		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
 		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
+		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
     </v1.4>
 </loadFolders>
