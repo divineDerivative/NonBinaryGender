@@ -17,7 +17,14 @@ namespace NonBinaryGender
             }
             NameBank nameBank = PawnNameDatabaseShuffled.BankOf(PawnNameCategory.HumanStandard);
             char sep = Path.DirectorySeparatorChar;
-            string raw = GenFile.TextFromRawFile(GenFilePaths.ModsFolderPath + sep + "NonBinaryGender" + sep + "Languages" + sep + "English" + sep + "Names" + sep + "First_None.txt");
+            var modData = ModLister.GetActiveModWithIdentifier("divineDerivative.NonBinaryGender");
+            string path = modData.RootDir.FullName + sep + "Languages" + sep + "English" + sep + "Names" + sep + "First_None.txt";
+            if (!File.Exists(path))
+            {
+                Log.Error("Unable to find gender neutral names file at " + path);
+                return;
+            }
+            string raw = GenFile.TextFromRawFile(path);
             IEnumerable<string> list = GenText.LinesFromString(raw);
             nameBank.AddNames(PawnNameSlot.First, Gender.None, list);
             nameBank.ErrorCheck();
