@@ -24,15 +24,17 @@ namespace NonBinaryGender
             return true;
         }
 
-        public static void MatchesPrefix(Portrait portrait, ref PortraitElementDef portraitElementDef)
+        public static void MatchesPrefix(Type portrait, ref Type portraitElementDef)
         {
-            if (portrait.pawn.IsEnby())
+            Pawn pawn = (Pawn)AccessTools.Field(typeof(Portrait), nameof(Portrait.pawn)).GetValue(portrait);
+            Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof( PortraitElementDef.requirements)).GetValue(portraitElementDef);
+            if (pawn.IsEnby())
             {
-                if (portraitElementDef.requirements.body != null && portraitElementDef.requirements.gender.HasValue)
+                if (requirements.body != null && requirements.gender.HasValue)
                 {
-                    if (portraitElementDef.requirements.body == GeneticBodyType.Standard)
+                    if (requirements.body == GeneticBodyType.Standard)
                     {
-                        switch (portraitElementDef.requirements.gender)
+                        switch (requirements.gender)
                         {
                             case Gender.Male:
                                 bodyTypeDef = BodyTypeDefOf.Male;
@@ -41,21 +43,22 @@ namespace NonBinaryGender
                                 bodyTypeDef = BodyTypeDefOf.Female;
                                 break;
                         }
-                        oldGender = portraitElementDef.requirements.gender;
-                        portraitElementDef.requirements.gender = null;
+                        oldGender = requirements.gender;
+                        requirements.gender = null;
                     }
                 }
                 forMatches = true;
             }
         }
 
-        public static void MatchesPostfix(Portrait portrait, ref PortraitElementDef portraitElementDef, BoolReport __result)
+        public static void MatchesPostfix(Type portrait, ref Type portraitElementDef)
         {
             forMatches = false;
             bodyTypeDef = null;
             if (oldGender.HasValue)
             {
-                portraitElementDef.requirements.gender = oldGender;
+                Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof(PortraitElementDef.requirements)).GetValue(portraitElementDef);
+                requirements.gender = oldGender;
                 oldGender = null;
             }
         }
