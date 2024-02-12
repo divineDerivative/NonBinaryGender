@@ -1,0 +1,20 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Orassans</li>
+			<li>Orassans Lite</li>
+		</mods>
+		<match  Class="PatchOperationReplace">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Orassan"]/alienRace/graphicPaths/head</xpath>
+			<value>
+				<head>
+					<path>Things/Orassan/Heads/</path>
+					<headtypeGraphics>
+						<Male_AverageNormal>Things/Orassan/Heads/Male_Average_Normal</Male_AverageNormal>					
+						<Female_AverageNormal>Things/Orassan/Heads/Female_Average_Normal</Female_AverageNormal>
+					</headtypeGraphics>
+				</head>
+			</value>
+		</match>
+  </Operation>
+</Patch>
