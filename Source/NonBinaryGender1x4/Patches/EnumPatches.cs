@@ -25,44 +25,6 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
-        //This is no longer needed since it uses data from GetCachedValuesAndNames
-        //[HarmonyPatch(typeof(Enum), nameof(Enum.GetNames))]
-        //[HarmonyPostfix]
-        //public static void EnumGetNamesPatch(Type enumType, ref string[] __result)
-        //{
-        //    if (enumType == typeof(Gender))
-        //    {
-        //        int length = __result.Length;
-        //        string[] newArray = new string[length + 1];
-        //        for (int i = 0; i < length; i++)
-        //        {
-        //            newArray[i] = __result[i];
-        //        }
-        //        newArray[length] = "Enby";
-        //        __result = newArray;
-        //    }
-        //}
-
-        //This is no longer needed since it uses data from GetCachedValuesAndNames
-        //So far this has been used for generating deities
-        //[HarmonyPatch(typeof(Enum), nameof(Enum.GetValues))]
-        //[HarmonyPostfix]
-        //public static void EnumGetValuesPatch(Type enumType, ref Array __result)
-        //{
-        //    if (enumType == typeof(Gender))
-        //    {
-        //        int length = __result.Length;
-        //        Gender enby = (Gender)length;
-        //        Array newArray = Array.CreateInstance(enumType, length + 1);
-        //        for (int i = 0; i < length; i++)
-        //        {
-        //            newArray.SetValue(__result.GetValue(i), i);
-        //        }
-        //        newArray.SetValue(enby, length);
-        //        __result = newArray;
-        //    }
-        //}
-
         private static Type valuesAndNames = AccessTools.TypeByName("ValuesAndNames");
 
         private static object genderCache;

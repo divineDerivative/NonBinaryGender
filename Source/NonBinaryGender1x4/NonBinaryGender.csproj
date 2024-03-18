@@ -52,12 +52,20 @@
     </When>
   </Choose>
   <ItemGroup>
-    <Reference Include="0Harmony">
+    <Reference Include="0Harmony" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="AlienRace">
+    <Reference Include="0Harmony" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\1.4\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AlienRace" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+        <Reference Include="AlienRace" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2640710953\1.5\Assemblies\AlienRace.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CharacterEditor">

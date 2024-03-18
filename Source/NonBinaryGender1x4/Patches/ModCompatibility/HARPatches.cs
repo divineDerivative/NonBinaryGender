@@ -20,8 +20,6 @@ namespace NonBinaryGender
         public static void PatchHAR(this Harmony harmony)
         {
             harmony.Patch(typeof(HarmonyPatches).GetMethod(nameof(HarmonyPatches.GenerateRandomAgePrefix)), transpiler: new HarmonyMethod(typeof(HARPatches).GetMethod(nameof(GenerateRandomAgePrefixTranspiler))));
-            //Not doing this in favor of just patching races that need it
-            //harmony.Patch(typeof(AlienPartGenerator.ExtendedGenderGraphic).GetMethod(nameof(AlienPartGenerator.ExtendedGenderGraphic.IsApplicable)), prefix: new HarmonyMethod(typeof(HARPatches).GetMethod(nameof(ExtendedGenderGraphicIsApplicablePrefix))));
         }
 
         //Decide what, if any, adjustments should be made to head offsets based on HAR settings
@@ -127,18 +125,6 @@ namespace NonBinaryGender
                 }
             }
 
-        }
-
-        //This allows gender graphics to be applied to non-binary pawns, though the result is suboptimal. It will select whichever gender is listed first in the xml, when really it should choose between them. I could maybe get that to work, but I'd need to remember which choice it made so they're not constantly changing graphics and that sounds tedious
-        public static bool ExtendedGenderGraphicIsApplicablePrefix(ref bool __result, object pawn, BodyPartDef part, string partLabel, Gender ___gender)
-        {
-            ExtendedGraphicsPawnWrapper wrappedPawn = pawn as ExtendedGraphicsPawnWrapper;
-            if (wrappedPawn.GetGender().IsEnby())
-            {
-                __result = ___gender != Gender.None;
-                return false;
-            }
-            return true;
         }
     }
 }

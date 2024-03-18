@@ -2,10 +2,20 @@
 <loadFolders>
     <v1.4>
 		<li>/</li>
+		<li>1.4</li>
         <li IfModActive="Ludeon.RimWorld.Ideology">ModSupport/Ideology</li>
 		<li IfModActive="Nals.FacialAnimation">ModSupport/FacialAnimation</li>
 		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
 		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
 		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
     </v1.4>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">ModSupport/Ideology</li>
+		<li IfModActive="Nals.FacialAnimation">ModSupport/FacialAnimation</li>
+		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
+		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
+		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
+	</v1.5>
 </loadFolders>

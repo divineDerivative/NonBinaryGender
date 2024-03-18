@@ -68,19 +68,5 @@ namespace NonBinaryGender.Patches
             }
             return true;
         }
-
-        //This is actually unnecessary since none is the default case for the switch
-        //And everywhere it gets used we're either avoiding or it doesn't matter
-        //[HarmonyPrefix]
-        //[HarmonyPatch(typeof(GenderUtility), nameof(GenderUtility.Opposite))]
-        //public static bool OppositePatch(ref Gender __result, Gender gender)
-        //{
-        //    if (gender.IsEnby())
-        //    {
-        //        __result = Gender.None;
-        //        return false;
-        //    }
-        //    return true;
-        //}
     }
 }
