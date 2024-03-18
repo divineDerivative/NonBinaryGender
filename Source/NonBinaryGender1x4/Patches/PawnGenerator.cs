@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Reflection;
 using Verse;
+using System;
 
 namespace NonBinaryGender.Patches
 {
@@ -52,6 +53,24 @@ namespace NonBinaryGender.Patches
                 }
             }
 
+#if v1_5
+            Type compilerType = null;
+            var types = AccessTools.InnerTypes(typeof(PawnGenerator));
+            foreach (var innerType in types)
+            {
+                var fields = innerType.GetFields();
+                if (fields.Count() == 1 && fields[0].FieldType == typeof(Pawn))
+                {
+                    var methods = innerType.GetMethods(AccessTools.all);
+                    if (methods.Any(x => x.Name.Contains("TryGenerateNewPawnInternal")))
+                    {
+                        compilerType = innerType;
+                        break;
+                    }
+                }
+            }
+#endif
+
             foreach (CodeInstruction code in instructions)
             {
                 //Look for Rand.Value being called, then insert our stuff before it
@@ -60,6 +79,9 @@ namespace NonBinaryGender.Patches
                     //We check for animals because we don't want non-binary cows
                     //if (!pawn.RaceProps.Animal
                     yield return new CodeInstruction(OpCodes.Ldloc_0);
+#if v1_5
+                    yield return CodeInstruction.LoadField(compilerType, "pawn");
+#endif
                     yield return new CodeInstruction(OpCodes.Callvirt, RaceProps);
                     yield return new CodeInstruction(OpCodes.Callvirt, Animal);
                     yield return new CodeInstruction(OpCodes.Brtrue, notAnimalorEnby);
@@ -71,6 +93,9 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Bge_Un, notAnimalorEnby);
                     //pawn.gender = 3;
                     yield return new CodeInstruction(OpCodes.Ldloc_0);
+#if v1_5
+                    yield return CodeInstruction.LoadField(compilerType, "pawn");
+#endif
                     yield return new CodeInstruction(OpCodes.Ldc_I4_3);
                     yield return new CodeInstruction(OpCodes.Stfld, InfoHelper.genderField);
                     yield return new CodeInstruction(OpCodes.Br_S, doneWithGender);

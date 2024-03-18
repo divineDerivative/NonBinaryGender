@@ -14,29 +14,43 @@
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>portable</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Jocelyn\AppData\Local\Temp\vsCCE.tmp\Debug\</IntermediateOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>portable</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DebugSymbols>true</DebugSymbols>
-    <IntermediateOutputPath>C:\Users\Jocelyn\AppData\Local\Temp\vsCCE.tmp\Release\</IntermediateOutputPath>
-  </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\1.4\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;v1_4</DefineConstants>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;v1_5</DefineConstants>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
+      <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.*">
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
+      <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*-*">
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    </When>
+  </Choose>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
@@ -44,10 +58,6 @@
     </Reference>
     <Reference Include="AlienRace">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CharacterEditor">
@@ -58,8 +68,12 @@
       <HintPath>..\..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PortraitsOfTheRim">
+    <Reference Include="PortraitsOfTheRim" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PortraitsOfTheRim" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
