@@ -39,7 +39,7 @@ namespace NonBinaryGender.Patches
             {
                 if (genderCache == null)
                 {
-                    ConstructorInfo ctor = AccessTools.Constructor(valuesAndNames, parameters: new Type[] { typeof(ulong[]), typeof(string[]) });
+                    ConstructorInfo ctor = AccessTools.Constructor(valuesAndNames, parameters: [typeof(ulong[]), typeof(string[])]);
                     ulong[] values = (ulong[])AccessTools.Field(valuesAndNames, "Values").GetValue(__result);
                     string[] names = (string[])AccessTools.Field(valuesAndNames, "Names").GetValue(__result);
                     int length = values.Length;
@@ -52,7 +52,7 @@ namespace NonBinaryGender.Patches
                     }
                     newValues[length] = (uint)length;
                     newNames[length] = "Enby";
-                    genderCache = ctor.Invoke(new object[] { newValues, newNames });
+                    genderCache = ctor.Invoke([newValues, newNames]);
                 }
                 __result = genderCache;
             }

@@ -17,10 +17,8 @@ namespace NonBinaryGender.Patches
         public static void BaseHeadOffsetAtPostfix(ref Vector3 __result, Rot4 rotation, Pawn ___pawn)
         {
             //Cache the list of heads we care about
-            if (HeadDefs == null)
-            {
-                HeadDefs = new HashSet<HeadTypeDef>
-                {
+            HeadDefs ??=
+                [
                     //I'm annoyed that these are so inconsistent
                     DefDatabase<HeadTypeDef>.GetNamed("Female_AveragePointy"),
                     DefDatabase<HeadTypeDef>.GetNamed("Male_AverageNormal"),
@@ -28,8 +26,7 @@ namespace NonBinaryGender.Patches
                     DefDatabase<HeadTypeDef>.GetNamed("Male_AverageWide"),
                     DefDatabase<HeadTypeDef>.GetNamed("Male_NarrowNormal"),
                     DefDatabase<HeadTypeDef>.GetNamed("Male_NarrowPointy")
-                };
-            }
+                ];
 
             //We only care about east and west, since the y offset is the same for all default body types
             if (___pawn.IsEnby() && (rotation.AsInt == 1 || rotation.AsInt == 3) && ___pawn.story != null)

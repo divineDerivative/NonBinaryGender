@@ -16,18 +16,12 @@ namespace NonBinaryGender.Patches
         {
             if (gender.IsEnby())
             {
-                switch (NonBinaryGenderMod.settings.neutralNames)
+                __result = NonBinaryGenderMod.settings.neutralNames switch
                 {
-                    case GenderNeutralNameOption.Only:
-                        __result = ___names[(int)Gender.None, (int)slot];
-                        break;
-                    case GenderNeutralNameOption.Add:
-                        __result = ___names[(int)Gender.Male, (int)slot].Concat(___names[(int)Gender.Female, (int)slot]).Concat(___names[(int)Gender.None, (int)slot]).ToList();
-                        break;
-                    default:
-                        __result = ___names[(int)Gender.Male, (int)slot].Concat(___names[(int)Gender.Female, (int)slot]).ToList();
-                        break;
-                }
+                    GenderNeutralNameOption.Only => ___names[(int)Gender.None, (int)slot],
+                    GenderNeutralNameOption.Add => ___names[(int)Gender.Male, (int)slot].Concat(___names[(int)Gender.Female, (int)slot]).Concat(___names[(int)Gender.None, (int)slot]).ToList(),
+                    _ => ___names[(int)Gender.Male, (int)slot].Concat(___names[(int)Gender.Female, (int)slot]).ToList(),
+                };
                 return false;
             }
             return true;

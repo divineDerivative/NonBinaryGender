@@ -23,7 +23,7 @@
     <DefineConstants>TRACE;DEBUG;v1_4</DefineConstants>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
@@ -32,13 +32,19 @@
     <DefineConstants>TRACE;DEBUG;v1_5</DefineConstants>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <Choose>
     <When Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
       <ItemGroup>
         <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.*">
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      <ItemGroup>
+        <PackageReference Include="Lib.Harmony">
+          <Version>2.2.2.0</Version>
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
       </ItemGroup>
@@ -49,17 +55,15 @@
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
       </ItemGroup>
+      <ItemGroup>
+        <PackageReference Include="Lib.Harmony">
+          <Version>2.3.1.1</Version>
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <Reference Include="0Harmony" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="0Harmony" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\1.4\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="AlienRace" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
       <Private>False</Private>

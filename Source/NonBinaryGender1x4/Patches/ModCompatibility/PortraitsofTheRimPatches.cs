@@ -65,7 +65,7 @@ namespace NonBinaryGender
 
         public static void PatchPortraits(this Harmony harmony)
         {
-            MethodInfo Matches = AccessTools.Method(typeof(Requirements), nameof(Requirements.Matches), new Type[] { typeof(Portrait), typeof(PortraitElementDef) });
+            MethodInfo Matches = AccessTools.Method(typeof(Requirements), nameof(Requirements.Matches), [typeof(Portrait), typeof(PortraitElementDef)]);
             harmony.Patch(Matches, prefix: new HarmonyMethod(typeof(PortraitsofTheRimPatches), nameof(MatchesPrefix)), postfix: new HarmonyMethod(typeof(PortraitsofTheRimPatches), nameof(MatchesPostfix)));
             MethodInfo ToBodyType = AccessTools.Method(typeof(GeneUtility), nameof(GeneUtility.ToBodyType));
             harmony.Patch(ToBodyType, prefix: new HarmonyMethod(typeof(PortraitsofTheRimPatches), nameof(ToBodyTypePrefix)));

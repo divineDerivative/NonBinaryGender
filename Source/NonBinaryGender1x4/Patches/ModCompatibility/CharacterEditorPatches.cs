@@ -60,7 +60,7 @@ namespace NonBinaryGender.Patches
 
             MethodInfo API = AccessTools.PropertyGetter(CEditor, "API");
             MethodInfo getPawn = AccessTools.PropertyGetter(CEditor, "Pawn");
-            MethodInfo ButtonImage = AccessTools.Method(typeof(Widgets), "ButtonImage", new Type[] { typeof(Rect), typeof(Texture2D), typeof(bool) });
+            MethodInfo ButtonImage = AccessTools.Method(typeof(Widgets), "ButtonImage", [typeof(Rect), typeof(Texture2D), typeof(bool)]);
 
             List<CodeInstruction> codes = instructions.ToList();
 
@@ -155,7 +155,7 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Call, API);
                     yield return new CodeInstruction(OpCodes.Callvirt, getPawn);
                     yield return CodeInstruction.LoadField(typeof(Pawn), nameof(Pawn.gender));
-                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.IsEnby), new Type[] { typeof(Gender) });
+                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.IsEnby), [typeof(Gender)]);
                     //Jump to storing the value with the result of IsEnby still on the stack
                     yield return new CodeInstruction(OpCodes.Br_S, storeEnbyIf);
 
@@ -183,7 +183,7 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 28f);
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 28f);
                     //new Rect(values loaded above)
-                    yield return new CodeInstruction(OpCodes.Newobj, AccessTools.Constructor(typeof(Rect), new Type[] { typeof(float), typeof(float), typeof(float), typeof(float) }));
+                    yield return new CodeInstruction(OpCodes.Newobj, AccessTools.Constructor(typeof(Rect), [typeof(float), typeof(float), typeof(float), typeof(float)]));
                     yield return CodeInstruction.LoadField(typeof(EnbyUtility), "NonBinaryIcon");
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     //Widgets.ButtonImage(above Rect, EnbyUtility.NonBinaryIcon)
@@ -248,7 +248,7 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Brtrue_S, trueLabel);
                     //Then we simply add pawn.IsEnby
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.IsEnby), new Type[] { typeof(Pawn) });
+                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.IsEnby), [typeof(Pawn)]);
                 }
                 //And continue where we left of, the jump to storing the value of flag, with the result of our section still on the stack
                 yield return code;
@@ -259,31 +259,31 @@ namespace NonBinaryGender.Patches
         public static IEnumerable<CodeInstruction> DrawRelationsTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
             //It's just the same thing four times but with different field names, so we'll just iterate through lists
-            List<FieldInfo> fields = new List<FieldInfo>
-            {
+            List<FieldInfo> fields =
+            [
                 AccessTools.Field(BlockSocial, "selectedGender"),
                 AccessTools.Field(BlockSocial, "selectedGender2"),
                 AccessTools.Field(BlockSocial, "selectedGender3"),
                 AccessTools.Field(BlockSocial, "selectedGender4"),
-            };
-            List<Label> firstLabel = new List<Label>
-            {
+            ];
+            List<Label> firstLabel =
+            [
                 ilg.DefineLabel(),
                 ilg.DefineLabel(),
                 ilg.DefineLabel(),
                 ilg.DefineLabel()
-            };
-            List<Label> secondLabel = new List<Label>
-            {
+            ];
+            List<Label> secondLabel =
+            [
                 ilg.DefineLabel(),
                 ilg.DefineLabel(),
                 ilg.DefineLabel(),
                 ilg.DefineLabel()
-            };
-            List<bool> bools = new List<bool>
-            {
+            ];
+            List<bool> bools =
+            [
                 false, false, false, false
-            };
+            ];
 
             int index = 0;
             List<CodeInstruction> codes = instructions.ToList();

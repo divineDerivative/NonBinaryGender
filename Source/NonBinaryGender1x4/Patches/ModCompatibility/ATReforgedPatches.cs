@@ -39,7 +39,7 @@ namespace NonBinaryGender.Patches
                 {
                     yield return CodeInstruction.LoadField(typeof(NonBinaryGenderMod), nameof(NonBinaryGenderMod.settings)).MoveLabelsFrom(code);
                     yield return CodeInstruction.LoadField(typeof(Settings), nameof(Settings.enbyChance));
-                    yield return CodeInstruction.Call(typeof(Rand), nameof(Rand.Chance), new Type[] { typeof(float) });
+                    yield return CodeInstruction.Call(typeof(Rand), nameof(Rand.Chance), [typeof(float)]);
                     yield return new CodeInstruction(OpCodes.Brfalse, myLabel);
                     yield return new CodeInstruction(OpCodes.Ldc_I4_3);
                     yield return new CodeInstruction(OpCodes.Ret);

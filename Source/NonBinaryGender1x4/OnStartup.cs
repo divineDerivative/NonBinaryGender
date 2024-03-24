@@ -9,7 +9,7 @@ namespace NonBinaryGender
     {
         static OnStartup()
         {
-            Harmony harmony = new Harmony("divineDerivative.NonBinaryGender");
+            Harmony harmony = new("divineDerivative.NonBinaryGender");
             harmony.PatchAll();
             if (ModsConfig.IsActive("void.charactereditor"))
             {

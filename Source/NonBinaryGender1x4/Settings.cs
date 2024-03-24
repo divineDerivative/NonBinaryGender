@@ -46,7 +46,7 @@ namespace NonBinaryGender
 
         public override void DoSettingsWindowContents(Rect canvas)
         {
-            Listing_Standard list = new Listing_Standard
+            Listing_Standard list = new()
             {
                 ColumnWidth = (canvas.width / 2f) - 17f
             };
@@ -57,7 +57,7 @@ namespace NonBinaryGender
 
             if (list.ButtonTextLabeled("Enby.GenderNeutralNames".Translate(), settings.neutralNames.ToString(), tooltip: "Enby.GenderNeutralNamesTooltip".Translate()))
             {
-                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                List<FloatMenuOption> options = [];
                 foreach (GenderNeutralNameOption value in Enum.GetValues(typeof(GenderNeutralNameOption)))
                 {
                     options.Add(new FloatMenuOption(Enum.GetName(typeof(GenderNeutralNameOption), value), delegate

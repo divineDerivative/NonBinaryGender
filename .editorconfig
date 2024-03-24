@@ -2,3 +2,6 @@
 
 # IDE0060: Remove unused parameter
 dotnet_diagnostic.IDE0060.severity = none
+
+# IDE0305: Simplify collection initialization
+dotnet_diagnostic.IDE0305.severity = none
