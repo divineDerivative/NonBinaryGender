@@ -13,16 +13,20 @@ namespace NonBinaryGender
             harmony.PatchAll();
             if (ModsConfig.IsActive("void.charactereditor"))
             {
-                CharacterEditorPatches.PatchCE(harmony);
+                harmony.PatchCE();
             }
             if (ModsConfig.IsActive("erdelf.humanoidalienraces") || ModsConfig.IsActive("erdelf.humanoidalienraces.dev"))
             {
-                HARPatches.PatchHAR(harmony);
+                harmony.PatchHAR();
                 Settings.HARActive = true;
+                if (ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers"))
+                {
+                    harmony.PatchATR();
+                }
             }
             if (ModsConfig.IsActive("Nals.FacialAnimation"))
             {
-                FacialAnimation_Patches.PatchFacialAnimation(harmony);
+                harmony.PatchFacialAnimation();
             }
             if (ModsConfig.IsActive("TwoPenny.PortraitsOfTheRim"))
             {

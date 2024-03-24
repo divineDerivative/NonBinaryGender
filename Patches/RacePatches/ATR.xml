@@ -1,0 +1,163 @@
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>MH: Android Tiers</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Tier 1-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier1Android"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawns/Humanlikes/Tier1/head/None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier1/head/None</None>
+							</genderGraphics>
+							<headtypeGraphics>
+								<ATR_Tier1_Male>Things/Pawns/Humanlikes/Tier1/head/Male</ATR_Tier1_Male>
+								<ATR_Tier1_Female>Things/Pawns/Humanlikes/Tier1/head/Female</ATR_Tier1_Female>
+								<ATR_Tier1_None>
+									<path>Things/Pawns/Humanlikes/Tier1/head/None</path>
+									<genderGraphics>
+										<Male>Things/Pawns/Humanlikes/Tier1/head/Male</Male>
+										<Female>Things/Pawns/Humanlikes/Tier1/head/Female</Female>
+									</genderGraphics>
+								</ATR_Tier1_None>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier1Android"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawns/Humanlikes/Tier1/body/Naked_None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier1/body/Naked_None</None>
+							</genderGraphics>
+							<bodytypeGraphics>
+								<Male>Things/Pawns/Humanlikes/Tier1/body/Naked_Male</Male>
+								<Female>Things/Pawns/Humanlikes/Tier1/body/Naked_Female</Female>
+							</bodytypeGraphics>
+						</body>
+					</value>
+				</li>
+				<!--Tier 2-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier2Android"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawns/Humanlikes/Tier2/head/None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier2/head/None</None>
+							</genderGraphics>
+							<headtypeGraphics>
+								<ATR_Tier2_Male>Things/Pawns/Humanlikes/Tier2/head/Male</ATR_Tier2_Male>
+								<ATR_Tier2_Female>Things/Pawns/Humanlikes/Tier2/head/Female</ATR_Tier2_Female>
+								<ATR_Tier2_None>
+									<path>Things/Pawns/Humanlikes/Tier2/head/None</path>
+									<genderGraphics>
+										<Male>Things/Pawns/Humanlikes/Tier2/head/Male</Male>
+										<Female>Things/Pawns/Humanlikes/Tier2/head/Female</Female>
+									</genderGraphics>
+								</ATR_Tier2_None>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier2Android"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawns/Humanlikes/Tier2/body/Naked_None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier2/body/Naked_None</None>
+							</genderGraphics>
+							<bodytypeGraphics>
+								<Male>Things/Pawns/Humanlikes/Tier2/body/Naked_Male</Male>
+								<Female>Things/Pawns/Humanlikes/Tier2/body/Naked_Female</Female>
+							</bodytypeGraphics>
+						</body>
+					</value>
+				</li>
+				<!--Tier 3-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier3Android"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawns/Humanlikes/Tier3/head/None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier3/head/None</None>
+							</genderGraphics>
+							<headtypeGraphics>
+								<ATR_Tier3_Male>Things/Pawns/Humanlikes/Tier3/head/Male</ATR_Tier3_Male>
+								<ATR_Tier3_Female>Things/Pawns/Humanlikes/Tier3/head/Female</ATR_Tier3_Female>
+								<ATR_Tier3_None>
+									<path>Things/Pawns/Humanlikes/Tier3/head/None</path>
+									<genderGraphics>
+										<Male>Things/Pawns/Humanlikes/Tier3/head/Male</Male>
+										<Female>Things/Pawns/Humanlikes/Tier3/head/Female</Female>
+									</genderGraphics>
+								</ATR_Tier3_None>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier3Android"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawns/Humanlikes/Tier3/body/Naked_None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier3/body/Naked_None</None>
+							</genderGraphics>
+							<bodytypeGraphics>
+								<Male>Things/Pawns/Humanlikes/Tier3/body/Naked_Male</Male>
+								<Female>Things/Pawns/Humanlikes/Tier3/body/Naked_Female</Female>
+							</bodytypeGraphics>
+						</body>
+					</value>
+				</li>
+				<!--Tier 4-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier4Android"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawns/Humanlikes/Tier4/head/None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier4/head/None</None>
+							</genderGraphics>
+							<headtypeGraphics>
+								<ATR_Tier4_Male>Things/Pawns/Humanlikes/Tier4/head/Male</ATR_Tier4_Male>
+								<ATR_Tier4_Female>Things/Pawns/Humanlikes/Tier4/head/Female</ATR_Tier4_Female>
+								<ATR_Tier4_None>
+									<path>Things/Pawns/Humanlikes/Tier4/head/None</path>
+									<genderGraphics>
+										<Male>Things/Pawns/Humanlikes/Tier4/head/Male</Male>
+										<Female>Things/Pawns/Humanlikes/Tier4/head/Female</Female>
+									</genderGraphics>
+								</ATR_Tier4_None>
+							</headtypeGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="ATR_Tier4Android"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawns/Humanlikes/Tier4/body/Naked_None</path>
+							<genderGraphics>
+								<None>Things/Pawns/Humanlikes/Tier4/body/Naked_None</None>
+							</genderGraphics>
+							<bodytypeGraphics>
+								<Male>Things/Pawns/Humanlikes/Tier4/body/Naked_Male</Male>
+								<Female>Things/Pawns/Humanlikes/Tier4/body/Naked_Female</Female>
+							</bodytypeGraphics>
+						</body>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
