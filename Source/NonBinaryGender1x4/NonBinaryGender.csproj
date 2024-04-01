@@ -56,8 +56,7 @@
         </PackageReference>
       </ItemGroup>
       <ItemGroup>
-        <PackageReference Include="Lib.Harmony">
-          <Version>2.3.1.1</Version>
+        <PackageReference Include="Lib.Harmony" Version="2.3.*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
       </ItemGroup>
@@ -100,10 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefModExtension.cs" />
+    <Compile Include="Patches\LeaderTitle\Faction.cs" />
+    <Compile Include="Patches\LeaderTitle\Ideo.cs" />
+    <Compile Include="Patches\LeaderTitle\IdeoFoundation.cs" />
     <Compile Include="Names.cs" />
     <Compile Include="Patches\ApparelProperties.cs" />
     <Compile Include="Patches\BackstoryDef.cs" />
     <Compile Include="OnStartup.cs" />
+    <Compile Include="Patches\LeaderTitle\Dialog_EditPrecept.cs" />
+    <Compile Include="Patches\LeaderTitle\Precept_Role.cs" />
     <Compile Include="Patches\ModCompatibility\ATReforgedPatches.cs" />
     <Compile Include="Patches\ModCompatibility\CharacterEditorPatches.cs" />
     <Compile Include="Patches\EnumPatches.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="WorldComp_EnbyLeaderTitle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.editorconfig">
@@ -132,6 +137,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>robocopy "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NonBinaryGender" "C:\RimWorld_Debug\Mods\NonBinaryGender" /r:1 /s /xo /xd Source .vs .git /xf *.sln .gitattributes .gitignore .editorconfig *.md || set errorlist=0</PostBuildEvent>
+    <PostBuildEvent>robocopy "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NonBinaryGender" "C:\RimWorld_Debug\Mods\NonBinaryGender" /r:1 /s /xo /xd Source .vs .git /xf *.sln .gitattributes .gitignore .editorconfig *.md || set errorlist=0
+robocopy "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NonBinaryGender" "C:\RimWorld_Debug_v1_4\Mods\NonBinaryGender" /r:1 /s /xo /xd Source .vs .git /xf *.sln .gitattributes .gitignore .editorconfig *.md || set errorlist=0</PostBuildEvent>
   </PropertyGroup>
 </Project>

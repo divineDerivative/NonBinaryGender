@@ -52,5 +52,17 @@ namespace NonBinaryGender
 
             return new CodeInstruction((!useAddress) ? (fieldInfo.IsStatic ? OpCodes.Ldsfld : OpCodes.Ldfld) : (fieldInfo.IsStatic ? OpCodes.Ldsflda : OpCodes.Ldflda), fieldInfo);
         }
+
+        public static bool LoadsField(this CodeInstruction code, Type type, string name)
+        {
+            FieldInfo field = AccessTools.Field(type, name);
+            return code.LoadsField(field);
+        }
+
+        public static bool StoresField(this CodeInstruction code, Type type, string name)
+        {
+            FieldInfo field = AccessTools.Field(type, name);
+            return code.StoresField(field);
+        }
     }
 }
