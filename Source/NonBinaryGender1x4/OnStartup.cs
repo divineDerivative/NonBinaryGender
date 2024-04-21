@@ -11,7 +11,7 @@ namespace NonBinaryGender
         {
             Harmony harmony = new("divineDerivative.NonBinaryGender");
             harmony.PatchAll();
-            if (ModsConfig.IsActive("void.charactereditor"))
+            if (ModsConfig.IsActive("void.charactereditor") || ModsConfig.IsActive("void.charactereditor_steam"))
             {
                 harmony.PatchCE();
             }
@@ -19,18 +19,22 @@ namespace NonBinaryGender
             {
                 harmony.PatchHAR();
                 Settings.HARActive = true;
-                if (ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers"))
+                if (ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers") || ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers_steam"))
                 {
                     harmony.PatchATR();
                 }
             }
-            if (ModsConfig.IsActive("Nals.FacialAnimation"))
+            if (ModsConfig.IsActive("Nals.FacialAnimation") || ModsConfig.IsActive("Nals.FacialAnimation_steam"))
             {
                 harmony.PatchFacialAnimation();
             }
-            if (ModsConfig.IsActive("TwoPenny.PortraitsOfTheRim"))
+            if (ModsConfig.IsActive("TwoPenny.PortraitsOfTheRim") || ModsConfig.IsActive("TwoPenny.PortraitsOfTheRim_steam"))
             {
                 harmony.PatchPortraits();
+            }
+            if (ModsConfig.IsActive("ISOREX.PawnEditor") || ModsConfig.IsActive("ISOREX.PawnEditor_steam"))
+            {
+                harmony.PatchPE();
             }
             //Add names if needed
             if (NonBinaryGenderMod.settings.neutralNames != GenderNeutralNameOption.None)

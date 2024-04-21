@@ -49,7 +49,6 @@ namespace NonBinaryGender
             {
                 throw new ArgumentException($"fieldInfo is null");
             }
-
             return new CodeInstruction((!useAddress) ? (fieldInfo.IsStatic ? OpCodes.Ldsfld : OpCodes.Ldfld) : (fieldInfo.IsStatic ? OpCodes.Ldsflda : OpCodes.Ldflda), fieldInfo);
         }
 
@@ -63,6 +62,12 @@ namespace NonBinaryGender
         {
             FieldInfo field = AccessTools.Field(type, name);
             return code.StoresField(field);
+        }
+
+        public static bool Calls(this CodeInstruction code, Type type, string name)
+        {
+            MethodInfo method = AccessTools.Method(type, name);
+            return code.Calls(method);
         }
     }
 }

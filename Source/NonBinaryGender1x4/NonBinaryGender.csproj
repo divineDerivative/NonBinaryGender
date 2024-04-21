@@ -83,6 +83,10 @@
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2974536022\1.4\Assemblies\MH Android Tiers Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PawnEditor">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3219801790\Assemblies\PawnEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PortraitsOfTheRim" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
       <Private>False</Private>
@@ -114,6 +118,7 @@
     <Compile Include="Patches\ModCompatibility\FacialAnimation.cs" />
     <Compile Include="Patches\GenderUtility.cs" />
     <Compile Include="Patches\ModCompatibility\HARPatches.cs" />
+    <Compile Include="Patches\ModCompatibility\PawnEditorPatches.cs" />
     <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
     <Compile Include="Patches\NameBank.cs" />
     <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
