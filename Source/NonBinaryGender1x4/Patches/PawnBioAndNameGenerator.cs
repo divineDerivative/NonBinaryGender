@@ -71,7 +71,7 @@ namespace NonBinaryGender.Patches
 
         //[HarmonyPostfix]
         //[HarmonyPatch(typeof(PawnBioAndNameGenerator), nameof(PawnBioAndNameGenerator.TryGetRandomUnusedSolidName))]
-        public static void TryGetRandomUnusedSolidNameLogging(Gender gender, string requiredLastName, bool forceNoNick, NameTriple __result)
+        public static void TryGetRandomUnusedSolidNameLogging(Gender gender, NameTriple __result)
         {
             if (gender.IsEnby())
             {
@@ -96,7 +96,7 @@ namespace NonBinaryGender.Patches
         //Otherwise default behavior lets all gender possibilities apply
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PawnBioAndNameGenerator), "IsBioUseable")]
-        public static void IsBioUseablePostfix(PawnBio bio, BackstoryCategoryFilter categoryFilter, PawnKindDef kind, Gender gender, string requiredLastName, ref bool __result)
+        public static void IsBioUseablePostfix(PawnBio bio, Gender gender, ref bool __result)
         {
             if (__result && gender.IsEnby() && NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.Only && bio.gender != GenderPossibility.Either)
             {
@@ -106,7 +106,7 @@ namespace NonBinaryGender.Patches
 
         //[HarmonyPostfix]
         //[HarmonyPatch(typeof(PawnBioAndNameGenerator), "TryGetRandomUnusedSolidBioFor")]
-        public static void TryGetRandomUnusedSolidBioForLogging(List<BackstoryCategoryFilter> backstoryCategories, PawnKindDef kind, Gender gender, string requiredLastName, PawnBio result, ref bool __result)
+        public static void TryGetRandomUnusedSolidBioForLogging(Gender gender, PawnBio result, ref bool __result)
         {
             if (__result && gender.IsEnby())
             {

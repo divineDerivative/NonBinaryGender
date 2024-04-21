@@ -15,7 +15,7 @@ namespace NonBinaryGender.Patches
         //This makes them bisexual unless they're already asexual. Only works on new pawn generation
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PawnGenerator), "GenerateTraits")]
-        public static void GenerateTraitsPatch(Pawn pawn, PawnGenerationRequest request)
+        public static void GenerateTraitsPatch(Pawn pawn)
         {
             if (pawn.IsEnby())
             {

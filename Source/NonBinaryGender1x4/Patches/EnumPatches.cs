@@ -33,7 +33,7 @@ namespace NonBinaryGender.Patches
         //It also causes Enum.GetValues && Enum.GetNames to return 'correct' data without needing additional patches
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Enum), "GetCachedValuesAndNames")]
-        public static void GetCachedValuesAndNamesPatch(ref object __result, Type enumType, bool getNames)
+        public static void GetCachedValuesAndNamesPatch(ref object __result, Type enumType)
         {
             if (enumType == typeof(Gender))
             {

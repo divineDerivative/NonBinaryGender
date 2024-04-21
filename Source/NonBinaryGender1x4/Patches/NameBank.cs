@@ -12,7 +12,7 @@ namespace NonBinaryGender.Patches
         //This picks the appropriate set of name banks depending on mod settings
         [HarmonyPrefix]
         [HarmonyPatch(typeof(NameBank), "NamesFor")]
-        public static bool NamesForPatch(NameBank __instance, ref List<string> __result, PawnNameSlot slot, Gender gender, List<string>[,] ___names)
+        public static bool NamesForPatch(ref List<string> __result, PawnNameSlot slot, Gender gender, List<string>[,] ___names)
         {
             if (gender.IsEnby())
             {

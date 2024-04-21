@@ -446,7 +446,7 @@ namespace NonBinaryGender.Patches
         }
 
         //This allows heads whose texture names start with male or female to be added to the head type list for enby pawns
-        public static IEnumerable<CodeInstruction> TestHeadTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
+        public static IEnumerable<CodeInstruction> TestHeadTranspiler(IEnumerable<CodeInstruction> instructions)
         {
             Label? trueLabel = new Label();
             Label? storeLabel = new Label();

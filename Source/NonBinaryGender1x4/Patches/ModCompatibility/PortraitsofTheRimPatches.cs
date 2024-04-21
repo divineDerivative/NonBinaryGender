@@ -51,7 +51,7 @@ namespace NonBinaryGender
             }
         }
 
-        public static void MatchesPostfix(Type portrait, ref Type portraitElementDef)
+        public static void MatchesPostfix(ref Type portraitElementDef)
         {
             forMatches = false;
             bodyTypeDef = null;
