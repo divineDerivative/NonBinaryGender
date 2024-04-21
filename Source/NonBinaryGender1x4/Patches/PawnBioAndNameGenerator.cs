@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using HarmonyLib;
 using RimWorld;
-using Verse;
-using HarmonyLib;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection.Emit;
+using Verse;
 
 namespace NonBinaryGender.Patches
 {

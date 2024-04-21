@@ -2,8 +2,8 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Reflection;
+using System.Reflection.Emit;
 using Verse;
 using System;
 
@@ -55,13 +55,13 @@ namespace NonBinaryGender.Patches
 
 #if v1_5
             Type compilerType = null;
-            var types = AccessTools.InnerTypes(typeof(PawnGenerator));
-            foreach (var innerType in types)
+            IEnumerable<Type> types = AccessTools.InnerTypes(typeof(PawnGenerator));
+            foreach (Type innerType in types)
             {
-                var fields = innerType.GetFields();
+                FieldInfo[] fields = innerType.GetFields();
                 if (fields.Count() == 1 && fields[0].FieldType == typeof(Pawn))
                 {
-                    var methods = innerType.GetMethods(AccessTools.all);
+                    MethodInfo[] methods = innerType.GetMethods(AccessTools.all);
                     if (methods.Any(x => x.Name.Contains("TryGenerateNewPawnInternal")))
                     {
                         compilerType = innerType;

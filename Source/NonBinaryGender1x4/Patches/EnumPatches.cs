@@ -1,7 +1,7 @@
-﻿using System;
-using Verse;
-using HarmonyLib;
+﻿using HarmonyLib;
+using System;
 using System.Reflection;
+using Verse;
 
 namespace NonBinaryGender.Patches
 {

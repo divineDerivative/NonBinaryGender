@@ -1,9 +1,9 @@
-﻿using System;
-using Verse;
-using HarmonyLib;
-using System.Reflection;
+﻿using HarmonyLib;
 using PortraitsOfTheRim;
 using RimWorld;
+using System;
+using System.Reflection;
+using Verse;
 
 namespace NonBinaryGender
 {
@@ -27,7 +27,7 @@ namespace NonBinaryGender
         public static void MatchesPrefix(Type portrait, ref Type portraitElementDef)
         {
             Pawn pawn = (Pawn)AccessTools.Field(typeof(Portrait), nameof(Portrait.pawn)).GetValue(portrait);
-            Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof( PortraitElementDef.requirements)).GetValue(portraitElementDef);
+            Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof(PortraitElementDef.requirements)).GetValue(portraitElementDef);
             if (pawn.IsEnby())
             {
                 if (requirements.body != null && requirements.gender.HasValue)

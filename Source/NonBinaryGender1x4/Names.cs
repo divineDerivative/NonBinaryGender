@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using RimWorld;
-using Verse;
+﻿using RimWorld;
+using System.Collections.Generic;
 using System.IO;
+using Verse;
 
 namespace NonBinaryGender
 {
@@ -17,7 +17,7 @@ namespace NonBinaryGender
             }
             NameBank nameBank = PawnNameDatabaseShuffled.BankOf(PawnNameCategory.HumanStandard);
             char sep = Path.DirectorySeparatorChar;
-            var modData = ModLister.GetActiveModWithIdentifier("divineDerivative.NonBinaryGender");
+            ModMetaData modData = ModLister.GetActiveModWithIdentifier("divineDerivative.NonBinaryGender");
             string path = modData.RootDir.FullName + sep + "Languages" + sep + "English" + sep + "Names" + sep + "First_None.txt";
             if (!File.Exists(path))
             {

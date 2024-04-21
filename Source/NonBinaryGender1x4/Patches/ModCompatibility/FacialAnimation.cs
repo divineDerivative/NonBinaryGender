@@ -1,9 +1,9 @@
-﻿using System;
-using Verse;
+﻿using FacialAnimation;
 using HarmonyLib;
-using FacialAnimation;
-using System.Reflection;
+using System;
 using System.Linq;
+using System.Reflection;
+using Verse;
 
 namespace NonBinaryGender.Patches
 {

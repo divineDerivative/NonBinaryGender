@@ -1,11 +1,10 @@
-﻿using System;
+﻿using ATReforged;
+using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using ATReforged;
-using Verse;
-using HarmonyLib;
 using System.Reflection.Emit;
+using Verse;
 
 namespace NonBinaryGender.Patches
 {

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using HarmonyLib;
+using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Verse;
-using HarmonyLib;
-using UnityEngine;
-using System.Reflection.Emit;
 using System.Reflection;
-using RimWorld;
+using System.Reflection.Emit;
+using UnityEngine;
+using Verse;
 
 namespace NonBinaryGender.Patches
 {
@@ -271,7 +271,6 @@ namespace NonBinaryGender.Patches
             }
         }
 #endif
-
 
         //This makes the gender change to non-binary if the female icon is clicked, and change to male/none if the non-binary icon is clicked
         public static IEnumerable<CodeInstruction> GenderButtonTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
