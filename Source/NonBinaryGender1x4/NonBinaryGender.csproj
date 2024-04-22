@@ -121,6 +121,7 @@
     <Compile Include="Patches\ModCompatibility\PawnEditorPatches.cs" />
     <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
     <Compile Include="Patches\NameBank.cs" />
+    <Compile Include="Patches\ParentPatches.cs" />
     <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
     <Compile Include="Patches\PawnGenerator.cs" />
     <Compile Include="Patches\PawnRelationDef.cs" />
