@@ -124,6 +124,7 @@
     <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
     <Compile Include="Patches\PawnGenerator.cs" />
     <Compile Include="Patches\PawnRelationDef.cs" />
+    <Compile Include="Patches\PawnRelationWorkers.cs" />
     <Compile Include="Patches\PawnRenderer.cs" />
     <Compile Include="Patches\PawnStyleItemChooser.cs" />
     <Compile Include="Patches\Pawn_StoryTracker.cs" />
