@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
@@ -14,6 +16,31 @@ namespace NonBinaryGender
         public static bool IsEnby(this Gender gender) => (int)gender == 3;
         public static readonly Texture2D NonBinaryIcon = ContentFinder<Texture2D>.Get("UI/Gender/NonBinary", true);
         public static readonly Texture2D NonBinaryButton = ContentFinder<Texture2D>.Get("UI/Gender/NonBinaryButton", true);
+        public static MethodInfo GetParentMethod = AccessTools.Method(typeof(ParentRelationUtility), "GetParent");
+
+        public static Pawn GetParent(this Pawn pawn, Gender gender)
+        {
+            if (GetParentMethod != null)
+            {
+                return (Pawn)GetParentMethod.Invoke(null, [pawn, gender]);
+            }
+            if (!pawn.RaceProps.IsFlesh)
+            {
+                return null;
+            }
+            if (pawn.relations == null)
+            {
+                return null;
+            }
+            foreach (DirectPawnRelation relation in pawn.relations.DirectRelations)
+            {
+                if (relation.def == PawnRelationDefOf.Parent && relation.otherPawn.gender == gender)
+                {
+                    return relation.otherPawn;
+                }
+            }
+            return null;
+        }
     }
 
     public static class InfoHelper

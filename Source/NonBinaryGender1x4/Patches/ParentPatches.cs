@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
@@ -12,11 +11,6 @@ namespace NonBinaryGender.Patches
     [HarmonyPatch]
     public static class ParentPatches
     {
-        static MethodInfo GetParent = AccessTools.Method(typeof(ParentRelationUtility), "GetParent");
-        static MethodInfo GetFather = AccessTools.Method(typeof(ParentRelationUtility), "GetFather");
-        static MethodInfo GetMother = AccessTools.Method(typeof(ParentRelationUtility), "GetMother");
-        static MethodInfo ResolveMyName = AccessTools.Method(typeof(PawnRelationWorker_Parent), "ResolveMyName");
-
         [HarmonyPrefix]
         [HarmonyPatch(typeof(SpouseRelationUtility), nameof(SpouseRelationUtility.GetFirstSpouseOfOppositeGender))]
         //Used in the generation of parent relationships
@@ -68,32 +62,6 @@ namespace NonBinaryGender.Patches
 
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
-        public static IEnumerable<CodeInstruction> GetParentTranspiler(IEnumerable<CodeInstruction> instructions)
-        {
-            //Replace the gender specific methods with GetParent using whatever the provided pawn's gender is
-            foreach (CodeInstruction code in instructions)
-            {
-                if (code.Calls(GetFather))
-                {
-                    yield return new CodeInstruction(OpCodes.Ldarg_1);
-                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
-                    yield return HelperExtensions.Call(GetParent);
-                }
-                else if (code.Calls(GetMother))
-                {
-                    yield return new CodeInstruction(OpCodes.Ldarg_2);
-                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
-                    yield return HelperExtensions.Call(GetParent);
-                }
-                else
-                {
-                    yield return code;
-                }
-            }
-        }
-
-        [HarmonyTranspiler]
-        [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
         public static IEnumerable<CodeInstruction> GenderCheckTranspiler(IEnumerable<CodeInstruction> instructions)
         {
             //Replace != Gender.Male with == Gender.Female and != Gender.Female with == Gender.Male
@@ -107,7 +75,7 @@ namespace NonBinaryGender.Patches
                 {
                     genderFound = !genderFound;
                 }
-    
+
                 if (genderFound)
                 {
                     //Switch the gender
@@ -135,6 +103,37 @@ namespace NonBinaryGender.Patches
             }
         }
 
+        static MethodInfo GetFather = AccessTools.Method(typeof(ParentRelationUtility), "GetFather");
+        static MethodInfo GetMother = AccessTools.Method(typeof(ParentRelationUtility), "GetMother");
+
+        [HarmonyTranspiler]
+        [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
+        public static IEnumerable<CodeInstruction> GetParentTranspiler(IEnumerable<CodeInstruction> instructions)
+        {
+            //Replace the gender specific methods with GetParent using whatever the provided pawn's gender is
+            foreach (CodeInstruction code in instructions)
+            {
+                if (code.Calls(GetFather))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
+                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.GetParent));
+                }
+                else if (code.Calls(GetMother))
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
+                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.GetParent));
+                }
+                else
+                {
+                    yield return code;
+                }
+            }
+        }
+
+        static MethodInfo ResolveMyName = AccessTools.Method(typeof(PawnRelationWorker_Parent), "ResolveMyName");
+
         //The original will just do nothing if other is non-binary, so we do it ourselves
         [HarmonyPrefix]
         [HarmonyPatch(typeof(PawnRelationWorker_Parent), nameof(PawnRelationWorker_Parent.CreateRelation))]
@@ -142,7 +141,6 @@ namespace NonBinaryGender.Patches
         {
             if (other.IsEnby())
             {
-                Log.Message($"Attempting to make {other.LabelShort} {generated.LabelShort}'s parent");
                 generated.SetParent(other);
                 Pawn spouse = other.GetFirstSpouseOfOppositeGender();
                 if (spouse != null)
@@ -162,9 +160,19 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
+        /// <summary>
+        /// Sets <paramref name="newParent"/> as the non-binary parent of <paramref name="pawn"/>. Will remove an existing non-binary parent first.
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <param name="newParent"></param>
         public static void SetParent(this Pawn pawn, Pawn newParent)
         {
-            Pawn parent = (Pawn)GetParent.Invoke(null, [pawn, (Gender)3]);
+            if (newParent != null && !newParent.IsEnby())
+            {
+                Log.Warning($"Tried to set {newParent} with gender {newParent.gender} as {pawn}'s non-binary parent.");
+                return;
+            }
+            Pawn parent = pawn.GetParent((Gender)3);
             if (parent != newParent)
             {
                 if (parent != null)
