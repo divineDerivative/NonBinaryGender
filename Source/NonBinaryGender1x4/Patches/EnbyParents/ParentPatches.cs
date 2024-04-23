@@ -7,7 +7,6 @@ using Verse;
 
 namespace NonBinaryGender.Patches
 {
-#if v1_5
     [HarmonyPatch]
     public static class ParentPatches
     {
@@ -188,5 +187,4 @@ namespace NonBinaryGender.Patches
             }
         }
     }
-#endif
 }

@@ -13,8 +13,14 @@ namespace NonBinaryGender.Patches
         [HarmonyPatch(typeof(PawnRelationWorker_Child), nameof(PawnRelationWorker_Child.GenerationChance))]
         public static bool GenerationChancePrefix(Pawn generated, Pawn other, PawnGenerationRequest request, ref float __result, PawnRelationWorker_Child __instance)
         {
-            if (generated.IsEnby() && !other.IsDuplicate)
+            if (generated.IsEnby())
             {
+#if v1_5
+                if (other.IsDuplicate)
+                {
+                    return true;
+                }
+#endif
                 if (!ChildRelationUtility.XenotypesCompatible(generated, other))
                 {
                     __result = 0f;
