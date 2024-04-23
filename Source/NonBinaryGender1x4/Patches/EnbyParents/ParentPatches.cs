@@ -160,6 +160,8 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
+        //Might need to patch ResolveMyName
+
         /// <summary>
         /// Sets <paramref name="newParent"/> as the non-binary parent of <paramref name="pawn"/>. Will remove an existing non-binary parent first.
         /// </summary>

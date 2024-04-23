@@ -103,7 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefModExtension.cs" />
-    <Compile Include="Patches\ChildPatches.cs" />
+    <Compile Include="Patches\EnbyParents\ChildPatches.cs" />
+    <Compile Include="Patches\EnbyParents\SiblingPatches.cs" />
     <Compile Include="Patches\LeaderTitle\Faction.cs" />
     <Compile Include="Patches\LeaderTitle\Ideo.cs" />
     <Compile Include="Patches\LeaderTitle\IdeoFoundation.cs" />
@@ -122,7 +123,7 @@
     <Compile Include="Patches\ModCompatibility\PawnEditorPatches.cs" />
     <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
     <Compile Include="Patches\NameBank.cs" />
-    <Compile Include="Patches\ParentPatches.cs" />
+    <Compile Include="Patches\EnbyParents\ParentPatches.cs" />
     <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
     <Compile Include="Patches\PawnGenerator.cs" />
     <Compile Include="Patches\PawnRelationDef.cs" />
