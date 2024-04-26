@@ -144,133 +144,133 @@ namespace NonBinaryGender.Patches
                 }
             }
         }
-#else
-        internal static void PatchCE(this Harmony harmony)
-        {
-            //Need to grab these because everything in CE is internal/private
-            CEditor = Type.GetType("CharacterEditor.CEditor, CharacterEditor");
-            BlockPerson = AccessTools.Inner(AccessTools.Inner(CEditor, "EditorUI"), "BlockPerson");
-            BlockSocial = AccessTools.Inner(AccessTools.Inner(CEditor, "EditorUI"), "h");
-            NameTool = AccessTools.TypeByName("ar, CharacterEditor");
-            DialogChoosePawn = AccessTools.TypeByName("k, CharacterEditor");
+        //#else
+        //internal static void PatchCE(this Harmony harmony)
+        //{
+        //    //Need to grab these because everything in CE is internal/private
+        //    CEditor = Type.GetType("CharacterEditor.CEditor, CharacterEditor");
+        //    BlockPerson = AccessTools.Inner(AccessTools.Inner(CEditor, "EditorUI"), "BlockPerson");
+        //    BlockSocial = AccessTools.Inner(AccessTools.Inner(CEditor, "EditorUI"), "h");
+        //    NameTool = AccessTools.TypeByName("ar, CharacterEditor");
+        //    DialogChoosePawn = AccessTools.TypeByName("k, CharacterEditor");
 
-            harmony.Patch(AccessTools.Method(BlockPerson, "ch"), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GenderButtonTranspiler))));
-            harmony.Patch(AccessTools.Method(AccessTools.TypeByName("aq, CharacterEditor"), "a", [typeof(Pawn), typeof(string)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(TestHeadTranspiler))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "a", [typeof(int), typeof(int).MakeByRefType(), typeof(int), typeof(int)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(DrawRelationsTranspiler))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "w"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChangePrefix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "v"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange2Prefix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "u"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange3Prefix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "t"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange4Prefix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "m", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawnPostfix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "l", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn2Postfix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "k", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn3Postfix))));
-            harmony.Patch(AccessTools.Method(BlockSocial, "j", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn4Postfix))));
-            harmony.Patch(AccessTools.Method(DialogChoosePawn, "d", [typeof(int), typeof(int).MakeByRefType(), typeof(int), typeof(int)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(DrawTitleTranspiler))));
-            Type RelationTool = AccessTools.TypeByName("af, CharacterEditor");
-            harmony.Patch(AccessTools.Method(RelationTool, "a", [typeof(DirectPawnRelation)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(RelationLabelDirectPostfix))));
-            harmony.Patch(AccessTools.Method(RelationTool, "a", [typeof(PawnRelationDef), typeof(Pawn)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(RelationLabelIndirectPostfix))));
-        }
+        //    harmony.Patch(AccessTools.Method(BlockPerson, "ch"), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GenderButtonTranspiler))));
+        //    harmony.Patch(AccessTools.Method(AccessTools.TypeByName("aq, CharacterEditor"), "a", [typeof(Pawn), typeof(string)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(TestHeadTranspiler))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "a", [typeof(int), typeof(int).MakeByRefType(), typeof(int), typeof(int)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(DrawRelationsTranspiler))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "w"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChangePrefix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "v"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange2Prefix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "u"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange3Prefix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "t"), prefix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(AOnGenderChange4Prefix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "m", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawnPostfix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "l", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn2Postfix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "k", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn3Postfix))));
+        //    harmony.Patch(AccessTools.Method(BlockSocial, "j", [typeof(PawnRelationDef)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(GetLabelSelectedPawn4Postfix))));
+        //    harmony.Patch(AccessTools.Method(DialogChoosePawn, "d", [typeof(int), typeof(int).MakeByRefType(), typeof(int), typeof(int)]), transpiler: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(DrawTitleTranspiler))));
+        //    Type RelationTool = AccessTools.TypeByName("af, CharacterEditor");
+        //    harmony.Patch(AccessTools.Method(RelationTool, "a", [typeof(DirectPawnRelation)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(RelationLabelDirectPostfix))));
+        //    harmony.Patch(AccessTools.Method(RelationTool, "a", [typeof(PawnRelationDef), typeof(Pawn)]), postfix: new HarmonyMethod(typeof(CharacterEditorPatches).GetMethod(nameof(RelationLabelIndirectPostfix))));
+        //}
 
-        //These allow non-binary to be selected as a gender
-        public static bool AOnGenderChangePrefix(Type __instance, ref Gender ___s)
-        {
-            ___s = ___s == Gender.Female ? (Gender)3 : ___s == Gender.Male ? Gender.Female : Gender.Male;
-            MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "b");
-            SelectedPawn.Invoke(__instance, [null]);
-            return false;
-        }
+        ////These allow non-binary to be selected as a gender
+        //public static bool AOnGenderChangePrefix(Type __instance, ref Gender ___s)
+        //{
+        //    ___s = ___s == Gender.Female ? (Gender)3 : ___s == Gender.Male ? Gender.Female : Gender.Male;
+        //    MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "b");
+        //    SelectedPawn.Invoke(__instance, [null]);
+        //    return false;
+        //}
 
-        public static bool AOnGenderChange2Prefix(Type __instance, ref Gender ___t)
-        {
-            ___t = ___t == Gender.Female ? (Gender)3 : ___t == Gender.Male ? Gender.Female : Gender.Male;
-            MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "d");
-            SelectedPawn.Invoke(__instance, [null]);
-            return false;
-        }
+        //public static bool AOnGenderChange2Prefix(Type __instance, ref Gender ___t)
+        //{
+        //    ___t = ___t == Gender.Female ? (Gender)3 : ___t == Gender.Male ? Gender.Female : Gender.Male;
+        //    MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "d");
+        //    SelectedPawn.Invoke(__instance, [null]);
+        //    return false;
+        //}
 
-        public static bool AOnGenderChange3Prefix(Type __instance, ref Gender ___u)
-        {
-            ___u = ___u == Gender.Female ? (Gender)3 : ___u == Gender.Male ? Gender.Female : Gender.Male;
-            MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "f");
-            SelectedPawn.Invoke(__instance, [null]);
-            return false;
-        }
+        //public static bool AOnGenderChange3Prefix(Type __instance, ref Gender ___u)
+        //{
+        //    ___u = ___u == Gender.Female ? (Gender)3 : ___u == Gender.Male ? Gender.Female : Gender.Male;
+        //    MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "f");
+        //    SelectedPawn.Invoke(__instance, [null]);
+        //    return false;
+        //}
 
-        public static bool AOnGenderChange4Prefix(Type __instance, ref Gender ___v)
-        {
-            ___v = ___v == Gender.Female ? (Gender)3 : ___v == Gender.Male ? Gender.Female : Gender.Male;
-            MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "h");
-            SelectedPawn.Invoke(__instance, [null]);
-            return false;
-        }
+        //public static bool AOnGenderChange4Prefix(Type __instance, ref Gender ___v)
+        //{
+        //    ___v = ___v == Gender.Female ? (Gender)3 : ___v == Gender.Male ? Gender.Female : Gender.Male;
+        //    MethodInfo SelectedPawn = AccessTools.Method(BlockSocial, "h");
+        //    SelectedPawn.Invoke(__instance, [null]);
+        //    return false;
+        //}
 
-        //These change the label for the relationship
-        public static void GetLabelSelectedPawnPostfix(PawnRelationDef A_0, Gender ___s, ref string __result)
-        {
-            if (___s.IsEnby())
-            {
-                if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby;
-                }
-            }
-        }
+        ////These change the label for the relationship
+        //public static void GetLabelSelectedPawnPostfix(PawnRelationDef A_0, Gender ___s, ref string __result)
+        //{
+        //    if (___s.IsEnby())
+        //    {
+        //        if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby;
+        //        }
+        //    }
+        //}
 
-        public static void GetLabelSelectedPawn2Postfix(PawnRelationDef A_0, Gender ___t, ref string __result)
-        {
-            if (___t.IsEnby())
-            {
-                if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
-                }
-            }
-        }
+        //public static void GetLabelSelectedPawn2Postfix(PawnRelationDef A_0, Gender ___t, ref string __result)
+        //{
+        //    if (___t.IsEnby())
+        //    {
+        //        if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
+        //        }
+        //    }
+        //}
 
-        public static void GetLabelSelectedPawn3Postfix(PawnRelationDef A_0, Gender ___u, ref string __result)
-        {
-            if (___u.IsEnby())
-            {
-                if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
-                }
-            }
-        }
+        //public static void GetLabelSelectedPawn3Postfix(PawnRelationDef A_0, Gender ___u, ref string __result)
+        //{
+        //    if (___u.IsEnby())
+        //    {
+        //        if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
+        //        }
+        //    }
+        //}
 
-        public static void GetLabelSelectedPawn4Postfix(PawnRelationDef A_0, Gender ___v, ref string __result)
-        {
-            if (___v.IsEnby())
-            {
-                if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
-                }
-            }
-        }
+        //public static void GetLabelSelectedPawn4Postfix(PawnRelationDef A_0, Gender ___v, ref string __result)
+        //{
+        //    if (___v.IsEnby())
+        //    {
+        //        if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby + __result.Substring(__result.IndexOf("("));
+        //        }
+        //    }
+        //}
 
-        //These give the correct label to the existing relations
-        public static void RelationLabelDirectPostfix(ref string __result, DirectPawnRelation A_0)
-        {
-            if (A_0.otherPawn.IsEnby())
-            {
-                if (A_0.def.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby + __result.Substring(__result.IndexOf(" "));
-                }
-            }
-        }
-        public static void RelationLabelIndirectPostfix(ref string __result, PawnRelationDef A_0, Pawn A_1)
-        {
-            if (A_1.IsEnby())
-            {
-                if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
-                {
-                    __result = extension.labelEnby + __result.Substring(__result.IndexOf(" "));
-                }
-            }
-        }
-#endif
+        ////These give the correct label to the existing relations
+        //public static void RelationLabelDirectPostfix(ref string __result, DirectPawnRelation A_0)
+        //{
+        //    if (A_0.otherPawn.IsEnby())
+        //    {
+        //        if (A_0.def.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby + __result.Substring(__result.IndexOf(" "));
+        //        }
+        //    }
+        //}
+        //public static void RelationLabelIndirectPostfix(ref string __result, PawnRelationDef A_0, Pawn A_1)
+        //{
+        //    if (A_1.IsEnby())
+        //    {
+        //        if (A_0.GetModExtension<EnbyInfo>() is EnbyInfo extension && extension.labelEnby != null)
+        //        {
+        //            __result = extension.labelEnby + __result.Substring(__result.IndexOf(" "));
+        //        }
+        //    }
+        //}
+        //#endif
 
         //This makes the gender change to non-binary if the female icon is clicked, and change to male/none if the non-binary icon is clicked
         public static IEnumerable<CodeInstruction> GenderButtonTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
@@ -288,11 +288,11 @@ namespace NonBinaryGender.Patches
 
             MethodInfo API = AccessTools.PropertyGetter(CEditor, "API");
             MethodInfo getPawn = AccessTools.PropertyGetter(CEditor, "Pawn");
-#if v1_4
+            //#if v1_4
             MethodInfo ButtonImage = AccessTools.Method(typeof(Widgets), "ButtonImage", [typeof(Rect), typeof(Texture2D), typeof(bool)]);
-#else
-            MethodInfo ButtonImage = AccessTools.Method(typeof(Widgets), "ButtonImage", [typeof(Rect), typeof(Texture2D), typeof(bool), typeof(string)]);
-#endif
+            //#else
+            //            MethodInfo ButtonImage = AccessTools.Method(typeof(Widgets), "ButtonImage", [typeof(Rect), typeof(Texture2D), typeof(bool), typeof(string)]);
+            //#endif
 
             List<CodeInstruction> codes = instructions.ToList();
 
@@ -365,11 +365,11 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Call, API);
                     yield return new CodeInstruction(OpCodes.Callvirt, getPawn);
                     yield return new CodeInstruction(OpCodes.Ldc_I4_3);
-#if v1_4
+                    //#if v1_4
                     yield return CodeInstruction.Call(NameTool, "SetPawnGender");
-#else
-                    yield return CodeInstruction.Call(NameTool, "a", [typeof(Pawn), typeof(Gender)]);
-#endif
+                    //#else
+                    //                    yield return CodeInstruction.Call(NameTool, "a", [typeof(Pawn), typeof(Gender)]);
+                    //#endif
 
                     //I think the nop is just to mark the end of the nested if block
                     //Give this the label we grabbed earlier
@@ -411,11 +411,11 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Nop);
                     //(float)x+132, 259f, 28f, 28f
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-#if v1_4
+                    //#if v1_4
                     yield return CodeInstruction.LoadField(BlockPerson, "x");
-#else
-                    yield return CodeInstruction.LoadField(BlockPerson, "ac");
-#endif
+                    //#else
+                    //                    yield return CodeInstruction.LoadField(BlockPerson, "ac");
+                    //#endif
                     yield return new CodeInstruction(OpCodes.Ldc_I4, 132);
                     yield return new CodeInstruction(OpCodes.Add);
                     yield return new CodeInstruction(OpCodes.Conv_R4);
@@ -427,10 +427,10 @@ namespace NonBinaryGender.Patches
                     yield return CodeInstruction.LoadField(typeof(EnbyUtility), "NonBinaryIcon");
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     //Widgets.ButtonImage(above Rect, EnbyUtility.NonBinaryIcon)
-#if v1_5
+                    //#if v1_5
                     //Widgets.ButtonImage(above Rect, EnbyUtility.NonBinaryIcon, null) they added a string to the signature
-                    yield return new CodeInstruction(OpCodes.Ldnull);
-#endif
+                    //yield return new CodeInstruction(OpCodes.Ldnull);
+                    //#endif
                     yield return new CodeInstruction(OpCodes.Call, ButtonImage);
                     //Store whether the icon was clicked or not
                     yield return new CodeInstruction(OpCodes.Stloc, wasButtonPressed);
@@ -503,7 +503,7 @@ namespace NonBinaryGender.Patches
         public static IEnumerable<CodeInstruction> DrawRelationsTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
             //It's just the same thing four times but with different field names, so we'll just iterate through lists
-#if v1_4
+            //#if v1_4
             List<FieldInfo> fields =
             [
                 AccessTools.Field(BlockSocial, "selectedGender"),
@@ -511,15 +511,15 @@ namespace NonBinaryGender.Patches
                 AccessTools.Field(BlockSocial, "selectedGender3"),
                 AccessTools.Field(BlockSocial, "selectedGender4"),
             ];
-#else
-            List<FieldInfo> fields =
-            [
-                AccessTools.Field(BlockSocial, "s"),
-                AccessTools.Field(BlockSocial, "t"),
-                AccessTools.Field(BlockSocial, "u"),
-                AccessTools.Field(BlockSocial, "v"),
-            ];
-#endif
+            //#else
+            //List<FieldInfo> fields =
+            //[
+            //    AccessTools.Field(BlockSocial, "s"),
+            //    AccessTools.Field(BlockSocial, "t"),
+            //    AccessTools.Field(BlockSocial, "u"),
+            //    AccessTools.Field(BlockSocial, "v"),
+            //];
+            //#endif
 
             List<Label> firstLabel =
             [
@@ -581,11 +581,11 @@ namespace NonBinaryGender.Patches
         //This shows the correct gender icon on the list of pawns to select from
         public static IEnumerable<CodeInstruction> DrawTitleTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
-#if v1_4
+            //#if v1_4
             FieldInfo choosenGender = AccessTools.Field(DialogChoosePawn, "choosenGender");
-#else
-            FieldInfo choosenGender = AccessTools.Field(DialogChoosePawn, "g");
-#endif
+            //#else
+            //FieldInfo choosenGender = AccessTools.Field(DialogChoosePawn, "g");
+            //#endif
             Label firstLabel = ilg.DefineLabel();
             Label secondLabel = ilg.DefineLabel();
 
@@ -620,5 +620,6 @@ namespace NonBinaryGender.Patches
                 }
             }
         }
+#endif
     }
 }

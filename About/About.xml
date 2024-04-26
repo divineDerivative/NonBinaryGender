@@ -17,7 +17,7 @@
 		-    Both colonists and world pawns can generate as non-binary
 		-    Adds appropriate gender-neutral relationship titles (child instead of son/daughter, etc)
 		-    Adds precepts for nudity rules and spouse rules to match vanilla male/female precepts in Ideology
-		-    Compatible with Character Editor
+		-    Compatible with Character Editor (1.4 only) and Pawn Editor (1.5 only)
 		-    Compatible with [NL] Facial Animation - WIP
 		-    Gender neutral name options
 	</description>
@@ -33,4 +33,9 @@
 		<li>erdelf.humanoidalienraces</li>
 		<li>erdelf.humanoidalienraces.dev</li>
 	</loadAfter>
+	<incompatibleWithByVersion>
+		<v1.5>
+			<li>void.charactereditor</li>
+		</v1.5>
+	</incompatibleWithByVersion>
 </ModMetaData>

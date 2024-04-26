@@ -11,10 +11,13 @@ namespace NonBinaryGender
         {
             Harmony harmony = new("divineDerivative.NonBinaryGender");
             harmony.PatchAll();
+
+#if v1_4
             if (ModsConfig.IsActive("void.charactereditor") || ModsConfig.IsActive("void.charactereditor_steam"))
             {
                 harmony.PatchCE();
             }
+#endif
             if (ModsConfig.IsActive("erdelf.humanoidalienraces") || ModsConfig.IsActive("erdelf.humanoidalienraces.dev"))
             {
                 harmony.PatchHAR();
