@@ -10,7 +10,7 @@ namespace NonBinaryGender.Patches
     {
         public static bool Prefix(ref string __result, Pawn ___leader, FactionIdeosTracker ___ideos)
         {
-            if (___leader.gender.IsEnby())
+            if (___leader != null && ___leader.gender.IsEnby())
             {
                 Dictionary<Ideo, string> list = Find.World.GetComponent<WorldComp_EnbyLeaderTitle>().TitlesPerIdeo;
                 if (___ideos != null && ___ideos.PrimaryIdeo != null)
