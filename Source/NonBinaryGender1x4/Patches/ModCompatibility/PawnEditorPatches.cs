@@ -15,6 +15,7 @@ namespace NonBinaryGender.Patches
         {
             harmony.Patch(AccessTools.Method(typeof(TabWorker_Bio_Humanlike), "DoButtons"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DoButtonsTranspiler))));
             harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "DoLeftSection"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DoLeftSectionTranspiler))));
+            harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "IsAllowed", [typeof(HeadTypeDef), typeof(Pawn)]), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(HeadTypeTranspiler))));
         }
 
         public static IEnumerable<CodeInstruction> GenderButtonTranspiler(IEnumerable<CodeInstruction> instructions, OpCode loadPawn, Type type = null)
@@ -59,6 +60,33 @@ namespace NonBinaryGender.Patches
             {
                 TabWorker_Bio_Humanlike.SetGender(pawn, (Gender)3);
             }, EnbyUtility.NonBinaryIcon, Color.white);
+        }
+
+        public static IEnumerable<CodeInstruction> HeadTypeTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
+        {
+            Label label = ilg.DefineLabel();
+            bool insert = false;
+            foreach (CodeInstruction code in instructions)
+            {
+                if (insert)
+                {
+                    yield return new CodeInstruction(OpCodes.Beq, label);
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return CodeInstruction.Call(typeof(EnbyUtility), nameof(EnbyUtility.IsEnby), [typeof(Pawn)]);
+                    yield return new CodeInstruction(OpCodes.Ret);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_1).WithLabels(label);
+                    insert = false;
+                }
+                else
+                {
+                    yield return code;
+                }
+
+                if (code.LoadsField(InfoHelper.genderField))
+                {
+                    insert = true;
+                }
+            }
         }
     }
 }
