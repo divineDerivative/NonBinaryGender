@@ -3,6 +3,8 @@ using PawnEditor;
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
@@ -16,6 +18,26 @@ namespace NonBinaryGender.Patches
             harmony.Patch(AccessTools.Method(typeof(TabWorker_Bio_Humanlike), "DoButtons"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DoButtonsTranspiler))));
             harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "DoLeftSection"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DoLeftSectionTranspiler))));
             harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "IsAllowed", [typeof(HeadTypeDef), typeof(Pawn)]), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(HeadTypeTranspiler))));
+
+            MethodInfo HeadTypePredicate = FindPredicate();
+            harmony.Patch(HeadTypePredicate, prefix: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(HeadTypePredicatePrefix))));
+
+            static MethodInfo FindPredicate()
+            {
+                MethodInfo result = null;
+                foreach (MethodInfo method in typeof(Dialog_AppearanceEditor).GetMethods(AccessTools.all).Where(t => t.GetCustomAttribute<System.Runtime.CompilerServices.CompilerGeneratedAttribute>() != null).ToList())
+                {
+                    if (method.ReturnType == typeof(bool) && method.Name.Contains("DoWindowContents") && method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(HeadTypeDef) && method.GetParameters()[0].Name == "type")
+                    {
+                        if (result != null)
+                        {
+                            Log.Error("Multiple matching methods found: " + result.Name + " and " + method.Name);
+                        }
+                        result = method;
+                    }
+                }
+                return result;
+            }
         }
 
         public static IEnumerable<CodeInstruction> GenderButtonTranspiler(IEnumerable<CodeInstruction> instructions, OpCode loadPawn, Type type = null)
@@ -87,6 +109,16 @@ namespace NonBinaryGender.Patches
                     insert = true;
                 }
             }
+        }
+
+        public static bool HeadTypePredicatePrefix(Pawn ___pawn, ref bool __result)
+        {
+            if (___pawn.IsEnby())
+            {
+                __result = true;
+                return false;
+            }
+            return true;
         }
     }
 }
