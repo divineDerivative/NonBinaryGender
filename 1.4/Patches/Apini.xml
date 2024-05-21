@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Apini Playable Race, New Age</li>
+			<li>Apini Playable Race, Continued!</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Apini-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Apini"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Apini/Head/</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</ApiniLarva>
+							</ageGraphics>
+							<headtypeGraphics>
+								<Male_AverageNormal>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_AverageNormal>
+								<Male_AveragePointy>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_AveragePointy>
+								<Male_AverageWide>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_AverageWide>
+								<Male_NarrowNormal>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_NarrowNormal>
+								<Male_NarrowPointy>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_NarrowPointy>
+								<Male_NarrowWide>Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</Male_NarrowWide>
+								<Female_AverageNormal>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_AverageNormal>
+								<Female_AveragePointy>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_AveragePointy>
+								<Female_AverageWide>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_AverageWide>
+								<Female_NarrowNormal>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_NarrowNormal>
+								<Female_NarrowPointy>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_NarrowPointy>
+								<Female_NarrowWide>Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</Female_NarrowWide>
+							</headtypeGraphics>
+							<prioritization>
+								<li>Age</li>
+								<li>Headtype</li>
+							</prioritization>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Apini"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawn/Alien_Races/Apini/Body/Naked_Average</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Body/Naked_Average</ApiniLarva>
+							</ageGraphics>
+						</body>
+					</value>
+				</li>
+				<!--Azuri-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Azuri"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Azuri/Head/</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</ApiniLarva>
+							</ageGraphics>
+							<headtypeGraphics>
+								<Male_AverageNormal>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_AverageNormal>
+								<Male_AveragePointy>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_AveragePointy>
+								<Male_AverageWide>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_AverageWide>
+								<Male_NarrowNormal>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_NarrowNormal>
+								<Male_NarrowPointy>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_NarrowPointy>
+								<Male_NarrowWide>Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</Male_NarrowWide>
+								<Female_AverageNormal>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_AverageNormal>
+								<Female_AveragePointy>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_AveragePointy>
+								<Female_AverageWide>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_AverageWide>
+								<Female_NarrowNormal>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_NarrowNormal>
+								<Female_NarrowPointy>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_NarrowPointy>
+								<Female_NarrowWide>Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</Female_NarrowWide>
+							</headtypeGraphics>
+							<prioritization>
+								<li>Age</li>
+								<li>Headtype</li>
+							</prioritization>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Azuri"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawn/Alien_Races/Azuri/Body/Naked_Average</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Body/Naked_Average</ApiniLarva>
+							</ageGraphics>
+						</body>
+					</value>
+				</li>
+				<!--Necropini-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Necropini"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Npini/Head/Average_Normal</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</ApiniLarva>
+							</ageGraphics>
+						</head>
+					</value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Necropini"]/alienRace/graphicPaths/body</xpath>
+					<value>
+						<body>
+							<path>Things/Pawn/Alien_Races/Npini/Body/Naked_Average</path>
+							<ageGraphics>
+								<ApiniLarva>Things/Pawn/Alien_Races/Beelarva/Body/Naked_Average</ApiniLarva>
+							</ageGraphics>
+						</body>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

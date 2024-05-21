@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Apini Playable Race, New Age</li>
+			<li>Apini Playable Race, Continued!</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!--Apini-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Apini"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Apini/Head/</path>
+							<extendedGraphics>
+								<Age For="ApiniLarva">Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</Age>
+								<HeadType For="Male_AverageNormal">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_AveragePointy">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_AverageWide">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowNormal">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowPointy">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowWide">Things/Pawn/Alien_Races/Apini/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Female_AverageNormal">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_AveragePointy">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_AverageWide">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowNormal">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowPointy">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowWide">Things/Pawn/Alien_Races/Apini/Head/Female_Average_Normal</HeadType>
+							</extendedGraphics>
+						</head>
+					</value>
+				</li>
+				<!--Azuri-->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Azuri"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Azuri/Head/</path>
+							<extendedGraphics>
+								<Age For="ApiniLarva">Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</Age>
+								<HeadType For="Male_AverageNormal">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_AveragePointy">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_AverageWide">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowNormal">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowPointy">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Male_NarrowWide">Things/Pawn/Alien_Races/Azuri/Head/Male_Average_Normal</HeadType>
+								<HeadType For="Female_AverageNormal">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_AveragePointy">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_AverageWide">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowNormal">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowPointy">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+								<HeadType For="Female_NarrowWide">Things/Pawn/Alien_Races/Azuri/Head/Female_Average_Normal</HeadType>
+							</extendedGraphics>
+						</head>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Necropini"]/alienRace/graphicPaths/head</xpath>
+					<value>
+						<head>
+							<path>Things/Pawn/Alien_Races/Npini/Head/Average_Normal</path>
+							<extendedGraphics>
+								<Age For="ApiniLarva">Things/Pawn/Alien_Races/Beelarva/Head/Average_Normal</Age>
+							</extendedGraphics>
+						</head>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
