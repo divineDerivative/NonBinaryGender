@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+	<!--Not updated for 1.5 yet-->
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>MH: Android Tiers</li>

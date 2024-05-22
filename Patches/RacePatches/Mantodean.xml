@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>Name</li>
+			<li>Mantodeans Continued</li>
 		</mods>
 		<match  Class="PatchOperationReplace">
-			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Mantodean"]/alienRace/graphicPaths/head</xpath>
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Mantodean" or defName="L24_Alien_Mantodean"]/alienRace/graphicPaths/head</xpath>
 			<value>
 				<head>
 					<path>Things/Pawn/Humanlike/Mantodean/Head/</path>

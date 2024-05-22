@@ -8,10 +8,10 @@
 			<xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="ARR_VieraBase"]/alienRace/graphicPaths/head</xpath>
 			<value>
 				<head>
-					<path>ARimReborn/Heads/Viera/</path>
+					<path>ARimReborn/Pawn/Viera/Heads/</path>
 					<headtypeGraphics>
-						<ARR_Viera_Male_Average>ARimReborn/Heads/Viera/Male_Average</ARR_Viera_Male_Average>
-						<ARR_Viera_Female_Average>ARimReborn/Heads/Viera/Female_Average</ARR_Viera_Female_Average>
+						<ARR_Viera_Male_Average>ARimReborn/Pawn/Viera/Heads/Male_Average</ARR_Viera_Male_Average>
+						<ARR_Viera_Female_Average>ARimReborn/Pawn/Viera/Heads/Female_Average</ARR_Viera_Female_Average>
 					</headtypeGraphics>
 				</head>
 			</value>
