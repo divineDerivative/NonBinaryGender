@@ -36,7 +36,12 @@ namespace NonBinaryGender.Patches
                 }
                 foreach (GeneDef requiredGene in head.requiredGenes)
                 {
+
+#if v1_4
                     if (!pawn.genes.HasGene(requiredGene))
+#else
+                    if (!pawn.genes.HasActiveGene(requiredGene))
+#endif
                     {
                         return false;
                     }

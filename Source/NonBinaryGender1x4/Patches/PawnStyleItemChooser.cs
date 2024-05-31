@@ -24,7 +24,12 @@ namespace NonBinaryGender.Patches
                     __result = 100f;
                     return false;
                 }
+
+#if v1_4
                 if (ModsConfig.BiotechActive && pawn.genes != null && styleItem.requiredGene != null && !pawn.genes.HasGene(styleItem.requiredGene))
+#else
+                if (ModsConfig.BiotechActive && pawn.genes != null && styleItem.requiredGene != null && !pawn.genes.HasActiveGene(styleItem.requiredGene))
+#endif
                 {
                     __result = 0f;
                     return false;
