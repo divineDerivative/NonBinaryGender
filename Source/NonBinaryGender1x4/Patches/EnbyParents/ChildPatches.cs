@@ -1,6 +1,9 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using Verse;
 
 namespace NonBinaryGender.Patches
@@ -8,45 +11,60 @@ namespace NonBinaryGender.Patches
     [HarmonyPatch]
     public static class ChildPatches
     {
-        //generated is the parent, other is the potential child
-        [HarmonyPrefix]
+        [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_Child), nameof(PawnRelationWorker_Child.GenerationChance))]
-        public static bool GenerationChancePrefix(Pawn generated, Pawn other, PawnGenerationRequest request, ref float __result, PawnRelationWorker_Child __instance)
+        public static IEnumerable<CodeInstruction> GenerationChanceTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
-            if (generated.IsEnby())
+            Label? biotechLabel = new();
+            Label myLabel = ilg.DefineLabel();
+            List<CodeInstruction> codes = instructions.ToList();
+            for (int i = 0; i < instructions.Count(); i++)
             {
-#if v1_5
-                if (other.IsDuplicate)
+                CodeInstruction code = codes[i];
+                CodeInstruction nextCode = codes[i + 1];
+                if (code.LoadsConstant(2) && nextCode.Branches(out biotechLabel))
                 {
-                    return true;
+                    nextCode.operand = myLabel;
+                    break;
                 }
-#endif
-                if (!ChildRelationUtility.XenotypesCompatible(generated, other))
-                {
-                    __result = 0f;
-                    return false;
-                }
-                float num;
-                if (other.GetMother() != null)
-                {
-                    num = ChildRelationUtility.ChanceOfBecomingChildOf(other, generated, other.GetMother(), null, request, null);
-                }
-                else if (other.GetFather() != null)
-                {
-                    num = ChildRelationUtility.ChanceOfBecomingChildOf(other, other.GetFather(), generated, null, null, request);
-                }
-                else
-                {
-                    num = ChildRelationUtility.ChanceOfBecomingChildOf(other, other.GetParent((Gender)3), generated, null, null, request);
-                }
-                if (ModsConfig.BiotechActive && request.Context == PawnGenerationContext.PlayerStarter && other.DevelopmentalStage.Juvenile())
-                {
-                    num *= 10f;
-                }
-                __result = num * __instance.BaseGenerationChanceFactor(generated, other, request);
-                return false;
             }
-            return true;
+
+            foreach (CodeInstruction code in instructions)
+            {
+                if (code.Calls(AccessTools.PropertyGetter(typeof(ModsConfig), nameof(ModsConfig.BiotechActive))))
+                {
+                    //Make the female section jump to the Biotech section
+                    yield return new CodeInstruction(OpCodes.Br_S, biotechLabel);
+                    //Check for non-binary
+                    yield return new CodeInstruction(OpCodes.Ldarg_1).WithLabels(myLabel);
+                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_3);
+                    //Jump to Biotech section if not enby
+                    yield return new CodeInstruction(OpCodes.Bne_Un, biotechLabel);
+                    //Load generated, other, and request
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return new CodeInstruction(OpCodes.Ldarg_3);
+                    yield return CodeInstruction.Call(typeof(ChildPatches), nameof(GenerationChanceHelper));
+                    //Store result to num
+                    yield return new CodeInstruction(OpCodes.Stloc_0);
+                }
+                yield return code;
+            }
+        }
+
+        private static float GenerationChanceHelper(Pawn generated, Pawn other, PawnGenerationRequest request)
+        {
+            Pawn otherParent = other.GetMother() ?? other.GetFather();
+            if (otherParent is null)
+            {
+                return ChildRelationUtility.ChanceOfBecomingChildOf(other, generated, null, null, request, null);
+            }
+            if (otherParent.gender == Gender.Male)
+            {
+                return ChildRelationUtility.ChanceOfBecomingChildOf(other, otherParent, generated, null, null, request);
+            }
+            return ChildRelationUtility.ChanceOfBecomingChildOf(other, generated, otherParent, null, request, null);
         }
 
         [HarmonyPrefix]
@@ -56,13 +74,24 @@ namespace NonBinaryGender.Patches
             if (generated.IsEnby())
             {
                 other.SetParent(generated);
-                if (other.GetMother() is Pawn mother)
+                //Using my method due to the difference in GetMother and GetFather between game versions
+                Pawn mother = other.GetParent(Gender.Female);
+                Pawn father = other.GetParent(Gender.Male);
+                //ResolveMyName gets called in ResolveOtherParent if another parent exists, so we need to call it here if they don't
+                if (mother == null && father == null)
                 {
-                    ResolveOtherParent(mother, generated, other, ref request);
+                    ResolveMyName.Invoke(null, [request, other, mother ?? father]);
                 }
-                if (other.GetFather() is Pawn father)
+                else
                 {
-                    ResolveOtherParent(father, generated, other, ref request);
+                    if (mother is not null)
+                    {
+                        ResolveOtherParent(mother, generated, other, ref request);
+                    }
+                    if (father is not null)
+                    {
+                        ResolveOtherParent(father, generated, other, ref request);
+                    }
                 }
                 return false;
             }
@@ -70,22 +99,22 @@ namespace NonBinaryGender.Patches
         }
 
         static MethodInfo ResolveMyName = AccessTools.Method(typeof(PawnRelationWorker_Child), "ResolveMyName");
-        private static void ResolveOtherParent(Pawn parent, Pawn generated, Pawn child, ref PawnGenerationRequest request)
+        private static void ResolveOtherParent(Pawn existingParent, Pawn generatedParent, Pawn child, ref PawnGenerationRequest request)
         {
-            ResolveMyName.Invoke(null, [request, child, parent]);
+            ResolveMyName.Invoke(null, [request, child, existingParent]);
             //Next is an orientation check. It should probably just be not straight/asexual yeah?
-            if (!parent.story.traits.HasTrait(TraitDefOf.Gay) && !parent.story.traits.HasTrait(TraitDefOf.Bisexual))
+            if (!existingParent.story.traits.HasTrait(TraitDefOf.Gay) && !existingParent.story.traits.HasTrait(TraitDefOf.Bisexual))
             {
-                generated.relations.AddDirectRelation(PawnRelationDefOf.ExLover, parent);
+                generatedParent.relations.AddDirectRelation(PawnRelationDefOf.ExLover, existingParent);
             }
-            else if (Rand.Value < 0.85f && !LovePartnerRelationUtility.HasAnyLovePartner(parent))
+            else if (Rand.Value < 0.85f && !LovePartnerRelationUtility.HasAnyLovePartner(existingParent))
             {
-                generated.relations.AddDirectRelation(PawnRelationDefOf.Spouse, parent);
-                SpouseRelationUtility.ResolveNameForSpouseOnGeneration(ref request, generated);
+                generatedParent.relations.AddDirectRelation(PawnRelationDefOf.Spouse, existingParent);
+                SpouseRelationUtility.ResolveNameForSpouseOnGeneration(ref request, generatedParent);
             }
             else
             {
-                LovePartnerRelationUtility.GiveRandomExLoverOrExSpouseRelation(generated, parent);
+                LovePartnerRelationUtility.GiveRandomExLoverOrExSpouseRelation(generatedParent, existingParent);
             }
         }
     }

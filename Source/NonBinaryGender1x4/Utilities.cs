@@ -18,12 +18,21 @@ namespace NonBinaryGender
         public static readonly Texture2D NonBinaryButton = ContentFinder<Texture2D>.Get("UI/Gender/NonBinaryButton", true);
         public static MethodInfo GetParentMethod = AccessTools.Method(typeof(ParentRelationUtility), "GetParent");
 
+        /// <summary>
+        /// Finds <paramref name="pawn"/>'s parent with the specified <paramref name="gender"/>.
+        /// Uses the vanilla version if it exists.
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <param name="gender"></param>
+        /// <returns>The parent if it exists</returns>
         public static Pawn GetParent(this Pawn pawn, Gender gender)
         {
+            //Use the original method if it exists (1.5)
             if (GetParentMethod != null)
             {
                 return (Pawn)GetParentMethod.Invoke(null, [pawn, gender]);
             }
+            //Otherwise replicate it
             if (!pawn.RaceProps.IsFlesh)
             {
                 return null;

@@ -13,22 +13,29 @@ namespace NonBinaryGender.Patches
         [HarmonyPatch(typeof(PawnRelationWorker_Sibling), nameof(PawnRelationWorker_Sibling.GenerationChance))]
         public static bool GenerationChancePrefix(Pawn generated, Pawn other, PawnGenerationRequest request, ref float __result, PawnRelationWorker_Sibling __instance)
         {
+            if (!ChildRelationUtility.XenotypesCompatible(generated, other))
+            {
+                return true;
+            }
             //Look at the potential sibling's parents
             if (other.GetParent((Gender)3) is Pawn parent)
             {
                 float num = 1f;
-                if (other.GetFather() is Pawn father)
+                Pawn father = other.GetFather();
+                Pawn mother = other.GetMother();
+                if (father is null && mother is null)
+                {
+                    num = ChildRelationUtility.ChanceOfBecomingChildOf(generated, parent, null, request, null, null);
+                }
+                else if (father is not null)
                 {
                     num = ChildRelationUtility.ChanceOfBecomingChildOf(generated, father, parent, request, null, null);
                 }
-                if (other.GetMother() is Pawn mother)
+                else if (mother is not null)
                 {
                     num = ChildRelationUtility.ChanceOfBecomingChildOf(generated, parent, mother, request, null, null);
                 }
-                if (!ChildRelationUtility.XenotypesCompatible(generated, other))
-                {
-                    return true;
-                }
+
                 float ageDifference = Mathf.Abs(generated.ageTracker.AgeChronologicalYearsFloat - other.ageTracker.AgeChronologicalYearsFloat);
                 float ageFactor = 1f;
                 if (ageDifference > 40f)
@@ -51,7 +58,6 @@ namespace NonBinaryGender.Patches
         [HarmonyPatch(typeof(PawnRelationWorker_Sibling), nameof(PawnRelationWorker_Sibling.CreateRelation))]
         public static bool CreateRelationPrefix(Pawn generated, Pawn other, ref PawnGenerationRequest request)
         {
-            //I don't like how big this is
             if (other.GetParent((Gender)3) is Pawn parent)
             {
                 bool tryMakeSpouses = Rand.Value < 0.85f;
@@ -63,7 +69,7 @@ namespace NonBinaryGender.Patches
                     tryMakeSpouses = false;
                 }
 
-                if (existingMother == null && existingFather == null)
+                if (existingMother is null && existingFather is null)
                 {
                     Gender newParentGender = Rand.Bool ? Gender.Female : Gender.Male;
                     Pawn newParent = (Pawn)GenerateParent.Invoke(null, [generated, other, newParentGender, request, tryMakeSpouses]);
@@ -77,14 +83,14 @@ namespace NonBinaryGender.Patches
                     }
                     madeNewParent = true;
                 }
-                //Hoping it's fine if any of these is null
+
                 generated.SetMother(other.GetMother());
                 generated.SetFather(other.GetFather());
                 generated.SetParent(parent);
                 if (madeNewParent)
                 {
                     Pawn otherParent = other.GetMother() ?? other.GetFather();
-                    if (otherParent != null && !otherParent.story.traits.HasTrait(TraitDefOf.Gay) && !otherParent.story.traits.HasTrait(TraitDefOf.Bisexual))
+                    if (!otherParent.story.traits.HasTrait(TraitDefOf.Gay) && !otherParent.story.traits.HasTrait(TraitDefOf.Bisexual))
                     {
                         parent.relations.AddDirectRelation(PawnRelationDefOf.ExLover, otherParent);
                     }

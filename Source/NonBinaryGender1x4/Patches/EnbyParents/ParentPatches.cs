@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
@@ -30,33 +31,60 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
-        //generated is the child, other is the potential parent
-        [HarmonyPrefix]
+        [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_Parent), nameof(PawnRelationWorker_Parent.GenerationChance))]
-        public static bool GenerationChancePrefix(Pawn generated, Pawn other, PawnGenerationRequest request, ref float __result, PawnRelationWorker_Parent __instance)
+        public static IEnumerable<CodeInstruction> GenerationChanceTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
-            if (other.IsEnby())
+            Label? biotechLabel = new();
+            Label myLabel = ilg.DefineLabel();
+            List<CodeInstruction> codes = instructions.ToList();
+            for (int i = 0; i < instructions.Count(); i++)
             {
-                Pawn spouse = other.GetFirstSpouseOfOppositeGender();
-                float num;
-                if (spouse != null)
+                CodeInstruction code = codes[i];
+                CodeInstruction nextCode = codes[i + 1];
+                if (code.LoadsConstant(2) && nextCode.Branches(out biotechLabel))
                 {
-                    //Put the gendered spouse in the correct slot and put the enby in the other
-                    num = ChildRelationUtility.ChanceOfBecomingChildOf(generated, spouse.gender == Gender.Male ? spouse : other, spouse.gender == Gender.Female ? spouse : other, request, null, null);
+                    nextCode.operand = myLabel;
+                    break;
                 }
-                else
-                {
-                    //Don't think it matters where they go if it's only them
-                    num = ChildRelationUtility.ChanceOfBecomingChildOf(generated, other, null, request, null, null);
-                }
-                if (ModsConfig.BiotechActive && request.Context == PawnGenerationContext.PlayerStarter && generated.DevelopmentalStage.Juvenile())
-                {
-                    num *= 10f;
-                }
-                __result = num * __instance.BaseGenerationChanceFactor(generated, other, request);
-                return false;
             }
-            return true;
+
+            foreach (CodeInstruction code in instructions)
+            {
+                if (code.Calls(AccessTools.PropertyGetter(typeof(ModsConfig), nameof(ModsConfig.BiotechActive))))
+                {
+                    //Make the female section jump to the Biotech section
+                    yield return new CodeInstruction(OpCodes.Br_S, biotechLabel);
+                    //Check for non-binary
+                    yield return new CodeInstruction(OpCodes.Ldarg_2).WithLabels(myLabel);
+                    yield return HelperExtensions.LoadField(InfoHelper.genderField);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_3);
+                    //Jump to Biotech section if not enby
+                    yield return new CodeInstruction(OpCodes.Bne_Un, biotechLabel);
+                    //Load generated, other, and request
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return new CodeInstruction(OpCodes.Ldarg_3);
+                    yield return CodeInstruction.Call(typeof(ParentPatches), nameof(GenerationChanceHelper));
+                    //Store result to num
+                    yield return new CodeInstruction(OpCodes.Stloc_0);
+                }
+                yield return code;
+            }
+        }
+
+        private static float GenerationChanceHelper(Pawn generated, Pawn other, PawnGenerationRequest request)
+        {
+            Pawn spouse = other.GetFirstSpouseOfOppositeGender();
+            if (spouse is null)
+            {
+                return ChildRelationUtility.ChanceOfBecomingChildOf(generated, other, null, null, request, null);
+            }
+            if (spouse.gender == Gender.Male)
+            {
+                return ChildRelationUtility.ChanceOfBecomingChildOf(generated, spouse, other, null, null, request);
+            }
+            return ChildRelationUtility.ChanceOfBecomingChildOf(generated, other, spouse, null, request, null);
         }
 
         [HarmonyTranspiler]
