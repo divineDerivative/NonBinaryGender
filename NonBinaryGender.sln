@@ -8,7 +8,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonBinaryGender", "Source\NonBinaryGender1x4\NonBinaryGender.csproj", "{2437D019-B858-4D18-8AC7-A5BB59974208}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonBinaryGender", "Source\NonBinaryGender.csproj", "{2437D019-B858-4D18-8AC7-A5BB59974208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Defs", "Defs", "{76CD79B0-BB8C-4200-928B-373A367DBEA5}"
+	ProjectSection(SolutionItems) = preProject
+		Defs\ThoughtDefs\DeathThoughts.xml = Defs\ThoughtDefs\DeathThoughts.xml
+		Defs\ThoughtDefs\KilledThoughts.xml = Defs\ThoughtDefs\KilledThoughts.xml
+		Defs\ThoughtDefs\LostThoughts.xml = Defs\ThoughtDefs\LostThoughts.xml
+		Defs\Precepts\Precepts_SpouseCount.xml = Defs\Precepts\Precepts_SpouseCount.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{E138FB6C-4FE9-4232-8E6D-35B4669BFA97}"
+	ProjectSection(SolutionItems) = preProject
+		Patches\RacePatches\ATR.xml = Patches\RacePatches\ATR.xml
+		Patches\Biotech.xml = Patches\Biotech.xml
+		Patches\RacePatches\Mantodean.xml = Patches\RacePatches\Mantodean.xml
+		Patches\RelationDefs.xml = Patches\RelationDefs.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4", "1.4", "{0FDB8A52-1AEC-4C3D-9AE0-68ECFCD4A953}"
+	ProjectSection(SolutionItems) = preProject
+		1.4\Patches\AARAuRa.xml = 1.4\Patches\AARAuRa.xml
+		1.4\Patches\AARMiqote.xml = 1.4\Patches\AARMiqote.xml
+		1.4\Patches\AARViera.xml = 1.4\Patches\AARViera.xml
+		1.4\Patches\Anthro.xml = 1.4\Patches\Anthro.xml
+		1.4\Patches\Apini.xml = 1.4\Patches\Apini.xml
+		1.4\Patches\Heruan.xml = 1.4\Patches\Heruan.xml
+		1.4\Patches\Orassan.xml = 1.4\Patches\Orassan.xml
+		1.4\Patches\Seren.xml = 1.4\Patches\Seren.xml
+		1.4\Patches\Skrix.xml = 1.4\Patches\Skrix.xml
+		1.4\Patches\template.xml = 1.4\Patches\template.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5", "1.5", "{0E276D2A-48FE-4465-A17E-E61EB2A77F62}"
+	ProjectSection(SolutionItems) = preProject
+		1.5\Patches\Apini.xml = 1.5\Patches\Apini.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Keyed Strings", "Keyed Strings", "{6BC24E5D-933C-4696-B3CA-9C696763079F}"
+	ProjectSection(SolutionItems) = preProject
+		Languages\English\Keyed\KeyedStrings.xml = Languages\English\Keyed\KeyedStrings.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +63,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76CD79B0-BB8C-4200-928B-373A367DBEA5} = {57BCDBD1-F881-4DEB-A4F2-B9F2F929424B}
+		{E138FB6C-4FE9-4232-8E6D-35B4669BFA97} = {57BCDBD1-F881-4DEB-A4F2-B9F2F929424B}
+		{0FDB8A52-1AEC-4C3D-9AE0-68ECFCD4A953} = {E138FB6C-4FE9-4232-8E6D-35B4669BFA97}
+		{0E276D2A-48FE-4465-A17E-E61EB2A77F62} = {E138FB6C-4FE9-4232-8E6D-35B4669BFA97}
+		{6BC24E5D-933C-4696-B3CA-9C696763079F} = {57BCDBD1-F881-4DEB-A4F2-B9F2F929424B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EEFF4EE-7949-4D2E-866D-1D1AC4C55D25}
