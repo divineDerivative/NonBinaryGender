@@ -75,6 +75,10 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Reference Include="0DivineFramework">
+      <HintPath>..\..\DivineFramework\Assemblies\0DivineFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="CharacterEditor">
       <HintPath>..\..\..\..\..\workshop\content\294100\1874644848\v1.4\Assemblies\CharacterEditor.dll</HintPath>
       <Private>False</Private>
