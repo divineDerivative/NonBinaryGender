@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -198,7 +199,7 @@ namespace NonBinaryGender.Patches
         {
             if (newParent != null && !newParent.IsEnby())
             {
-                Log.Warning($"Tried to set {newParent} with gender {newParent.gender} as {pawn}'s non-binary parent.");
+                LogUtil.Warning($"Tried to set {newParent} with gender {newParent.gender} as {pawn}'s non-binary parent.");
                 return;
             }
             Pawn parent = pawn.GetParent((Gender)3);

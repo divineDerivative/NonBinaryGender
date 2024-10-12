@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,7 +89,7 @@ namespace NonBinaryGender.Patches
                 {
                     possibility = GenderPossibility.Female;
                 }
-                Log.Warning($"Solid name \'{__result}\' chosen for enby pawn with gender possibility of {possibility}");
+                LogUtil.Warning($"Solid name \'{__result}\' chosen for enby pawn with gender possibility of {possibility}");
             }
         }
 
@@ -110,7 +111,7 @@ namespace NonBinaryGender.Patches
         {
             if (__result && gender.IsEnby())
             {
-                Log.Warning("Solid bio \'" + result.name + "\' chosen for enby pawn with gender possibility of " + result.gender);
+                LogUtil.Warning("Solid bio \'" + result.name + "\' chosen for enby pawn with gender possibility of " + result.gender);
             }
         }
     }

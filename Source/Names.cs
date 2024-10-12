@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using DivineFramework;
+using RimWorld;
 using System.Collections.Generic;
 using System.IO;
 using Verse;
@@ -21,14 +22,14 @@ namespace NonBinaryGender
             string path = modData.RootDir.FullName + sep + "Languages" + sep + "English" + sep + "Names" + sep + "First_None.txt";
             if (!File.Exists(path))
             {
-                Log.Error("Unable to find gender neutral names file at " + path);
+                LogUtil.Error("Unable to find gender neutral names file at " + path);
                 return;
             }
             string raw = GenFile.TextFromRawFile(path);
             IEnumerable<string> list = GenText.LinesFromString(raw);
             nameBank.AddNames(PawnNameSlot.First, Gender.None, list);
             nameBank.ErrorCheck();
-            Log.Message("Gender neutral names added");
+            LogUtil.Message("Gender neutral names added");
             alreadyAdded = true;
         }
 

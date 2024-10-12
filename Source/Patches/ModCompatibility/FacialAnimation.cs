@@ -1,4 +1,5 @@
-﻿using FacialAnimation;
+﻿using DivineFramework;
+using FacialAnimation;
 using HarmonyLib;
 using System;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace NonBinaryGender.Patches
                     {
                         if (targetMethod != null)
                         {
-                            Log.Error("Multiple matching methods found: " + targetMethod.Name + " and " + method.Name);
+                            LogUtil.Error("Multiple matching methods found: " + targetMethod.Name + " and " + method.Name);
                         }
                         targetMethod = method;
                     }

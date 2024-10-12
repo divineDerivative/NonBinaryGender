@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using PawnEditor;
 using RimWorld;
 using System;
@@ -31,7 +32,7 @@ namespace NonBinaryGender.Patches
                     {
                         if (result != null)
                         {
-                            Log.Error("Multiple matching methods found: " + result.Name + " and " + method.Name);
+                            LogUtil.Error("Multiple matching methods found: " + result.Name + " and " + method.Name);
                         }
                         result = method;
                     }

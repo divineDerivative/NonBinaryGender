@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using NonBinaryGender.Patches;
 using Verse;
 
@@ -11,7 +12,6 @@ namespace NonBinaryGender
         {
             Harmony harmony = new("divineDerivative.NonBinaryGender");
             harmony.PatchAll();
-
 #if v1_4
             if (ModsConfig.IsActive("void.charactereditor") || ModsConfig.IsActive("void.charactereditor_steam"))
             {
