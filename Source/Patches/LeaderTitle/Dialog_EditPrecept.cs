@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,7 +95,7 @@ namespace NonBinaryGender.Patches
             }
             else
             {
-                Log.Error("Unable to find entry point for DoWindowContentsTranspiler");
+                LogUtil.Error("Unable to find entry point for DoWindowContentsTranspiler");
             }
             //This takes care of returning the adjusted instructions and the simple addition of saving the newly generated name to the enby field
             foreach (CodeInstruction code in codes)
