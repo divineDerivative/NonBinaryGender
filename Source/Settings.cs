@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using DivineFramework;
+using DivineFramework.UI;
 
 namespace NonBinaryGender
 {
@@ -63,7 +64,7 @@ namespace NonBinaryGender
         public NonBinaryGenderMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<Settings>();
-            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new("0.2.1.0"), "[NonBinaryGender]", () => true);
+            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new("0.3.0.0"), "[NonBinaryGender]", () => true);
         }
 
         public override string SettingsCategory()
