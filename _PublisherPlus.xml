@@ -3,7 +3,6 @@
   <Excluded>
     <exclude>.editorconfig</exclude>
     <exclude>.git</exclude>
-    <exclude>.rimignore</exclude>
     <exclude>.vs</exclude>
     <exclude>NonBinaryGender.sln</exclude>
     <exclude>Source</exclude>

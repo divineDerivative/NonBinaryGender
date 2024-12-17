@@ -14,26 +14,26 @@
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\1.4\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;v1_4</DefineConstants>
+    <OutputPath>..\1.4\Assemblies\</OutputPath>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>v1_4</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;v1_5</DefineConstants>
+    <OutputPath>..\1.5\Assemblies\</OutputPath>
     <DebugType>portable</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>v1_5</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <Choose>
     <When Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
@@ -41,12 +41,18 @@
         <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
-      </ItemGroup>
-      <ItemGroup>
         <PackageReference Include="Lib.Harmony">
           <Version>2.2.2.0</Version>
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
+        <Reference Include="AlienRace">
+          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="PortraitsOfTheRim">
+          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </When>
     <When Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
@@ -54,52 +60,41 @@
         <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*-*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
-      </ItemGroup>
-      <ItemGroup>
         <PackageReference Include="Lib.Harmony" Version="2.3.*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
+        <Reference Include="AlienRace">
+          <HintPath>..\..\..\..\..\workshop\content\294100\2640710953\1.5\Assemblies\AlienRace.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="PortraitsOfTheRim">
+          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </When>
   </Choose>
   <ItemGroup>
-    <Reference Include="AlienRace" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="AlienRace" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2640710953\1.5\Assemblies\AlienRace.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0DivineFramework">
+      <HintPath>..\..\DivineFramework\Assemblies\0DivineFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CharacterEditor">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\1874644848\v1.4\Assemblies\CharacterEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\1874644848\v1.4\Assemblies\CharacterEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="FacialAnimation">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MH Android Tiers Core">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2974536022\1.4\Assemblies\MH Android Tiers Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\2974536022\1.4\Assemblies\MH Android Tiers Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PawnEditor">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\3219801790\Assemblies\PawnEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\Assemblies\PawnEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="PortraitsOfTheRim" Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PortraitsOfTheRim" Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-      <HintPath>..\..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DefModExtension.cs" />
@@ -137,16 +132,13 @@
     <Compile Include="WorldComp_EnbyLeaderTitle.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Patches\ForLater\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>robocopy "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NonBinaryGender" "C:\RimWorld_Debug\Mods\NonBinaryGender" /r:1 /s /xo /xd Source .vs .git /xf *.sln .gitattributes .gitignore .editorconfig *.md || set errorlist=0
-robocopy "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NonBinaryGender" "C:\RimWorld_Debug_v1_4\Mods\NonBinaryGender" /r:1 /s /xo /xd Source .vs .git /xf *.sln .gitattributes .gitignore .editorconfig *.md || set errorlist=0</PostBuildEvent>
+    <PostBuildEvent>call "$(SolutionDir)..\DivineFramework\PostBuild.bat" "$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="ForcePostBuild" AfterTargets="Build">
+    <Touch Files="$(IntermediateOutputPath)TouchMe.txt" />
+  </Target>
 </Project>
