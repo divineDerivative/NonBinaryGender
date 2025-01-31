@@ -56,6 +56,21 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
+
+#if v1_5
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(GenderUtility), nameof(GenderUtility.GetGenderNoun))]
+        public static bool GetGenderNounPatch(ref string __result, Gender gender)
+        {
+            if (gender.IsEnby())
+            {
+                __result = "ProItNoun".Translate();
+                return false;
+            }
+            return true;
+        }
+#endif
+
         //Displays the non-binary gender icon in various places
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenderUtility), nameof(GenderUtility.GetIcon))]
