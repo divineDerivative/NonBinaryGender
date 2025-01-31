@@ -58,7 +58,7 @@ namespace NonBinaryGender.Patches
         {
             if (!__result && me != other)
             {
-                __result = InRelationViaParents(me, other, PawnRelationDefOf.Sibling.Worker) || InRelationViaParents(me, other, PawnRelationDefOf.HalfSibling.Worker);
+                __result = InRelationViaParents(me, other, PawnRelationDefOf.Sibling.Worker, false) || InRelationViaParents(me, other, PawnRelationDefOf.HalfSibling.Worker, false);
             }
         }
 
