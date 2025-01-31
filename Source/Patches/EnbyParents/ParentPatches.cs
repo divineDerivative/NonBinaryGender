@@ -34,6 +34,7 @@ namespace NonBinaryGender.Patches
 
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_Parent), nameof(PawnRelationWorker_Parent.GenerationChance))]
+        [HarmonyBefore(["eth0net.AnimalHemogen"])]
         public static IEnumerable<CodeInstruction> GenerationChanceTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
             Label? biotechLabel = new();
@@ -90,6 +91,7 @@ namespace NonBinaryGender.Patches
 
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
+        [HarmonyBefore(["eth0net.AnimalHemogen"])]
         public static IEnumerable<CodeInstruction> GenderCheckTranspiler(IEnumerable<CodeInstruction> instructions)
         {
             //Replace != Gender.Male with == Gender.Female and != Gender.Female with == Gender.Male

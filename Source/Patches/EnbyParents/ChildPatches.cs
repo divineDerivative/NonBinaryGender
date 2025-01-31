@@ -13,6 +13,7 @@ namespace NonBinaryGender.Patches
     {
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_Child), nameof(PawnRelationWorker_Child.GenerationChance))]
+        [HarmonyBefore(["eth0net.AnimalHemogen"])]
         public static IEnumerable<CodeInstruction> GenerationChanceTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator ilg)
         {
             Label? biotechLabel = new();
