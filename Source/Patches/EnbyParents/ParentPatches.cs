@@ -191,6 +191,27 @@ namespace NonBinaryGender.Patches
         }
 
         //Might need to patch ResolveMyName
+    }
+
+    [HarmonyPatch]
+    public static class SetParent_Patches
+    {
+        internal static bool skip = false;
+        public static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return AccessTools.Method(typeof(ParentRelationUtility), nameof(ParentRelationUtility.SetMother));
+            yield return AccessTools.Method(typeof(ParentRelationUtility), nameof(ParentRelationUtility.SetFather));
+        }
+
+        public static void Prefix()
+        {
+            skip = true;
+        }
+
+        public static void Postfix()
+        {
+            skip = false;
+        }
 
         /// <summary>
         /// Sets <paramref name="newParent"/> as the non-binary parent of <paramref name="pawn"/>. Will remove an existing non-binary parent first.
@@ -215,6 +236,26 @@ namespace NonBinaryGender.Patches
                 {
                     pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, newParent);
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch]
+    public static class GetParent_Patches
+    {
+        public static IEnumerable<MethodBase> TargetMethods()
+        {
+            yield return AccessTools.Method(typeof(ParentRelationUtility), nameof(ParentRelationUtility.GetMother));
+            yield return AccessTools.Method(typeof(ParentRelationUtility), nameof(ParentRelationUtility.GetFather));
+        }
+
+        [HarmonyPostfix]
+        public static void Postfix(Pawn pawn, ref Pawn __result)
+        {
+            //We don't want to interfere if this is being called from within SetMother or SetFather
+            if (!SetParent_Patches.skip)
+            {
+                __result ??= pawn.GetParent((Gender)3);
             }
         }
     }
