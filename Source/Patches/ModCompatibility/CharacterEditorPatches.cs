@@ -12,12 +12,13 @@ namespace NonBinaryGender.Patches
 {
     internal static class CharacterEditorPatches
     {
+#if v1_4
         private static Type CEditor;
         private static Type NameTool;
         private static Type BlockPerson;
         private static Type BlockSocial;
         private static Type DialogChoosePawn;
-#if v1_4
+
         internal static void PatchCE(this Harmony harmony)
         {
             //Need to grab these because everything in CE is internal/private

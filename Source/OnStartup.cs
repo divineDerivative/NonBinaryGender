@@ -1,5 +1,4 @@
-﻿using DivineFramework;
-using HarmonyLib;
+﻿using HarmonyLib;
 using NonBinaryGender.Patches;
 using Verse;
 

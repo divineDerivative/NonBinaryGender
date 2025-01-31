@@ -27,13 +27,13 @@ namespace NonBinaryGender
         {
             handler.RegisterNewRow().AddLabel(() => "Enby.EnbyChance".Translate() + (int)(enbyChance * 100f) + "%");
             handler.RegisterNewRow()
-                .AddElement(NewElement.Slider<float>()
+                .Add(NewElement.Slider<float>()
                 .WithReference(this, "enbyChance", enbyChance)
                 .MinMax(0f, 1f), "ChanceSlider");
             UIContainer buttonRow = handler.RegisterNewRow("ButtonRow", 2f);
             buttonRow.AddLabel("Enby.GenderNeutralNames".Translate)
                 .WithTooltip("Enby.GenderNeutralNamesTooltip".Translate);
-            buttonRow.AddElement(NewElement.Button(GenderNeutralButtonAction)
+            buttonRow.Add(NewElement.Button(GenderNeutralButtonAction)
                 .WithLabel(() => neutralNames.ToString()));
             handler.RegisterNewRow().AddLabel(() => Names.OptionTooltip(neutralNames, true));
 
@@ -64,7 +64,7 @@ namespace NonBinaryGender
         public NonBinaryGenderMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<Settings>();
-            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new("0.3.0.0"), "[NonBinaryGender]", () => true);
+            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new("0.8.1.0"), "[NonBinaryGender]", () => true);
         }
 
         public override string SettingsCategory()
