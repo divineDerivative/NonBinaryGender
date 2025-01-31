@@ -3,6 +3,7 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using Verse;
 
 namespace NonBinaryGender.Patches
@@ -33,22 +34,42 @@ namespace NonBinaryGender.Patches
             return false;
         }
 
-        [HarmonyPostfix]
+        //Add check for shared non-binary parent
+        [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_HalfSibling), nameof(PawnRelationWorker_HalfSibling.InRelation))]
-        public static void HalfSiblingPostfix(Pawn me, Pawn other, ref bool __result)
+        public static IEnumerable<CodeInstruction> HalfSiblingTranspiler(IEnumerable<CodeInstruction> instructions)
         {
-            //If it's already true we don't need to do anything
-            if (!__result && me != other)
+            Label? returnTrue = new();
+            List<CodeInstruction> codes = instructions.ToList();
+            for (int i = 0; i < instructions.Count(); i++)
             {
-                //But we do still need to check if they're full siblings first
-                if (!PawnRelationDefOf.Sibling.Worker.InRelation(me, other))
+                CodeInstruction code = codes[i];
+                CodeInstruction nextCode = codes[i + 1];
+                if (code.Calls(typeof(ParentRelationUtility), nameof(ParentRelationUtility.HasSameMother)) && nextCode.Branches(out returnTrue))
                 {
-                    //Have to check against all enby parents because HasSameParent will only grab one; if one of them has two enby parents, it might not grab the shared one
-                    IEnumerable<Pawn> myParents = me.GetParents().Where(p => p.IsEnby());
-                    IEnumerable<Pawn> yourParents = other.GetParents().Where(p => p.IsEnby());
-
-                    __result = myParents.SharesElementWith(yourParents);
+                    break;
                 }
+            }
+
+            bool FatherFound = false;
+            foreach (CodeInstruction code in instructions)
+            {
+                if (FatherFound && code.Branches(out _))
+                {
+                    yield return new CodeInstruction(OpCodes.Brtrue_S, returnTrue);
+                    //me.HasSameParent(other, (Gender)3)
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Ldarg_2);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_3);
+                    yield return CodeInstruction.Call(typeof(ParentRelationUtility), "HasSameParent");
+                    FatherFound = false;
+                }
+                if (code.Calls(typeof(ParentRelationUtility), nameof(ParentRelationUtility.HasSameFather)))
+                {
+                    FatherFound = true;
+                }
+
+                yield return code;
             }
         }
 
