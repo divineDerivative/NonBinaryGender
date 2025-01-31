@@ -98,7 +98,7 @@
 		<xpath>Defs/PawnRelationDef[defName="GranduncleOrGrandaunt"]</xpath>
 		<value>
 			<li Class="NonBinaryGender.EnbyInfo">
-				<labelEnby>great grandpibling</labelEnby>
+				<labelEnby>grandpibling</labelEnby>
 			</li>
 		</value>
 	</Operation>
