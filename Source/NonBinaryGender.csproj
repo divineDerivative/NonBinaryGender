@@ -32,6 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <DefineConstants>v1_5</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <DefineConstants>v1_6</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
@@ -57,14 +66,32 @@
     </When>
     <When Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
       <ItemGroup>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*-*">
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*">
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Lib.Harmony" Version="2.3.3">
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <Reference Include="AlienRace">
+          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="PortraitsOfTheRim">
+          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
+      <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
         <PackageReference Include="Lib.Harmony" Version="2.3.*">
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
         <Reference Include="AlienRace">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2640710953\1.5\Assemblies\AlienRace.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="PortraitsOfTheRim">
