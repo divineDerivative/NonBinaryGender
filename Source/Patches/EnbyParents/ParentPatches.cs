@@ -101,7 +101,7 @@ namespace NonBinaryGender.Patches
             foreach (CodeInstruction code in instructions)
             {
                 //We want to do our stuff at every other gender check
-                if (code.LoadsField(InfoHelper.genderField))
+                if (code.LoadsField(InfoHelper.genderField) || code.LoadsField(InfoHelper.genderField, true))
                 {
                     genderFound = !genderFound;
                 }
