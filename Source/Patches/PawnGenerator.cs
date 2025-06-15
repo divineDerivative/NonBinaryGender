@@ -90,7 +90,6 @@ namespace NonBinaryGender.Patches
         //This inserts a check against the enby chance when choosing a new pawn's gender
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnGenerator), "TryGenerateNewPawnInternal")]
-        [HarmonyDebug]
         public static IEnumerable<CodeInstruction> TryGenerateNewPawnInternalTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
         {
             MethodInfo RaceProps = typeof(Pawn).GetProperty("RaceProps").GetGetMethod();
@@ -141,6 +140,7 @@ namespace NonBinaryGender.Patches
                 //We check for animals because we don't want non-binary cows
                 //if (!pawn.RaceProps.Animal
                 new CodeInstruction(OpCodes.Ldloc_0).WithLabels(startMyStuff),
+                CodeInstruction.LoadField(compilerType, "pawn"),
                 new CodeInstruction(OpCodes.Callvirt, RaceProps),
                 new CodeInstruction(OpCodes.Callvirt, Animal),
                 new CodeInstruction(OpCodes.Brtrue, notAnimalorEnby),
@@ -152,6 +152,7 @@ namespace NonBinaryGender.Patches
                 new CodeInstruction(OpCodes.Bge_Un, notAnimalorEnby),
                 //pawn.gender = 3;
                 new CodeInstruction(OpCodes.Ldloc_0),
+                CodeInstruction.LoadField(compilerType, "pawn"),
                 new CodeInstruction(OpCodes.Ldc_I4_3),
                 new CodeInstruction(OpCodes.Stfld, InfoHelper.genderField),
                 new CodeInstruction(OpCodes.Br_S, doneWithGender)
