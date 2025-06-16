@@ -38,6 +38,10 @@ namespace NonBinaryGender
             {
                 harmony.PatchPE();
             }
+            if (ModsConfig.IsActive("Mlie.RFTribalPawnNames"))
+            {
+                harmony.Patch(AccessTools.Method("RTPN_NameBank:NamesFor"), prefix: new HarmonyMethod(typeof(NameBank_Patches), nameof(NameBank_Patches.NamesForPatch)));
+            }
             //Add names if needed
             if (NonBinaryGenderMod.settings.neutralNames != GenderNeutralNameOption.None)
             {
