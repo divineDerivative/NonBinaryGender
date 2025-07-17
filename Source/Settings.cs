@@ -64,7 +64,7 @@ namespace NonBinaryGender
         public NonBinaryGenderMod(ModContentPack content) : base(content)
         {
             settings = GetSettings<Settings>();
-            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new("0.9.0.10"), "[NonBinaryGender]", () => true);
+            ModManagement.RegisterMod("NonBinaryGenderModName", typeof(NonBinaryGenderMod).Assembly.GetName().Name, new(FrameworkVersionInfo.Version), "[NonBinaryGender]", () => true);
         }
 
         public override string SettingsCategory()
