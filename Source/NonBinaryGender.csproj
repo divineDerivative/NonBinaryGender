@@ -80,6 +80,10 @@
           <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="PawnEditor">
+          <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\1.5\Assemblies\PawnEditor.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </When>
     <When Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
@@ -96,6 +100,10 @@
         </Reference>
         <Reference Include="PortraitsOfTheRim">
           <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="PawnEditor">
+          <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\1.6\Assemblies\PawnEditor.dll</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
@@ -116,10 +124,6 @@
     </Reference>
     <Reference Include="MH Android Tiers Core">
       <HintPath>..\..\..\..\..\workshop\content\294100\2974536022\1.4\Assemblies\MH Android Tiers Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PawnEditor">
-      <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\Assemblies\PawnEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
