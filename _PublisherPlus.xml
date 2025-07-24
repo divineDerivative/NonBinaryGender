@@ -3,6 +3,7 @@
   <Excluded>
     <exclude>.editorconfig</exclude>
     <exclude>.git</exclude>
+    <exclude>.idea</exclude>
     <exclude>.vs</exclude>
     <exclude>NonBinaryGender.sln</exclude>
     <exclude>Source</exclude>
