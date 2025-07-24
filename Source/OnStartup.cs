@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using DivineFramework;
+using HarmonyLib;
 using NonBinaryGender.Patches;
 using Verse;
 
@@ -48,5 +49,11 @@ namespace NonBinaryGender
                 Names.AddUnisexNames();
             }
         }
+    }
+
+    internal class Logger : Logging
+    {
+        public static readonly Logger LogUtil = new Logger();
+        private Logger() : base("[NonBinaryGender]", () => true) { }
     }
 }

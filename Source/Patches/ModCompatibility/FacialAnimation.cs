@@ -1,4 +1,4 @@
-﻿using DivineFramework;
+﻿using static NonBinaryGender.Logger;
 using FacialAnimation;
 using HarmonyLib;
 using System;

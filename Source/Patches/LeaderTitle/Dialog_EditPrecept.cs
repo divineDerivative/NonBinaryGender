@@ -1,4 +1,4 @@
-﻿using DivineFramework;
+﻿using static NonBinaryGender.Logger;
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
