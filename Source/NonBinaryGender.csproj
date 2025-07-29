@@ -146,6 +146,7 @@
     <Compile Include="Patches\ModCompatibility\FacialAnimation.cs" />
     <Compile Include="Patches\GenderUtility.cs" />
     <Compile Include="Patches\ModCompatibility\HARPatches.cs" />
+    <Compile Include="Patches\ModCompatibility\MiscPatches.cs" />
     <Compile Include="Patches\ModCompatibility\PawnEditorPatches.cs" />
     <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
     <Compile Include="Patches\NameBank.cs" />

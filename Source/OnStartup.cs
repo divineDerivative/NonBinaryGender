@@ -43,6 +43,10 @@ namespace NonBinaryGender
             {
                 harmony.Patch(AccessTools.Method("RTPN_NameBank:NamesFor"), prefix: new HarmonyMethod(typeof(NameBank_Patches), nameof(NameBank_Patches.NamesForPatch)));
             }
+            if (ModsConfig.IsActive("Mlie.RationalRomance"))
+            {
+                harmony.PatchRationalRomance();
+            }
             //Add names if needed
             if (NonBinaryGenderMod.settings.neutralNames != GenderNeutralNameOption.None)
             {
