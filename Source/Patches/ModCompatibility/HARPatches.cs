@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 
-namespace NonBinaryGender
+namespace NonBinaryGender.Patches
 {
     public static class HARPatches
     {

@@ -1,8 +1,7 @@
 ﻿using System;
 using HarmonyLib;
-using NonBinaryGender.Patches;
 
-namespace NonBinaryGender
+namespace NonBinaryGender.Patches
 {
     public static class MiscPatches
     {

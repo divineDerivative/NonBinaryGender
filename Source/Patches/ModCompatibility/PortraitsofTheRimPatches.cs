@@ -5,7 +5,7 @@ using System;
 using System.Reflection;
 using Verse;
 
-namespace NonBinaryGender
+namespace NonBinaryGender.Patches
 {
     public static class PortraitsofTheRimPatches
     {
