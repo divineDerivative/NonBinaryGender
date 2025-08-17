@@ -139,6 +139,7 @@
     <Compile Include="Patches\BackstoryDef.cs" />
     <Compile Include="OnStartup.cs" />
     <Compile Include="Patches\LeaderTitle\Dialog_EditPrecept.cs" />
+    <Compile Include="Patches\LeaderTitle\PreceptUtility.cs" />
     <Compile Include="Patches\LeaderTitle\Precept_Role.cs" />
     <Compile Include="Patches\ModCompatibility\ATReforgedPatches.cs" />
     <Compile Include="Patches\ModCompatibility\CharacterEditorPatches.cs" />

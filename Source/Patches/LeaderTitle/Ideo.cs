@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using Verse;
 
 namespace NonBinaryGender.Patches
 {
@@ -10,7 +9,8 @@ namespace NonBinaryGender.Patches
         [HarmonyPatch(typeof(Ideo), nameof(Ideo.CopyTo))]
         public static void CopyToPostfix(Ideo ideo, ref Ideo __instance)
         {
-            WorldComp_EnbyLeaderTitle comp = Find.World.GetComponent<WorldComp_EnbyLeaderTitle>();
+            WorldComp_EnbyLeaderTitle comp = PreceptUtility.GetWorldComp();
+            //Using GetTitleFor and SetTitleFor would cause the comp to be retrieved twice, so we just do it manually here
             string oldName = comp.TitlesPerIdeo[__instance];
             comp.TitlesPerIdeo.Add(ideo, oldName);
         }

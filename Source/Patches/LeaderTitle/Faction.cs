@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using System.Collections.Generic;
 using Verse;
 
 namespace NonBinaryGender.Patches
@@ -12,13 +11,13 @@ namespace NonBinaryGender.Patches
         {
             if (___leader != null && ___leader.gender.IsEnby())
             {
-                Dictionary<Ideo, string> list = Find.World.GetComponent<WorldComp_EnbyLeaderTitle>().TitlesPerIdeo;
-                if (___ideos != null && ___ideos.PrimaryIdeo != null)
+                if (___ideos?.PrimaryIdeo != null)
                 {
-                    __result = list[___ideos.PrimaryIdeo];
+                    __result = ___ideos.PrimaryIdeo.GetTitleFor();
                     return false;
                 }
             }
+
             return true;
         }
     }

@@ -1,8 +1,6 @@
-﻿using static NonBinaryGender.Logger;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -115,7 +113,7 @@ namespace NonBinaryGender.Patches
 
             if (enbyLabel == string.Empty)
             {
-                enbyLabel = comp.TitlesPerIdeo[precept.ideo];
+                enbyLabel = precept.ideo.GetTitleFor();
             }
 
             enbyLabel = Widgets.TextField(new(num, num3, num2, EditFieldHeight), enbyLabel, 99999, ValidSymbolRegex);
@@ -135,8 +133,7 @@ namespace NonBinaryGender.Patches
         {
             if (___precept.def.leaderRole)
             {
-                WorldComp_EnbyLeaderTitle comp = Find.World.GetComponent<WorldComp_EnbyLeaderTitle>();
-                comp.TitlesPerIdeo[___precept.ideo] = enbyLabel;
+                ___precept.ideo.SetTitleFor(enbyLabel);
             }
         }
 

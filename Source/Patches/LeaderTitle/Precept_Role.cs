@@ -11,9 +11,10 @@ namespace NonBinaryGender.Patches
         {
             if (___def.leaderRole && p.IsEnby())
             {
-                __result = Find.World.GetComponent<WorldComp_EnbyLeaderTitle>().TitlesPerIdeo[___ideo];
+                __result = ___ideo.GetTitleFor();
                 return false;
             }
+
             return true;
         }
     }
