@@ -112,6 +112,6 @@
 		<texPath>Things/Pawn/Humanlike/Skins/Decrepit</texPath>
 		<shader>Map/Transparent</shader>
 		<probability>0.05</probability>
-		<gender>Male</gender>
+		<gender>3</gender>
 	</FacialAnimation.SkinTypeDef>
 </Defs>
