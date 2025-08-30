@@ -8,6 +8,7 @@
 		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
 		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
 		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
+		<li IfModActive="Reel.FacialAnims">ModSupport/ReelFacialAnims</li>
 	</v1.4>
 	<v1.5>
 		<li>/</li>
@@ -17,6 +18,7 @@
 		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
 		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
 		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
+		<li IfModActive="Reel.FacialAnims">ModSupport/ReelFacialAnims</li>
 	</v1.5>
 	<v1.6>
 		<li>/</li>
@@ -26,5 +28,6 @@
 		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
 		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
 		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
+		<li IfModActive="Reel.FacialAnims">ModSupport/ReelFacialAnims</li>
 	</v1.6>
 </loadFolders>
