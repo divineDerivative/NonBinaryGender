@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+<!-- Remove existing facial features and options -->
+    <Operation Class="PatchOperationSequence">
+        <operations>
+        <!-- Eyes -->
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.EyeballTypeDef[defName = "EyeDullNonBinary"]</xpath>
+            </li>
+            <!-- Lids -->
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidPointyNonBinary"]</xpath>
+            </li>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidFlashyNonBinary"]</xpath>
+            </li>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidQuiteNonBinary"]</xpath>
+            </li>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidSleepyNonBinary"]</xpath>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
