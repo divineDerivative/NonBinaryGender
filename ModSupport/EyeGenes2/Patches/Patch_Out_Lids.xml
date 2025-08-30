@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+    <!-- Remove lids, since EyeGenes2 replaces them with eyeballs -->
+    <!-- It adds non-gendered versions of Flirty and Hardened, so I don't need to make enby versions -->
+        <operations>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidFlirty_Enby"]</xpath>
+            </li>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/FacialAnimation.LidTypeDef[defName = "LidHardened_Enby"]</xpath>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
