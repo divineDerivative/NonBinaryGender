@@ -131,6 +131,7 @@
     <Compile Include="DefModExtension.cs" />
     <Compile Include="Patches\EnbyParents\ChildPatches.cs" />
     <Compile Include="Patches\EnbyParents\SiblingPatches.cs" />
+    <Compile Include="Patches\GeneUtility.cs" />
     <Compile Include="Patches\LeaderTitle\Faction.cs" />
     <Compile Include="Patches\LeaderTitle\Ideo.cs" />
     <Compile Include="Patches\LeaderTitle\IdeoFoundation.cs" />
