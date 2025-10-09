@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/XenotypeDef[defName='ERN_AuRaRaen']/genes</xpath>
+		<value>
+			<li>ERN_NBAuRaHornRaen</li>
+			<li>ERN_NBAuRaHornRaen1</li>
+			<li>ERN_NBAuRaHornRaen2</li>
+			<li>ERN_NBAuRaHornRaen3</li>
+			<li>ERN_NBAuRaHornRaen4</li>
+			<li>ERN_NBAuRaHornRaen5</li>
+			<li>ERN_NBAuRaHornRaen6</li>
+			<li>ERN_NBAuRaHornRaen7</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/XenotypeDef[defName='ERN_AuRaXaela']/genes</xpath>
+		<value>
+			<li>ERN_NBAuRaHornXaela</li>
+			<li>ERN_NBAuRaHornXaela1</li>
+			<li>ERN_NBAuRaHornXaela2</li>
+			<li>ERN_NBAuRaHornXaela3</li>
+			<li>ERN_NBAuRaHornXaela4</li>
+			<li>ERN_NBAuRaHornXaela5</li>
+			<li>ERN_NBAuRaHornXaela6</li>
+			<li>ERN_NBAuRaHornXaela7</li>
+		</value>
+	</Operation>
+</Patch>

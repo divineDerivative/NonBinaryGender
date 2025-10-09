@@ -1,0 +1,531 @@
+<?xml version="1.0" ?>
+<Defs>
+  <GeneDef ParentName="MAuRaRaenHornBase" Name="EnbyAuRaHornBase" Abstract="True">
+    <modExtensions>
+      <li Class="VEF.Genes.GeneExtension">
+        <forGenderOnly>3</forGenderOnly>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <!--================= MALE AURA RAEN ====================-->
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen4</defName>
+    <label>au ra horns</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns4</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Male_Raen_Horn</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen5</defName>
+    <label>au ra horns pointed</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns5</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Male_Raen_Horn1</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen6</defName>
+    <label>au ra horns large</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns6</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Male_Raen_Horn2</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen7</defName>
+    <label>au ra horns curled</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns7</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Male_Raen_Horn3</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!--================= FEMALE AURA RAEN ====================-->
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen</defName>
+    <label>au ra horns</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Female_Raen_Horn</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen1</defName>
+    <label>au ra horns fins</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns1</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Female_Raen_Horn1</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen2</defName>
+    <label>au ra horns large</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns2</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Female_Raen_Horn2</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornRaen3</defName>
+    <label>au ra horns curled</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaRaen/AuraRaenHorns3</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaRaen/Horns/Female_Raen_Horn3</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!--================= MALE AURA Xaela ====================-->
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela4</defName>
+    <label>au ra horns</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns4</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Male_Xaela_Horn</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela5</defName>
+    <label>au ra horns pointed</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns5</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Male_Xaela_Horn1</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela6</defName>
+    <label>au ra horns large</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns6</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Male_Xaela_Horn2</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela7</defName>
+    <label>au ra horns curled</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns7</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Male_Xaela_Horn3</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <!--================= FEMALE AURA Xaela ====================-->
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela</defName>
+    <label>au ra horns</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Female_Xaela_Horn</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela1</defName>
+    <label>au ra horns fins</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns1</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Female_Xaela_Horn1</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela2</defName>
+    <label>au ra horns large</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns2</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Female_Xaela_Horn2</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="EnbyAuRaHornBase">
+    <defName>ERN_NBAuRaHornXaela3</defName>
+    <label>au ra horns curled</label>
+    <iconPath>UI/Icons/Genes/ERN_AuRaXaela/AuraXaelaHorns3</iconPath>
+    <renderNodeProperties Inherit="False">
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/ERN_AuRaXaela/Horns/Female_Xaela_Horn3</texPath>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <useSkinShader>false</useSkinShader>
+        <colorType>Hair</colorType>
+        <drawData>
+          <defaultData>
+            <layer>80</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0, -0.0002, 0)</offset>
+            <layer>-5</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(0, 0, 0)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(0, 0, 0)</offset>
+          </dataEast>
+        </drawData>
+        <parentTagDef>Head</parentTagDef>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+</Defs>

@@ -32,5 +32,6 @@
 		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
 		<li IfModActive="Reel.FacialAnims">ModSupport/ReelFacialAnims</li>
 		<li IfModActive="Oppey.EyeGenes2">ModSupport/EyeGenes2</li>
+		<li IfModActive="Erin.FFXIVRaces">ModSupport/VEF - Gendered Genes/Erin's FF Races</li>
 	</v1.6>
 </loadFolders>
