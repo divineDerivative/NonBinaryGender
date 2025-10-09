@@ -13,29 +13,10 @@ namespace NonBinaryGender.Patches
         [HarmonyPatch(typeof(GeneUtility), nameof(GeneUtility.ToBodyType))]
         public static void ToBodyTypePostfix(GeneticBodyType bodyType, Pawn pawn, ref BodyTypeDef __result)
         {
-            if (forGenesChanged && bodyType == GeneticBodyType.Standard)
+            if (!PortraitsofTheRimPatches.forMatches && pawn.IsEnby() && bodyType == GeneticBodyType.Standard)
             {
                 __result = Rand.Bool ? BodyTypeDefOf.Female : BodyTypeDefOf.Male;
             }
-        }
-        
-        static bool forGenesChanged = false;
-
-        [HarmonyPrefix]
-        [HarmonyPatch(typeof(Pawn_GeneTracker), "Notify_GenesChanged")]
-        public static void Notify_GenesChangedPrefix(Pawn_GeneTracker __instance)
-        {
-            if (__instance.pawn.IsEnby())
-            {
-                forGenesChanged = true;
-            }
-        }
-
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(Pawn_GeneTracker), "Notify_GenesChanged")]
-        public static void Notify_GenesChangedPostfix(Pawn_GeneTracker __instance)
-        {
-            forGenesChanged = false;
         }
     }
 }
