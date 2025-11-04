@@ -34,15 +34,16 @@ namespace NonBinaryGender.Patches
             return false;
         }
 
-#if v1_5
+#if !v1_4
         //Add check for shared non-binary parent
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_HalfSibling), nameof(PawnRelationWorker_HalfSibling.InRelation))]
         public static IEnumerable<CodeInstruction> HalfSiblingTranspiler(IEnumerable<CodeInstruction> instructions)
         {
+            //This is just to find the return true label, so we can add a jump to it
             Label? returnTrue = new();
             List<CodeInstruction> codes = instructions.ToList();
-            for (int i = 0; i < instructions.Count(); i++)
+            for (int i = 0; i < codes.Count; i++)
             {
                 CodeInstruction code = codes[i];
                 CodeInstruction nextCode = codes[i + 1];
@@ -52,10 +53,10 @@ namespace NonBinaryGender.Patches
                 }
             }
 
-            bool FatherFound = false;
+            bool fatherFound = false;
             foreach (CodeInstruction code in instructions)
             {
-                if (FatherFound && code.Branches(out _))
+                if (fatherFound && code.Branches(out _))
                 {
                     yield return new CodeInstruction(OpCodes.Brtrue_S, returnTrue);
                     //me.HasSameParent(other, (Gender)3)
@@ -63,11 +64,11 @@ namespace NonBinaryGender.Patches
                     yield return new CodeInstruction(OpCodes.Ldarg_2);
                     yield return new CodeInstruction(OpCodes.Ldc_I4_3);
                     yield return CodeInstruction.Call(typeof(ParentRelationUtility), "HasSameParent");
-                    FatherFound = false;
+                    fatherFound = false;
                 }
                 if (code.Calls(typeof(ParentRelationUtility), nameof(ParentRelationUtility.HasSameFather)))
                 {
-                    FatherFound = true;
+                    fatherFound = true;
                 }
 
                 yield return code;

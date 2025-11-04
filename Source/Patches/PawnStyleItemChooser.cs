@@ -34,7 +34,7 @@ namespace NonBinaryGender.Patches
                     __result = 0f;
                     return false;
                 }
-#if v1_5
+#if !v1_4
                 if (ModsConfig.AnomalyActive && pawn.IsMutant && styleItem.requiredMutant != null && pawn.mutant.Def != styleItem.requiredMutant)
                 {
                     __result = 0f;
