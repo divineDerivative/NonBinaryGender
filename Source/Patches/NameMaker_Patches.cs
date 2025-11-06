@@ -1,8 +1,9 @@
 using HarmonyLib;
 using RimWorld;
-using Verse;
 using System.Collections.Generic;
 using System.Reflection;
+using Verse;
+using static NonBinaryGender.Logger;
 
 namespace NonBinaryGender.Patches
 {
@@ -14,11 +15,89 @@ namespace NonBinaryGender.Patches
         {
             if (gender.IsEnby())
             {
-                if (__instance.GetModExtension<EnbyNames>() is EnbyNames extension && extension.nameMakerEnby != null)
+                //if there is only the main name maker, I don't need to do anything. I only need to interfere if there are separate male and female makers
+                bool hasSeparateMakers = false;
+                RulePackDef maleMaker = null;
+                RulePackDef femaleMaker = null;
+
+                //Have to check each def type separately
+                if (__instance is PawnKindDef pawnKindDef)
                 {
-                    __result = extension.nameMakerEnby;
+                    if (pawnKindDef.nameMakerFemale is not null)
+                    {
+                        hasSeparateMakers = true;
+                        maleMaker = pawnKindDef.nameMaker;
+                        femaleMaker = pawnKindDef.nameMakerFemale;
+                    }
                 }
-                return false;
+                else if (__instance is XenotypeDef xenotypeDef)
+                {
+                    if (xenotypeDef.nameMakerFemale is not null)
+                    {
+                        hasSeparateMakers = true;
+                        maleMaker = xenotypeDef.nameMaker;
+                        femaleMaker = xenotypeDef.nameMakerFemale;
+                    }
+                }
+                else if (__instance is CultureDef cultureDef)
+                {
+                    if (cultureDef.pawnNameMakerFemale is not null)
+                    {
+                        hasSeparateMakers = true;
+                        maleMaker = cultureDef.pawnNameMaker;
+                        femaleMaker = cultureDef.pawnNameMakerFemale;
+                    }
+                }
+                else
+                {
+                    LogUtil.Error($"Tried to find name makers on an unknown Def type: {__instance.GetType()}");
+                    return true;
+                }
+
+                if (hasSeparateMakers)
+                {
+                    //Grab enby maker if it exists
+                    RulePackDef enbyMaker = __instance.GetModExtension<EnbyNames>()?.nameMakerEnby;
+                    Gender resultGender;
+
+                    if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.None)
+                    {
+                        //don't use the enby maker, pick between male or female
+                        resultGender = Rand.Bool ? Gender.Male : Gender.Female;
+                    }
+                    else if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.Only)
+                    {
+                        //just use the enby maker, if it exists
+                        if (enbyMaker is not null)
+                        {
+                            resultGender = (Gender)3;
+                        }
+                        //otherwise, randomly pick between male or female
+                        else
+                        {
+                            resultGender = Rand.Bool ? Gender.Male : Gender.Female;
+                        }
+                    }
+                    else
+                    {
+                        //randomly pick between all three genders
+                        int num = Rand.RangeInclusive(1, 3);
+                        resultGender = num switch
+                        {
+                            1 => Gender.Male,
+                            2 => Gender.Female,
+                            _ => (Gender)3,
+                        };
+                    }
+
+                    __result = resultGender switch
+                    {
+                        Gender.Male   => maleMaker,
+                        Gender.Female => femaleMaker,
+                        _             => enbyMaker,
+                    };
+                    return false;
+                }
             }
 
             return true;
