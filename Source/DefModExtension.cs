@@ -12,4 +12,9 @@ namespace NonBinaryGender
         public ThoughtDef lostThoughtEnby;
         public ThoughtDef killedThoughtEnby;
     }
+    
+    public class EnbyNames : DefModExtension
+    {
+        public RulePackDef nameMakerEnby;
+    }
 }
