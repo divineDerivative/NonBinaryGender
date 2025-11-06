@@ -15,7 +15,7 @@ namespace NonBinaryGender.Patches
         {
             if (gender.IsEnby())
             {
-                //if there is only the main name maker, I don't need to do anything. I only need to interfere if there are separate male and female makers
+                //If there is only the main name maker, I don't need to do anything. I only need to interfere if there are separate male and female makers
                 bool hasSeparateMakers = false;
                 RulePackDef maleMaker = null;
                 RulePackDef femaleMaker = null;
@@ -58,36 +58,28 @@ namespace NonBinaryGender.Patches
                 {
                     //Grab enby maker if it exists
                     RulePackDef enbyMaker = __instance.GetModExtension<EnbyNames>()?.nameMakerEnby;
-                    Gender resultGender;
+                    //Pick a binary gender to start
+                    Gender resultGender = Rand.Bool ? Gender.Male : Gender.Female;
 
-                    if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.None)
+                    if (enbyMaker is not null)
                     {
-                        //don't use the enby maker, pick between male or female
-                        resultGender = Rand.Bool ? Gender.Male : Gender.Female;
-                    }
-                    else if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.Only)
-                    {
-                        //just use the enby maker, if it exists
-                        if (enbyMaker is not null)
+                        if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.Only)
                         {
+                            //just use the enby maker, if it exists
                             resultGender = (Gender)3;
                         }
-                        //otherwise, randomly pick between male or female
-                        else
+                        else if (NonBinaryGenderMod.settings.neutralNames == GenderNeutralNameOption.Add)
                         {
-                            resultGender = Rand.Bool ? Gender.Male : Gender.Female;
+                            //randomly pick between all three genders
+                            int num = Rand.RangeInclusive(1, 3);
+                            resultGender = num switch
+                            {
+                                1 => Gender.Male,
+                                2 => Gender.Female,
+                                _ => (Gender)3,
+                            };
                         }
-                    }
-                    else
-                    {
-                        //randomly pick between all three genders
-                        int num = Rand.RangeInclusive(1, 3);
-                        resultGender = num switch
-                        {
-                            1 => Gender.Male,
-                            2 => Gender.Female,
-                            _ => (Gender)3,
-                        };
+                        //If setting is none we keep the binary gender we picked earlier
                     }
 
                     __result = resultGender switch
