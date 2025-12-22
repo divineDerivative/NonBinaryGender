@@ -57,7 +57,7 @@ namespace NonBinaryGender.Patches
         }
 
 
-#if v1_5
+#if !v1_4
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenderUtility), nameof(GenderUtility.GetGenderNoun))]
         public static bool GetGenderNounPatch(ref string __result, Gender gender)
