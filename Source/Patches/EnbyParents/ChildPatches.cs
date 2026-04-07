@@ -81,7 +81,7 @@ namespace NonBinaryGender.Patches
                 //ResolveMyName gets called in ResolveOtherParent if another parent exists, so we need to call it here if they don't
                 if (mother == null && father == null)
                 {
-                    ResolveMyName.Invoke(null, [request, other, mother ?? father]);
+                    ResolveMyName.Invoke(null, [request, other, null,]);
                 }
                 else
                 {
