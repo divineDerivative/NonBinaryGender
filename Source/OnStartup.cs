@@ -35,7 +35,7 @@ namespace NonBinaryGender
             {
                 harmony.PatchPortraits();
             }
-            if (ModsConfig.IsActive("ISOREX.PawnEditor") || ModsConfig.IsActive("ISOREX.PawnEditor_steam"))
+            if (ModsConfig.IsActive("ISOREX.PawnEditor") || ModsConfig.IsActive("ISOREX.PawnEditor_steam") || ModsConfig.IsActive("segaswolf.pawneditor.fork"))
             {
                 harmony.PatchPE();
             }
