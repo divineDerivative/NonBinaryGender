@@ -16,23 +16,35 @@ namespace NonBinaryGender
         public static bool IsEnby(this Gender gender) => (int)gender == 3;
         public static readonly Texture2D NonBinaryIcon = ContentFinder<Texture2D>.Get("UI/Gender/NonBinary", true);
         public static readonly Texture2D NonBinaryButton = ContentFinder<Texture2D>.Get("UI/Gender/NonBinaryButton", true);
-        public static MethodInfo GetParentMethod = AccessTools.Method(typeof(ParentRelationUtility), "GetParent");
+        private static readonly Func<Pawn, Gender, Pawn> GetParentMethod;
+
+        static EnbyUtility()
+        {
+            MethodInfo vanillaMethod = AccessTools.Method(typeof(ParentRelationUtility), "GetParent");
+            if (vanillaMethod != null)
+            {
+                GetParentMethod = AccessTools.MethodDelegate<Func<Pawn, Gender, Pawn>>(vanillaMethod);
+            }
+            else
+            {
+                MethodInfo copyMethod = AccessTools.Method(typeof(EnbyUtility), "GetParentCopy");
+                GetParentMethod = AccessTools.MethodDelegate<Func<Pawn, Gender, Pawn>>(copyMethod);
+            }
+        }
 
         /// <summary>
         /// Finds <paramref name="pawn"/>'s parent with the specified <paramref name="gender"/>.
         /// Uses the vanilla version if it exists.
         /// </summary>
-        /// <param name="pawn"></param>
-        /// <param name="gender"></param>
         /// <returns>The parent if it exists</returns>
         public static Pawn GetParent(this Pawn pawn, Gender gender)
         {
-            //Use the original method if it exists (1.5)
-            if (GetParentMethod != null)
-            {
-                return (Pawn)GetParentMethod.Invoke(null, [pawn, gender]);
-            }
-            //Otherwise replicate it
+            return GetParentMethod.Invoke(pawn, gender);
+        }
+
+        //Copy of the GetParent method that was introduced in 1.5
+        private static Pawn GetParentCopy(this Pawn pawn, Gender gender)
+        {
             if (!pawn.RaceProps.IsFlesh)
             {
                 return null;
@@ -41,6 +53,7 @@ namespace NonBinaryGender
             {
                 return null;
             }
+
             foreach (DirectPawnRelation relation in pawn.relations.DirectRelations)
             {
                 if (relation.def == PawnRelationDefOf.Parent && relation.otherPawn.gender == gender)
