@@ -52,7 +52,7 @@
     <stages>
       <li>
         <label>my parent {0} died</label>
-        <description>My parent died. He's gone forever.</description>
+        <description>My parent died. They're gone forever.</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
