@@ -95,11 +95,11 @@
           <ExcludeAssets>runtime</ExcludeAssets>
         </PackageReference>
         <Reference Include="AlienRace">
-          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.6\Assemblies\AlienRace.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="PortraitsOfTheRim">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.6\Assemblies\PortraitsOfTheRim.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="PawnEditor">
