@@ -1,109 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2437D019-B858-4D18-8AC7-A5BB59974208}</ProjectGuid>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NonBinaryGender</RootNamespace>
-    <AssemblyName>NonBinaryGender</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\1.4\Assemblies\</OutputPath>
-    <DebugType>portable</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <DefineConstants>v1_4</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\1.5\Assemblies\</OutputPath>
-    <DebugType>portable</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <DefineConstants>v1_5</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\1.6\Assemblies\</OutputPath>
-    <DebugType>portable</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <DefineConstants>v1_6</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Configurations>1.7</Configurations>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <PreBuildEvent>call "$(SolutionDir)..\DivineFramework\PreBuild.bat" "$(ProjectDir)" "$(RootNamespace)"</PreBuildEvent>
+    <PostBuildEvent>call "$(SolutionDir)..\DivineFramework\PostBuild.bat" "$(MSBuildProjectName)"</PostBuildEvent>
+    <AssemblyTitle>Non-Binary Gender</AssemblyTitle>
+    <Description>A RimWorld mod</Description>
+    <Product>Non-Binary Gender</Product>
+    <Copyright>Copyright © divineDerivative 2023</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.7|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\1.7\Assemblies\</OutputPath>
+    <LangVersion>latest</LangVersion>
+    <DefineConstants>v1_7</DefineConstants>
   </PropertyGroup>
   <Choose>
-    <When Condition="'$(Configuration)|$(Platform)' == '1.4|AnyCPU'">
+    <When Condition="'$(Configuration)|$(Platform)' == '1.7|AnyCPU'">
       <ItemGroup>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.4.*">
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-        <PackageReference Include="Lib.Harmony">
-          <Version>2.2.2.0</Version>
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
         <Reference Include="AlienRace">
-          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.4\Assemblies\AlienRace.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.7\Assemblies\AlienRace.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="PortraitsOfTheRim">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.4\Assemblies\PortraitsOfTheRim.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-    <When Condition="'$(Configuration)|$(Platform)' == '1.5|AnyCPU'">
-      <ItemGroup>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.*">
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-        <PackageReference Include="Lib.Harmony" Version="2.3.3">
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-        <Reference Include="AlienRace">
-          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="PortraitsOfTheRim">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.6\Assemblies\PortraitsOfTheRim.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="PawnEditor">
-          <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\1.5\Assemblies\PawnEditor.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-    <When Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
-      <ItemGroup>
-        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*">
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-        <PackageReference Include="Lib.Harmony" Version="2.3.*">
-          <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
-        <Reference Include="AlienRace">
-          <HintPath>..\..\..\..\..\workshop\content\294100\839005762\1.5\Assemblies\AlienRace.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="PortraitsOfTheRim">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2937991425\1.5\Assemblies\PortraitsOfTheRim.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="PawnEditor">
-          <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\1.6\Assemblies\PawnEditor.dll</HintPath>
+          <HintPath>..\..\..\..\..\workshop\content\294100\3219801790\1.7\Assemblies\PawnEditor.dll</HintPath>
           <Private>False</Private>
         </Reference>
       </ItemGroup>
@@ -128,55 +57,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefModExtension.cs" />
-    <Compile Include="Patches\EnbyParents\ChildPatches.cs" />
-    <Compile Include="Patches\EnbyParents\SiblingPatches.cs" />
-    <Compile Include="Patches\GeneUtility.cs" />
-    <Compile Include="Patches\LeaderTitle\Faction.cs" />
-    <Compile Include="Patches\LeaderTitle\Ideo.cs" />
-    <Compile Include="Patches\LeaderTitle\IdeoFoundation.cs" />
-    <Compile Include="Names.cs" />
-    <Compile Include="Patches\ApparelProperties.cs" />
-    <Compile Include="Patches\BackstoryDef.cs" />
-    <Compile Include="OnStartup.cs" />
-    <Compile Include="Patches\LeaderTitle\Dialog_EditPrecept.cs" />
-    <Compile Include="Patches\LeaderTitle\PreceptUtility.cs" />
-    <Compile Include="Patches\LeaderTitle\Precept_Role.cs" />
-    <Compile Include="Patches\ModCompatibility\ATReforgedPatches.cs" />
-    <Compile Include="Patches\ModCompatibility\CharacterEditorPatches.cs" />
-    <Compile Include="Patches\EnumPatches.cs" />
-    <Compile Include="Patches\ModCompatibility\FacialAnimation.cs" />
-    <Compile Include="Patches\GenderUtility.cs" />
-    <Compile Include="Patches\ModCompatibility\HARPatches.cs" />
-    <Compile Include="Patches\ModCompatibility\MiscPatches.cs" />
-    <Compile Include="Patches\ModCompatibility\PawnEditorPatches.cs" />
-    <Compile Include="Patches\ModCompatibility\PortraitsofTheRimPatches.cs" />
-    <Compile Include="Patches\NameBank.cs" />
-    <Compile Include="Patches\EnbyParents\ParentPatches.cs" />
-    <Compile Include="Patches\NameMaker_Patches.cs" />
-    <Compile Include="Patches\PawnBioAndNameGenerator.cs" />
-    <Compile Include="Patches\PawnGenerator.cs" />
-    <Compile Include="Patches\PawnRelationDef.cs" />
-    <Compile Include="Patches\PawnRelationWorkers.cs" />
-    <Compile Include="Patches\PawnRenderer.cs" />
-    <Compile Include="Patches\PawnStyleItemChooser.cs" />
-    <Compile Include="Patches\Pawn_StoryTracker.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\FrameworkVersion.g.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Utilities.cs" />
-    <Compile Include="WorldComp_EnbyLeaderTitle.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Patches\ForLater\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>call "$(SolutionDir)..\DivineFramework\PreBuild.bat" "$(ProjectDir)" "$(RootNamespace)"</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>call "$(SolutionDir)..\DivineFramework\PostBuild.bat" "$(ProjectName)"</PostBuildEvent>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.7.4981-unstable" />
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.3" />
+  </ItemGroup>
   <Target Name="ForcePostBuild" AfterTargets="Build">
     <Touch Files="$(IntermediateOutputPath)TouchMe.txt" />
   </Target>
