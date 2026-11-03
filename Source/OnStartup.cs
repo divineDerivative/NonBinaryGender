@@ -11,6 +11,8 @@ namespace NonBinaryGender
         static OnStartup()
         {
             Harmony harmony = new("divineDerivative.NonBinaryGender");
+            Enum_Patches.TryInjectGenderEnumInfo();
+            
             harmony.PatchAll();
 
             if (ModsConfig.IsActive("erdelf.humanoidalienraces") || ModsConfig.IsActive("erdelf.humanoidalienraces.dev"))
