@@ -43,10 +43,6 @@
       <HintPath>..\..\DivineFramework\Assemblies\0DivineFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CharacterEditor">
-      <HintPath>..\..\..\..\..\workshop\content\294100\1874644848\v1.4\Assemblies\CharacterEditor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="FacialAnimation">
       <HintPath>..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
       <Private>False</Private>
