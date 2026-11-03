@@ -34,4 +34,16 @@
 		<li IfModActive="Oppey.EyeGenes2">ModSupport/EyeGenes2</li>
 		<li IfModActive="Erin.FFXIVRaces">ModSupport/VEF - Gendered Genes/Erin's FF Races</li>
 	</v1.6>
+	<v1.7>
+		<li>/</li>
+		<li>1.7</li>
+		<li IfModActive="Ludeon.RimWorld.Ideology">ModSupport/Ideology</li>
+		<li IfModActive="Nals.FacialAnimation">ModSupport/FacialAnimation</li>
+		<li IfModActive="TwoPenny.PortraitsOfTheRim">ModSupport/PortraitsOfTheRim</li>
+		<li IfModActive="Capi.FacesOfTheRim">ModSupport/FacesOfTheRim</li>
+		<li IfModActive="VanillaExpanded.VTEXE.FacialAnims">ModSupport/VTE - FA</li>
+		<li IfModActive="Reel.FacialAnims">ModSupport/ReelFacialAnims</li>
+		<li IfModActive="Oppey.EyeGenes2">ModSupport/EyeGenes2</li>
+		<li IfModActive="Erin.FFXIVRaces">ModSupport/VEF - Gendered Genes/Erin's FF Races</li>
+	</v1.7>
 </loadFolders>
