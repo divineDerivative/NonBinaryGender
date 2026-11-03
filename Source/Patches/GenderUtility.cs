@@ -56,8 +56,7 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
-
-#if !v1_4
+        
         [HarmonyPrefix]
         [HarmonyPatch(typeof(GenderUtility), nameof(GenderUtility.GetGenderNoun))]
         public static bool GetGenderNounPatch(ref string __result, Gender gender)
@@ -69,7 +68,6 @@ namespace NonBinaryGender.Patches
             }
             return true;
         }
-#endif
 
         //Displays the non-binary gender icon in various places
         [HarmonyPrefix]

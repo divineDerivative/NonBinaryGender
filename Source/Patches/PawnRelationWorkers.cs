@@ -33,8 +33,7 @@ namespace NonBinaryGender.Patches
             __result = sharedParents > 1;
             return false;
         }
-
-#if !v1_4
+        
         //Add check for shared non-binary parent
         [HarmonyTranspiler]
         [HarmonyPatch(typeof(PawnRelationWorker_HalfSibling), nameof(PawnRelationWorker_HalfSibling.InRelation))]
@@ -74,7 +73,6 @@ namespace NonBinaryGender.Patches
                 yield return code;
             }
         }
-#endif
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(PawnRelationWorker_UncleOrAunt), nameof(PawnRelationWorker_UncleOrAunt.InRelation))]

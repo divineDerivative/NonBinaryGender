@@ -20,12 +20,8 @@ namespace NonBinaryGender
         //I'll keep this just in case though
         public string GenerateLeaderTitle(Ideo ideo)
         {
-
-#if v1_4
-            if (ideo.hiddenIdeoMode)
-#else
+            
             if (ideo.classicMode)
-#endif
             {
                 return PreceptDefOf.IdeoRole_Leader.label;
             }
