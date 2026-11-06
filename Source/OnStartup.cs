@@ -19,10 +19,6 @@ namespace NonBinaryGender
             {
                 harmony.PatchHAR();
                 Settings.HARActive = true;
-                if (ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers") || ModsConfig.IsActive("Killathon.MechHumanlikes.AndroidTiers_steam"))
-                {
-                    harmony.PatchATR();
-                }
             }
             if (ModsConfig.IsActive("Nals.FacialAnimation") || ModsConfig.IsActive("Nals.FacialAnimation_steam"))
             {

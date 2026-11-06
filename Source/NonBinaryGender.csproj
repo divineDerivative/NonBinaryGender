@@ -47,10 +47,6 @@
       <HintPath>..\..\..\..\..\workshop\content\294100\1635901197\1.4\Assemblies\FacialAnimation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MH Android Tiers Core">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2974536022\1.4\Assemblies\MH Android Tiers Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Patches\ForLater\" />
