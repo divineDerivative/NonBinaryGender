@@ -24,11 +24,10 @@ namespace NonBinaryGender.Patches
             return true;
         }
 
-        public static void MatchesPrefix(Type portrait, ref Type portraitElementDef)
+        public static void MatchesPrefix(Portrait portrait, ref PortraitElementDef portraitElementDef)
         {
-            Pawn pawn = (Pawn)AccessTools.Field(typeof(Portrait), nameof(Portrait.pawn)).GetValue(portrait);
-            Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof(PortraitElementDef.requirements)).GetValue(portraitElementDef);
-            if (pawn.IsEnby())
+            Requirements requirements = portraitElementDef.requirements;
+            if (portrait.pawn.IsEnby())
             {
                 if (requirements.body != null && requirements.gender.HasValue)
                 {
@@ -51,14 +50,13 @@ namespace NonBinaryGender.Patches
             }
         }
 
-        public static void MatchesPostfix(ref Type portraitElementDef)
+        public static void MatchesPostfix(ref PortraitElementDef portraitElementDef)
         {
             forMatches = false;
             bodyTypeDef = null;
             if (oldGender.HasValue)
             {
-                Requirements requirements = (Requirements)AccessTools.Field(typeof(PortraitElementDef), nameof(PortraitElementDef.requirements)).GetValue(portraitElementDef);
-                requirements.gender = oldGender;
+                portraitElementDef.requirements.gender = oldGender;
                 oldGender = null;
             }
         }
