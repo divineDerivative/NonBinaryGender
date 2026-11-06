@@ -38,7 +38,7 @@ namespace NonBinaryGender
             }
             if (ModsConfig.IsActive("Mlie.RFTribalPawnNames"))
             {
-                harmony.Patch(AccessTools.Method("RTPN_NameBank:NamesFor"), prefix: new HarmonyMethod(typeof(NameBank_Patches), nameof(NameBank_Patches.NamesForPatch)));
+                harmony.Patch(AccessTools.Method("RTPN_NameBank:namesFor"), prefix: new HarmonyMethod(typeof(NameBank_Patches), nameof(NameBank_Patches.NamesForPatch)));
             }
             if (ModsConfig.IsActive("Mlie.RationalRomance"))
             {
