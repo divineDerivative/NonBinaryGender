@@ -41,6 +41,38 @@ namespace NonBinaryGender.Patches
             }
         }
 
+        public static void PatchPEFork(this Harmony harmony)
+        {
+            harmony.Patch(AccessTools.Method(typeof(TabWorker_Bio_Humanlike), "DrawSexButton"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DrawSexButtonTranspiler))));
+            harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "GenderOptions"), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(DoLeftSectionTranspiler))));
+            harmony.Patch(AccessTools.Method(typeof(Dialog_AppearanceEditor), "IsAllowed", [typeof(HeadTypeDef), typeof(Pawn)]), transpiler: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(HeadTypeTranspiler))));
+
+            MethodInfo HeadTypePredicate = FindPredicate();
+            harmony.Patch(HeadTypePredicate, prefix: new HarmonyMethod(AccessTools.Method(typeof(PawnEditorPatches), nameof(HeadTypePredicatePrefixForked))));
+
+            static MethodInfo FindPredicate()
+            {
+                MethodInfo result = null;
+                foreach (Type type in typeof(Dialog_AppearanceEditor).GetNestedTypes(AccessTools.all).Where(t => t.GetCustomAttribute<System.Runtime.CompilerServices.CompilerGeneratedAttribute>() != null).ToList())
+                {
+                    foreach (MethodInfo method in type.GetMethods(AccessTools.all).ToList())
+                    {
+                        if (method.ReturnType == typeof(bool) && method.Name.Contains("HeadTypes") && method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(HeadTypeDef) && method.GetParameters()[0].Name == "type")
+                        {
+                            if (result != null)
+                            {
+                                LogUtil.Error("Multiple matching methods found: " + result.Name + " and " + method.Name);
+                            }
+
+                            LogUtil.Message($"Found predicate method: {method.Name} in type {type.FullName}");
+                            result = method;
+                        }
+                    }
+                }
+                return result;
+            }
+        }
+
         public static IEnumerable<CodeInstruction> GenderButtonTranspiler(IEnumerable<CodeInstruction> instructions, OpCode loadPawn, Type type = null)
         {
             bool malefound = false;
@@ -75,6 +107,11 @@ namespace NonBinaryGender.Patches
         public static IEnumerable<CodeInstruction> DoLeftSectionTranspiler(IEnumerable<CodeInstruction> instructions)
         {
             return GenderButtonTranspiler(instructions, OpCodes.Ldarg_0, typeof(Dialog_AppearanceEditor));
+        }
+
+        public static IEnumerable<CodeInstruction> DrawSexButtonTranspiler(IEnumerable<CodeInstruction> instructions)
+        {
+            return GenderButtonTranspiler(instructions, OpCodes.Ldarg_1);
         }
 
         private static FloatMenuOption DoButtonsHelper(Pawn pawn)
@@ -120,6 +157,29 @@ namespace NonBinaryGender.Patches
                 return false;
             }
             return true;
+        }
+        
+        public static bool HeadTypePredicatePrefixForked(object __instance, ref bool __result)
+        {
+            Pawn pawn = GetPawnFromObject(__instance);
+            if (pawn.IsEnby())
+            {
+                __result = true;
+                return false;
+            }
+            return true;
+        }
+
+        private static Pawn GetPawnFromObject(object instance)
+        {
+            FieldInfo dialog = instance.GetType()
+                .GetFields(AccessTools.all)
+                .FirstOrDefault(f =>
+                    !f.IsStatic &&
+                    typeof(Dialog_AppearanceEditor).IsAssignableFrom(f.FieldType));
+            
+            Pawn pawn = AccessTools.Field(typeof(Dialog_AppearanceEditor), "pawn").GetValue(dialog.GetValue(instance)) as Pawn;
+            return pawn;
         }
     }
 }

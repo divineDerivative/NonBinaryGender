@@ -28,9 +28,13 @@ namespace NonBinaryGender
             {
                 harmony.PatchPortraits();
             }
-            if (ModsConfig.IsActive("ISOREX.PawnEditor") || ModsConfig.IsActive("ISOREX.PawnEditor_steam") || ModsConfig.IsActive("segaswolf.pawneditor.fork"))
+            if (ModsConfig.IsActive("ISOREX.PawnEditor") || ModsConfig.IsActive("ISOREX.PawnEditor_steam"))
             {
                 harmony.PatchPE();
+            }
+            else if (ModsConfig.IsActive("segaswolf.pawneditor.fork"))
+            {
+                harmony.PatchPEFork();
             }
             if (ModsConfig.IsActive("Mlie.RFTribalPawnNames"))
             {
