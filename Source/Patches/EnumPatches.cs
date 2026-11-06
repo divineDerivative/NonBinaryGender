@@ -9,16 +9,16 @@ namespace NonBinaryGender.Patches
 {
     public static class Enum_Patches
     {
-
         private static object genderCache;
+        
         public static void TryInjectGenderEnumInfo()
         {
             try
             {
                 Type runtimeType = AccessTools.TypeByName("System.RuntimeType");
 
-                MethodInfo ReplaceCacheEntry = AccessTools.Method(runtimeType, "ReplaceCacheEntry");
-                if (ReplaceCacheEntry == null) throw new MissingMethodException("System.RuntimeType", "ReplaceCacheEntry<T>(...)");
+                MethodInfo ReplaceCacheEntryGeneric = AccessTools.Method(runtimeType, "ReplaceCacheEntry");
+                if (ReplaceCacheEntryGeneric == null) throw new MissingMethodException("System.RuntimeType", "ReplaceCacheEntry<T>(...)");
 
                 MethodInfo GetEnumInfo = AccessTools.Method(typeof(Enum), "GetEnumInfo");
 
@@ -63,8 +63,8 @@ namespace NonBinaryGender.Patches
                 object[] ctorArgs = [false, newValues, newNames];
 
                 object newEnumInfo = enumInfoCtor.Invoke(ctorArgs);
-                MethodInfo replaceCacheEntry = ReplaceCacheEntry.MakeGenericMethod(EnumInfoByte);
-                replaceCacheEntry.Invoke(typeof(Gender), [ newEnumInfo ]);
+                MethodInfo ReplaceCacheEntry = ReplaceCacheEntryGeneric.MakeGenericMethod(EnumInfoByte);
+                ReplaceCacheEntry.Invoke(typeof(Gender), [ newEnumInfo ]);
 
                 KeepStrongCacheRef(runtimeType, typeof(Gender));
             }
